@@ -2,30 +2,35 @@
 body 
 {
     font-family:  "Proza Libre", sans-serif;
-    background-color: #0F0C29;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='600' y1='25' x2='600' y2='777'%3E%3Cstop offset='0' stop-color='%230F0C29'/%3E%3Cstop offset='1' stop-color='%23302B63'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='650' y1='25' x2='650' y2='777'%3E%3Cstop offset='0' stop-color='%23120e2f'/%3E%3Cstop offset='1' stop-color='%232f2b5f'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='700' y1='25' x2='700' y2='777'%3E%3Cstop offset='0' stop-color='%23141135'/%3E%3Cstop offset='1' stop-color='%232e2a5c'/%3E%3C/linearGradient%3E%3ClinearGradient id='d' gradientUnits='userSpaceOnUse' x1='750' y1='25' x2='750' y2='777'%3E%3Cstop offset='0' stop-color='%2317133a'/%3E%3Cstop offset='1' stop-color='%232d2a58'/%3E%3C/linearGradient%3E%3ClinearGradient id='e' gradientUnits='userSpaceOnUse' x1='800' y1='25' x2='800' y2='777'%3E%3Cstop offset='0' stop-color='%231a1640'/%3E%3Cstop offset='1' stop-color='%232c2955'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='850' y1='25' x2='850' y2='777'%3E%3Cstop offset='0' stop-color='%231d1845'/%3E%3Cstop offset='1' stop-color='%232b2951'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' gradientUnits='userSpaceOnUse' x1='900' y1='25' x2='900' y2='777'%3E%3Cstop offset='0' stop-color='%23201b4a'/%3E%3Cstop offset='1' stop-color='%2329284e'/%3E%3C/linearGradient%3E%3ClinearGradient id='h' gradientUnits='userSpaceOnUse' x1='950' y1='25' x2='950' y2='777'%3E%3Cstop offset='0' stop-color='%23231e4f'/%3E%3Cstop offset='1' stop-color='%2328274b'/%3E%3C/linearGradient%3E%3ClinearGradient id='i' gradientUnits='userSpaceOnUse' x1='1000' y1='25' x2='1000' y2='777'%3E%3Cstop offset='0' stop-color='%23262155'/%3E%3Cstop offset='1' stop-color='%23272648'/%3E%3C/linearGradient%3E%3ClinearGradient id='j' gradientUnits='userSpaceOnUse' x1='1050' y1='25' x2='1050' y2='777'%3E%3Cstop offset='0' stop-color='%23292459'/%3E%3Cstop offset='1' stop-color='%23262644'/%3E%3C/linearGradient%3E%3ClinearGradient id='k' gradientUnits='userSpaceOnUse' x1='1100' y1='25' x2='1100' y2='777'%3E%3Cstop offset='0' stop-color='%232d285e'/%3E%3Cstop offset='1' stop-color='%23252541'/%3E%3C/linearGradient%3E%3ClinearGradient id='l' gradientUnits='userSpaceOnUse' x1='1150' y1='25' x2='1150' y2='777'%3E%3Cstop offset='0' stop-color='%23302B63'/%3E%3Cstop offset='1' stop-color='%2324243E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg %3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' x='100' width='1100' height='800'/%3E%3Crect fill='url(%23c)' x='200' width='1000' height='800'/%3E%3Crect fill='url(%23d)' x='300' width='900' height='800'/%3E%3Crect fill='url(%23e)' x='400' width='800' height='800'/%3E%3Crect fill='url(%23f)' x='500' width='700' height='800'/%3E%3Crect fill='url(%23g)' x='600' width='600' height='800'/%3E%3Crect fill='url(%23h)' x='700' width='500' height='800'/%3E%3Crect fill='url(%23i)' x='800' width='400' height='800'/%3E%3Crect fill='url(%23j)' x='900' width='300' height='800'/%3E%3Crect fill='url(%23k)' x='1000' width='200' height='800'/%3E%3Crect fill='url(%23l)' x='1100' width='100' height='800'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: #65C7F7;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 60'%3E%3Cg %3E%3Crect fill='%2365C7F7' width='11' height='11'/%3E%3Crect fill='%2361c5f7' x='10' width='11' height='11'/%3E%3Crect fill='%235dc4f7' y='10' width='11' height='11'/%3E%3Crect fill='%235ac2f6' x='20' width='11' height='11'/%3E%3Crect fill='%2356c0f6' x='10' y='10' width='11' height='11'/%3E%3Crect fill='%2352bef6' y='20' width='11' height='11'/%3E%3Crect fill='%234dbcf6' x='30' width='11' height='11'/%3E%3Crect fill='%2349bbf6' x='20' y='10' width='11' height='11'/%3E%3Crect fill='%2345b9f5' x='10' y='20' width='11' height='11'/%3E%3Crect fill='%2341b7f5' y='30' width='11' height='11'/%3E%3Crect fill='%233cb5f5' x='40' width='11' height='11'/%3E%3Crect fill='%2337b4f5' x='30' y='10' width='11' height='11'/%3E%3Crect fill='%2332b2f5' x='20' y='20' width='11' height='11'/%3E%3Crect fill='%232db0f4' x='10' y='30' width='11' height='11'/%3E%3Crect fill='%2327aef4' y='40' width='11' height='11'/%3E%3Crect fill='%2321acf4' x='50' width='11' height='11'/%3E%3Crect fill='%231aaaf4' x='40' y='10' width='11' height='11'/%3E%3Crect fill='%2310a9f3' x='30' y='20' width='11' height='11'/%3E%3Crect fill='%2302a7f3' x='20' y='30' width='11' height='11'/%3E%3Crect fill='%2300a5f3' x='10' y='40' width='11' height='11'/%3E%3Crect fill='%2300a3f3' y='50' width='11' height='11'/%3E%3Crect fill='%2300a1f2' x='60' width='11' height='11'/%3E%3Crect fill='%23009ff2' x='50' y='10' width='11' height='11'/%3E%3Crect fill='%23009df2' x='40' y='20' width='11' height='11'/%3E%3Crect fill='%23009bf1' x='30' y='30' width='11' height='11'/%3E%3Crect fill='%230099f1' x='20' y='40' width='11' height='11'/%3E%3Crect fill='%230098f0' x='10' y='50' width='11' height='11'/%3E%3Crect fill='%230096f0' x='70' width='11' height='11'/%3E%3Crect fill='%230094f0' x='60' y='10' width='11' height='11'/%3E%3Crect fill='%230092ef' x='50' y='20' width='11' height='11'/%3E%3Crect fill='%230090ef' x='40' y='30' width='11' height='11'/%3E%3Crect fill='%23008eee' x='30' y='40' width='11' height='11'/%3E%3Crect fill='%23008cee' x='20' y='50' width='11' height='11'/%3E%3Crect fill='%23008aed' x='80' width='11' height='11'/%3E%3Crect fill='%230088ec' x='70' y='10' width='11' height='11'/%3E%3Crect fill='%230086ec' x='60' y='20' width='11' height='11'/%3E%3Crect fill='%230084eb' x='50' y='30' width='11' height='11'/%3E%3Crect fill='%230082ea' x='40' y='40' width='11' height='11'/%3E%3Crect fill='%230080ea' x='30' y='50' width='11' height='11'/%3E%3Crect fill='%23007ee9' x='90' width='11' height='11'/%3E%3Crect fill='%23007ce8' x='80' y='10' width='11' height='11'/%3E%3Crect fill='%23007ae8' x='70' y='20' width='11' height='11'/%3E%3Crect fill='%230078e7' x='60' y='30' width='11' height='11'/%3E%3Crect fill='%230076e6' x='50' y='40' width='11' height='11'/%3E%3Crect fill='%230074e5' x='40' y='50' width='11' height='11'/%3E%3Crect fill='%230071e4' x='90' y='10' width='11' height='11'/%3E%3Crect fill='%23006fe3' x='80' y='20' width='11' height='11'/%3E%3Crect fill='%23006de2' x='70' y='30' width='11' height='11'/%3E%3Crect fill='%23006be1' x='60' y='40' width='11' height='11'/%3E%3Crect fill='%230069e0' x='50' y='50' width='11' height='11'/%3E%3Crect fill='%230067df' x='90' y='20' width='11' height='11'/%3E%3Crect fill='%230064de' x='80' y='30' width='11' height='11'/%3E%3Crect fill='%230062dd' x='70' y='40' width='11' height='11'/%3E%3Crect fill='%230060dc' x='60' y='50' width='11' height='11'/%3E%3Crect fill='%23005edb' x='90' y='30' width='11' height='11'/%3E%3Crect fill='%23005bd9' x='80' y='40' width='11' height='11'/%3E%3Crect fill='%230059d8' x='70' y='50' width='11' height='11'/%3E%3Crect fill='%230057d7' x='90' y='40' width='11' height='11'/%3E%3Crect fill='%230054d5' x='80' y='50' width='11' height='11'/%3E%3Crect fill='%230052D4' x='90' y='50' width='11' height='11'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
 
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
 }
 .form-box
 {
     width: 380px;
     height: 480px;
     position: relative;
-    margin: 20px auto 5px auto;
-    background: #fff;
+    margin: 50px auto 5px auto;
     padding: 5px;
     overflow: hidden;
     border-radius: 20px;
+
+    border: none;
+    background: rgba(0, 0, 0, 0.602);
+    backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.609);
+  border-left: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
 }
 .button-box
 {
-    width: 220px;
-    margin-top: 40px;
+    width: 250px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -34,27 +39,33 @@ body
     border-radius: 30px;
     
 }
+
+
 .toggle-btn
 {
-    padding: 10px 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 30px;
     cursor:pointer;
     background: transparent;
     border: 0;   
     outline: none;
     position: relative;
 
-    color: rgb(8, 226, 255);
+    color: white;
     font-family:  "Proza Libre", sans-serif;
-    font-weight: 400;
+    font-weight:500;
+    font-size: 14px;
 }
 #btn
 {
     top:0;
     left:0;
     position:absolute;
-    width: 110px;
+    width: 140px;
     height: 100%;
-    background: linear-gradient(to right, #FF0099,#493240);
+    background: linear-gradient(to right, #021B79,#0575E6);
     border-radius:30px;
     transition: 0.5s;
 }
@@ -88,7 +99,7 @@ body
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
-    background: linear-gradient(to right, #FF0099,#493240);
+    background: linear-gradient(to right, #021B79,#0575E6);
     border: 0;
     outline: none;
     border-radius: 30px;

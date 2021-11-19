@@ -8,26 +8,25 @@
     <link type="text/css" href="css/index_css1.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Barangay Name CHUCHU WELCOME</h1>
+    <h1>Barangay NAME</h1>
     <div class="container">
 
         <div class="card">
             <div class="box">
-                <div class="content">
+                <div class="content" onclick="location='residentPortal.php'">
                     <h2>01</h2>
                     <h3>Resident's Portal</h3>
-                    <p>Resident Log-In/Registration</p>
-                    <a href="residentPortal.php">Button</a>
+                    <p>Barangay NAME's Resident Log-In/Registration</p>
                 </div>
             </div>
         </div>
+
         <div class="card">
             <div class="box">
-                <div class="content">
+                <div class="content" onclick="location='adminPortal.php'">
                     <h2>02</h2>
                     <h3>Admin's Portal</h3>
-                    <p>Admin Log-In</p>
-                    <a href="adminPortal.php">Button</a>
+                    <p>Barangay NAME's Admin Log-In</p>
                 </div>
             </div>
         </div>
