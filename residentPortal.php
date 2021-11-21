@@ -1,3 +1,8 @@
+<?php
+session_start();
+require ("config.php");
+?>
+
 <!DOCTYPE HTML>
 <html lang="en">
 <meta charset="utf-8">
@@ -30,13 +35,15 @@
             type="text" 
             class="input-field" 
             name="residentUsernameLogIn" 
-            placeholder="Username">
+            placeholder="Username"
+            required>
                 
             <input 
             type="password" 
             class="input-field" 
             name="residentPasswordLogIn" 
-            placeholder="Password">
+            placeholder="Password"
+            required>
 
             <button 
             type="button" 

@@ -1,3 +1,9 @@
+<?php
+session_start();
+require ("config.php");
+?>
+
+
 <!DOCTYPE HTML>
 <html lang="en">
 <meta charset="utf-8">
@@ -11,12 +17,12 @@
     <div class="form-box">
         <div class="button-box">
             <div id="btn"></div>
-            <button type="button" name="residentLogInBtn" class="toggle-btn" onclick="logIn()">Admin's Log-In</button>
+            <button type="button" name="residentLogInBtn" class="toggle-btn" onclick="logIn()" >Admin's Log-In</button>
         </div>
         <!---LogIn--->
         <form id="logIn"class="input-group">
-            <input type="text" class="input-field" name="residentUsernameLogIn" placeholder="Username">
-            <input type="password" class="input-field" name="residentPasswordLogIn" placeholder="Password">
+            <input type="text" class="input-field" name="residentUsernameLogIn" placeholder="Username" required>
+            <input type="password" class="input-field" name="residentPasswordLogIn" placeholder="Password" required>
             <button type="button" name="residentLogIn" class="submit-btn">Log-In</button>
         </form>
 

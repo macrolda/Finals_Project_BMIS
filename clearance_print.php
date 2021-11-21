@@ -1,4 +1,10 @@
- <html>
+<?php
+session_start();
+require ("config.php");
+?>
+
+
+<html>
 <head>
 	<title>BARANGAY CLEARANCE SYSTEM</title>
 	<meta charset="UTF-8"> 
