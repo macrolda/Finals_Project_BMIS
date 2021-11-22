@@ -30,14 +30,14 @@ require ("config.php");
         <form id="logIn"class="input-group">
            <!--- <h1>Log-In</h1>
             <p class="welcomeBack">Welcome! Sign in to start your session</p>--->
-
+                
             <input 
             type="text" 
             class="input-field" 
             name="residentUsernameLogIn" 
             placeholder="Username"
             required>
-                
+               
             <input 
             type="password" 
             class="input-field" 
