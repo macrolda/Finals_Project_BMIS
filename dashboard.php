@@ -18,7 +18,13 @@ require ("config.php");
 <head>
     <title>Resident's LogIn/Registration</title>
     <link type="text/css" href="css/dashboard_css4.css" rel="stylesheet">
+    <script>
+        function displayDate(){
+            document.getElementById("showDate").innerHTML = Date();
+        }
+    </script>               
 </head>
+
 <body>
     <div class="container">
         <!-- START OF SIDE BAR -->
@@ -26,12 +32,13 @@ require ("config.php");
             <ul>
                 <li class="list ">
                     <a href="#">
+                        
                         <span class="title">Barangay Name</span>
                     </a>
                 </li>
 
                 <li class="list">
-                    <a href="dashboard.php">
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="home-outline"><ion-icon>    
                         </span>
@@ -40,16 +47,16 @@ require ("config.php");
                 </li>
 
                 <li class="list">
-                    <a href="residentInformation.php">
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="person-outline"><ion-icon>    
                         </span>
-                        <span class="title">Resident Information</span>
+                        <span class="title">Resident Records</span>
                     </a>
                 </li>
 
                 <li class="list">
-                    <a href="blotterRecords.php">
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="briefcase-outline"><ion-icon>    
                         </span>
@@ -58,7 +65,7 @@ require ("config.php");
                 </li>
             
                 <li class="list">
-                    <a href="settlementSchedules.php">
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="calendar-outline"><ion-icon>    
                         </span>
@@ -67,7 +74,7 @@ require ("config.php");
                 </li>
 
                 <li class="list">
-                    <a href="certificateRecords.php">
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="print-outline"><ion-icon>    
                         </span>
@@ -76,7 +83,7 @@ require ("config.php");
                 </li>
 
                 <li class="list">
-                    <a href="#accounts.php">
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="person"><ion-icon>    
                         </span>
@@ -85,13 +92,17 @@ require ("config.php");
                 </li>
             
                 <li class="list">
-                    <a href="#barangayConfig.php">
+                    <a href="#">
                         <span class="icon">
                             <ion-icon name="settings-outline"><ion-icon>    
                         </span>
-                        <span class="title">Barangay Configuration</span>
+                        <span class="title">Barangay Settings</span>
                     </a>
                 </li>
+
+                <div onload="displayDate()">
+                    <p id='showDate' ></p>
+                </div>
             </ul>
         </div>
         <!-- END OF SIDE BAR -->
@@ -112,22 +123,56 @@ require ("config.php");
                     <img  src="image/default_img.png">
                 </div>
             </div>
+
+            <!-- cards -->
+            <div class="cardBox">            
+                <div class="card">
+                    <div>
+                        <div class="numbers">0</div>
+                        <div class="cardName">Total Population</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="people-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">0</div>
+                        <div class="cardName">Registered Voters</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="receipt-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">0</div>
+                        <div class="cardName">Male</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="man-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">0</div>
+                        <div class="cardName">Female</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="woman-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
         </div>
-   
     </div>
+<!---SCRIPTS--->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<!---<script>
-    // MenuToggle
-    let toggle = document.querySelector('.toggle');
-    let navigation = document.querySelector('.navigation');
-    let main = document.querySelector('.main');
-    
-    toggle.onclick = function(){
-        navigation.classList.toggle('active')
-    }
-
-
+<script>
     // add hovered class in selected list item
     let list = document.querySelectorAll('.navigation li');
     function activeLink(){
@@ -135,6 +180,7 @@ require ("config.php");
         this.classList.add('hovered');
     }
     list.forEach((item) => item.addEventListener('mouseover',activeLink));
-</script>--->
+</script>
+<!---SCRIPTS--->
 </body>
 </html>
