@@ -9,7 +9,7 @@ body
 }
 .login-wrapper 
 {
-  margin-top: 100px;
+    margin-top: 100px;
     height: 100%;
     width: 100%;
     display: flex;
@@ -19,8 +19,8 @@ body
 .form 
 {
     position: relative;
-
-    max-width: 380px;
+    width: 400px;
+    max-width: 430px;
     padding: 60px 40px 40px;
     background: rgba(0, 0, 0, 0.623);
     border-radius: 10px;
@@ -66,7 +66,7 @@ body
 {
     width: 100%;
     padding: 10px 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     letter-spacing: 1px;
     margin-bottom: 30px;
     border: none;
@@ -81,7 +81,7 @@ body
     top: 0;
     left: 0;
     padding: 10px 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
     pointer-events: none;
     transition: .3s ease-out;
 }
@@ -90,25 +90,50 @@ body
 {
     transform: translateY(-18px);
     color: #ffffff;
-    font-size: .9rem;
+    font-size: .8rem;
 }
 .submit-btn 
 {
     display: block;
-    margin-left: 35%;
+    margin-left: auto;
     border: none;
     outline: none;
     background: #13a51f;
-    color: #fff;
+    color: blanchedalmond;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     padding: 10px 20px;
-    border-radius: 50px;
+    border-radius: 5px;
     cursor: pointer;
 }
- .close
+.forgot-pw
+{
+    color: inherit;
+}
+  
+#forgot-pw 
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: 1;
+    background: #fff;
+    opacity: 0;
+    transition: 0.6s;
+}
+#forgot-pw:target 
+{
+    height: 100%;
+    opacity: 1;
+}
+.close 
 {
     position: absolute;
     right: 1.5rem;
