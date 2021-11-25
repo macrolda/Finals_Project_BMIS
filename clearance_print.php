@@ -36,23 +36,23 @@
 					
 						<div class="flex1 text-left">
 							<div class="img">
-								<img src="image/">
+								<img src="image/logo_1.png">
 							</div>
 						</div>
 						<div class="flex1 text-center">
-							<h5>Republic of the Philippines</h5>
-							<h5>Province of ""</h5>
-							<h5>Municipality of "" </h5>
-							<h5>Barangay "" </h5>
+							<h5>Republic of the Philippines </h5>
+							<h5>Province of Cebu </h5>
+							<h5>Municipality of Talisay </h5>
+							<h5>Barangay Tabunok </h5>
 						</div>
 					
 			<div class="flex1">
 				<div class="text-right">
-					<h4> "BARANGAY CAPTAIN"
+				
 
-                                <td><img class="image" src="image/"></td>
+                                <td><img class="image" src="image/logo_2.png"></td>
                               
-                                <td><img class="image" src=""></td>
+                          
                              
 				</div>
 			</div>
@@ -68,12 +68,12 @@
 		</div>
 		
 				<div class="content margin-top-50" style='text-indent: 50px;'>
-					<h4>THIS IS TO CERTIFY that <b class="uppercase"> <h4> "FULL NAME"</b>
-						legal age and a bonafide resident of Barangay <h4> "BARANGAY MUNICIPAL PROVINCE", is personally known to
+					<h4>THIS IS TO CERTIFY that <b class="uppercase"> "FULL NAME"</b>
+						legal age and a bonafide resident of Barangay Tabunok Talisay Cebu City, is personally known to
 						me to be a person of good moral character and law-abiding citizen in the community.</h4>
 				</div>
 				<div class="content margin-top-50" style='text-indent: 50px;'>
-					<h4>That <b class="uppercase"> <h4> "FULL NAME" </b>  has not been convicted
+					<h4>That <b class="uppercase"> "FULL NAME" </b>  has not been convicted
 					 of any crime whatsoever neither is there any pending case filed against her before the 
 					 Barangay Court of Justice on the said barangay.</h4>
 				</div>
@@ -83,7 +83,7 @@
 				</div>
 				<div class="content margin-top-50" style='text-indent: 50px;'>
 					<h4>
-						GIVEN this <b><span id='date'></span></b> day of <b><span id='month'></span> <span id='year'></span></b> at Barangay <h4> "BARANGAY MUNICIPAL PROVINCE" Philippines.
+						GIVEN this <b><span id='date'></span></b> day of <b><span id='month'></span> <span id='year'></span></b> at Barangay Tabunok Talisay Cebu City Philippines.
 					</h4>
 				</div>
 		
@@ -96,9 +96,7 @@
 						<div class="flex1">
 							<h4 class="text-center">Certified Correct</h4>
 							<h4 class="uppercase text-center">
-								<h4> "BARANGAY CAPTAIN"
-				                   <h4> "FULL NAME"
-
+								
 							</h4>
 							<h4 class="text-center">Punong Barangay</h4>
 						</div>
@@ -109,7 +107,7 @@
 		<div class=" margin-top-50">
 			<h4 style="width: 100xp;">Paid OR No <span style="margin-left: 20px;">: "OR NUMBER"</span></h4>
 			<h4>Issued on <span style="margin-left: 38px;"></span>: <span id="month2"></span> <span id="date2"></span> <span id="year2"></span><h4>
-			<h4>Issued at <span  style="margin-left: 43px;"></span>: Barangay <h4> "BARANGAY MUNICIPAL PROVINCE" </h4>
+			<h4>Issued at <span  style="margin-left: 43px;"></span>: Barangay Tabunok Talisay Cebu City </h4>
 		</div>
 		
 	</div>
