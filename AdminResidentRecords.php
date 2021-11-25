@@ -8,15 +8,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 <link rel="icon" type="image/png" sizes="32x32" href="image/logo_1.png">
 <head>
@@ -129,7 +129,7 @@
 						                <h2>Resident's <b>Details</b></h2>
 					                </div>
 					                <div class="col-sm-6">
-						                <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
+						                <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Resident</span></a>
 						                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
 					                </div>
 				                </div>
@@ -151,6 +151,7 @@
                                         <th>Sex</th>
 						                <th>BirthDate</th>
 						                <th>BirthPlace</th>
+                                        <th>CivilStatus</th>
 						                <th>ContactNumber</th>
                                         <th>Email</th>
                                         <th>Address</th>
@@ -173,13 +174,18 @@
                                         <td>Sex</td>
 						                <td>BirthDate</td>
 						                <td>BirthPlace</td>
+                                        <td>CivilStatus</td>
 						                <td>ContactNumber</td>
                                         <td>Email</td>
                                         <td>Address</td>
 						                <td>RegisteredVoter</td>
 						                    <td>
-							                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-							                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+							                    <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                                    <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+                                                </a>
+							                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
+                                                    <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+                                                </a>
 						                    </td>
 					                </tr>					
 				                </tbody>
@@ -205,26 +211,102 @@
 		                    <div class="modal-content">
 			                    <form>
 				                    <div class="modal-header">						
-					                    <h4 class="modal-title">Add Employee</h4>
+					                    <h4 class="modal-title">Add Resident</h4>
 					                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				                    </div>
 				                    <div class="modal-body">					
 					                    <div class="form-group">
-						                    <label>Name</label>
+						                    <label>Resident ID: </label>
+						                    <input type="number" class="form-control" required>
+					                    </div>
+
+                                        <div class="form-group">
+						                    <label>First Name: </label>
 						                    <input type="text" class="form-control" required>
 					                    </div>
+
+                                        <div class="form-group">
+						                    <label>Middle Name: </label>
+						                    <input type="text" class="form-control" required>
+					                    </div>
+
+                                        <div class="form-group">
+						                    <label>Last Name:</label>
+						                    <input type="text" class="form-control" required>
+					                    </div>
+
+                                        <div class="form-group">
+						                    <label>Sex:</label>
+						                    <select id="sex" class="" name="sex" required>
+                                                <option selected disabled> </option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Preferred Not to Answer">Preferred Not to Answer</option>
+                                            </select>
+					                    </div>
+
+                                        <div class="form-group">
+						                    <label>Birth Month/Date/Year:</label>
+                                            <select id="birthMonth" class="birthday" name="birthMonth" required>
+                                                <option selected disabled>Month</option>
+                                                <?php for($i=1;$i<=12;$i++){
+			                                        echo "<option value='$i'>".$i."</option>";
+                                                }?>
+                                            </select>
+                
+                                            <select id="birthDate" class="birthday" name="birthDate" required>
+                                                <option selected disabled>Date</option>
+                                                <?php for($i=1;$i<=31;$i++){
+			                                        echo "<option value='$i'>".$i."</option>";
+                                                }?>
+                                            </select>
+
+                                            <select id="birthYear" class="birthday" name="birthYear" required>
+                                                <option selected disabled>Year</option>
+                                                <?php for($i=1990;$i<=2015;$i++){
+			                                        echo "<option value='$i'>".$i."</option>";
+                                                }?>
+                                            </select>
+					                    </div>
+
+                                        <div class="form-group">
+						                    <label>Birth Place:</label>
+						                    <input type="text" class="form-control" required>
+					                    </div>
+
+                                        <div class="form-group">
+						                    <label>Civil Status:</label>
+						                    <select id="civilStatus" class="" name="civilStatus" required>
+                                                <option selected disabled> </option>
+                                                <option value="Married">Yes</option>
+                                                <option value="Single">No</option>
+                                            </select>
+					                    </div>
+
+                                        <div class="form-group">
+						                    <label>Contact Number:</label>
+						                    <input type="number" class="form-control" required>
+					                    </div>
+
 					                    <div class="form-group">
-						                    <label>Email</label>
+						                    <label>Email:</label>
 						                    <input type="email" class="form-control" required>
 					                    </div>
+
 					                    <div class="form-group">
-						                    <label>Address</label>
+						                    <label>Address:</label>
 						                    <textarea class="form-control" required></textarea>
 					                    </div>
-					                    <div class="form-group">
-						                    <label>Phone</label>
-						                    <input type="text" class="form-control" required>
-					                    </div>					
+
+                                        <div class="form-group">
+						                    <label>Registered Voter:</label>
+                                            <select id="registeredVoter" class="" name="registeredVoter" required>
+                                                <option selected disabled> </option>
+                                                <option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                            </select>
+					                    </div>
+					                    					
 				                    </div>
 				                    <div class="modal-footer">
 					                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -251,14 +333,6 @@
 					                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 					                    <input type="submit" class="btn btn-danger" value="Delete">
 				                    </div>
-                                    <div class="modal-body">					
-					                    <p>Are you sure you want to delete these Records?</p>
-					                    <p class="text-warning"><small>This action cannot be undone.</small></p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                                        <input type="submit" class="btn btn-danger" value="Delete">
-                                    </div>
                                 </form>
                             </div>
                         </div>
