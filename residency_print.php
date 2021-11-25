@@ -1,4 +1,4 @@
- <html>
+<html>
 <head>
 	<title>BARANGAY CLEARANCE SYSTEM</title>
 	<meta charset="UTF-8"> 
@@ -36,23 +36,23 @@
 					
 						<div class="flex1 text-left">
 							<div class="img">
-								<img src="image/">
+								<img src="image/<?php echo $row['Logo'] ?>">
 							</div>
 						</div>
 						<div class="flex1 text-center">
 							<h5>Republic of the Philippines</h5>
 							<h5>Province of ""</h5>
 							<h5>Municipality of "" </h5>
-							<h5>Barangay "" </h5>
+							<h5>Barangay  ""</h5>
 						</div>
 					
 			<div class="flex1">
 				<div class="text-right">
-					<h4> "BARANGAY CAPTAIN"
-
-                                <td><img class="image" src="image/"></td>
+					
                               
-                                <td><img class="image" src=""></td>
+                                <td><img class="image" src="image/<?php echo $row['img'] ?>"></td>
+                              
+                                <td><img class="image" src="<?php echo $row['img'] ?>"></td>
                              
 				</div>
 			</div>
@@ -61,33 +61,30 @@
 			<h3 style="text-decoration: underline;">OFFICE OF THE PUNONG BARANGAY</h3>
 		</div>
 		<div class="content margin-top-50">
-			<h4>SUBJECT: <b style="text-decoration: underline;">BARANGAY CLEARANCE</b></h4>
+			<h4>SUBJECT: <b style="text-decoration: underline;">CERTIFICATE OF RESIDENCY</b></h4>
 		</div>
 		<div class="content margin-top-50">
-			<h4>TO WHOM IT MAY CONCERN:</h4>
+			<h4>To whom it may concern;</h4>
 		</div>
 		
 				<div class="content margin-top-50" style='text-indent: 50px;'>
 					<h4>THIS IS TO CERTIFY that <b class="uppercase"> <h4> "FULL NAME"</b>
-						legal age and a bonafide resident of Barangay <h4> "BARANGAY MUNICIPAL PROVINCE", is personally known to
-						me to be a person of good moral character and law-abiding citizen in the community.</h4>
+						legal age, <h4> "CIVIL STATUS" and resident of Barangay 
+						<h4> "BARANGAY MUNICIPAL PROVINCE" </h4>
 				</div>
 				<div class="content margin-top-50" style='text-indent: 50px;'>
-					<h4>That <b class="uppercase"> <h4> "FULL NAME" </b>  has not been convicted
-					 of any crime whatsoever neither is there any pending case filed against her before the 
-					 Barangay Court of Justice on the said barangay.</h4>
+					<h4>This is to certify further that <b class="uppercase"><h4> "FULL NAME" </b> <h4> "BARANGAY MUNICIPAL PROVINCE"  since <b> "SINCE" </b>
+					.</h4>
 				</div>
 				<div class="content margin-top-50" style='text-indent: 50px;'>
-					<h4>This certification is issued to the interested party for whatever legal and lawful 
-						purpose this may serve her most.</h4>
+					<h4>This Certification is issued upon the request of the interested party for whatever legal purpose it may serve her most.</h4>
 				</div>
 				<div class="content margin-top-50" style='text-indent: 50px;'>
 					<h4>
-						GIVEN this <b><span id='date'></span></b> day of <b><span id='month'></span> <span id='year'></span></b> at Barangay <h4> "BARANGAY MUNICIPAL PROVINCE" Philippines.
+						GIVEN this <b><span id='date'></span> day of <span id='month'></span> <span id='year'></span></b> at "BARANGAY MUNICIPAL PROVINCE" Philippines.
 					</h4>
 				</div>
 		
-			
 		<div class=" margin-top-50">
 			<div class="margin-top-50">
 					<div class="flex-parent">
@@ -98,7 +95,6 @@
 							<h4 class="uppercase text-center">
 								<h4> "BARANGAY CAPTAIN"
 				                   <h4> "FULL NAME"
-
 							</h4>
 							<h4 class="text-center">Punong Barangay</h4>
 						</div>
@@ -107,19 +103,17 @@
 			</div>
 		</div>
 		<div class=" margin-top-50">
-			<h4 style="width: 100xp;">Paid OR No <span style="margin-left: 20px;">: "OR NUMBER"</span></h4>
+			<h4 style="width: 100xp;">Paid OR No <span style="margin-left: 20px;">: "OR NUMBER" </span></h4>
 			<h4>Issued on <span style="margin-left: 38px;"></span>: <span id="month2"></span> <span id="date2"></span> <span id="year2"></span><h4>
-			<h4>Issued at <span  style="margin-left: 43px;"></span>: Barangay <h4> "BARANGAY MUNICIPAL PROVINCE" </h4>
+			<h4>Issued at <span  style="margin-left: 43px;"></span>: Barangay  <h4> "BARANGAY MUNICIPAL PROVINCE" </h4>
 		</div>
 		
 	</div>
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script>
+<script>
 	var y = new Date();
 	var m = new Date();
 	var d = new Date();
+	
 	var month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 	var day = d.getDate("1-31");
 
@@ -138,24 +132,9 @@
 	document.getElementById("date2").innerHTML = d.getDate("1-31") + ",";
 	document.getElementById("year2").innerHTML = y.getFullYear("yyyyy");
 	document.getElementById("month2").innerHTML = month[m.getMonth("0-11")];
-
-	function ordinal(i){
-		var a = i % 10,
-			b = i % 100;
-
-		if (a == 1 && b != 11) {
-			return i + "st";
-		}
-		if (a == 2 && b != 12) {
-			return i + "nd";
-		}
-		if (a == 3 && b != 13) {
-			return i + "rd";
-		}
-		return i + "th";
-	}
-	
 </script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 <script>
 	function myFunction() {
 	    window.print();
