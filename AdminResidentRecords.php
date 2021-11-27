@@ -123,14 +123,21 @@
                 <div class="container-xl">
                     <div class="table-responsive">
                         <div class="table-wrapper">
-			                <div class="table-title">
+			                <div class="table-title"> 
+                                <div class="col-sm-4">
+						                <h2 class="resiTitle">Resident's <b>Details</b></h2>
+					            </div>
 				                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="search-box">
+                                            <i class="material-icons">&#xE8B6;</i>
+                                            <input type="text" class="form-control" placeholder="Search&hellip;">
+                                        </div>
+                                    </div>
+
 					                <div class="col-sm-6">
-						                <h2>Resident's <b>Details</b></h2>
-					                </div>
-					                <div class="col-sm-6">
-						                <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Resident</span></a>
-						                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+						                <a href="#addResidentModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Resident</span></a>
+						                <a href="#deleteResidentModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
 					                </div>
 				                </div>
 			                </div>
@@ -157,8 +164,10 @@
                                         <th>Address</th>
 						                <th>RegisteredVoter</th>
 						                <th>Actions</th>
+                                        
 					                </tr>
 				                </thead>
+
 				                <tbody>
 					                <tr>
 						                <td>
@@ -167,28 +176,29 @@
 								                <label for="checkbox1"></label>
 							                </span>
 						                </td>
-                                        <td>ResidentID</td>
-						                <td>FirstName</td>
-						                <td>MiddleName</td>
-						                <td>LastName</td>
-                                        <td>Sex</td>
-						                <td>BirthDate</td>
-						                <td>BirthPlace</td>
-                                        <td>CivilStatus</td>
-						                <td>ContactNumber</td>
-                                        <td>Email</td>
-                                        <td>Address</td>
-						                <td>RegisteredVoter</td>
-						                    <td>
-							                    <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                        <td>ResidentID_INPUT</td>
+						                <td>FirstName_INPUT</td>
+						                <td>MiddleName_INPUT</td>
+						                <td>LastName_INPUT</td>
+                                        <td>Sex_INPUT</td>
+						                <td>BirthDate_INPUT</td>
+						                <td>BirthPlace_INPUT</td>
+                                        <td>CivilStatus_INPUT</td>
+						                <td>ContactNumber_INPUT</td>
+                                        <td>Email_INPUT</td>
+                                        <td>Address_INPUT</td>
+						                <td>RegisteredVoter_INPUT</td>
+						                    <td class="row">
+							                    <a href="#editResidentModal" class="col-sm-6 edit" data-toggle="modal">
                                                     <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
                                                 </a>
-							                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
+							                    <a href="#deleteResidentModal" class="col-sm-6 delete" data-toggle="modal">
                                                     <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
                                                 </a>
 						                    </td>
 					                </tr>					
 				                </tbody>
+
 			                </table>
 			                <div class="clearfix">
 				                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
@@ -206,10 +216,10 @@
 	                    </div>        
                     </div>
                     <!-- Edit Modal HTML -->
-                    <div id="addEmployeeModal" class="modal fade">
+                    <div id="addResidentModal" class="modal fade">
 	                    <div class="modal-dialog">
 		                    <div class="modal-content">
-			                    <form>
+			                    <form class="container">
 				                    <div class="modal-header">						
 					                    <h4 class="modal-title">Add Resident</h4>
 					                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -217,81 +227,95 @@
 				                    <div class="modal-body">					
 					                    <div class="form-group">
 						                    <label>Resident ID: </label>
-						                    <input type="number" class="form-control" required>
+						                    <input type="number" class="form-control" disabled>
 					                    </div>
+                                        <div class="row">
+                                            <div class="form-group col-sm-4">
+                                                <label>First Name: </label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
 
-                                        <div class="form-group">
-						                    <label>First Name: </label>
-						                    <input type="text" class="form-control" required>
-					                    </div>
+                                            <div class="form-group col-sm-4">
+                                                <label>Middle Name: </label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
 
-                                        <div class="form-group">
-						                    <label>Middle Name: </label>
-						                    <input type="text" class="form-control" required>
-					                    </div>
+                                            <div class="form-group col-sm-4">
+                                                <label>Last Name:</label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                        </div>
 
-                                        <div class="form-group">
-						                    <label>Last Name:</label>
-						                    <input type="text" class="form-control" required>
-					                    </div>
+                                        <div class="row">
+                                            <div class="form-group col-sm-4">
+                                                <label>Birth Month/Date/Year:</label>
+                                                
+                                                <select id="birthMonth" class="birthday" name="birthMonth" required>
+                                                    <option selected disabled>Month</option>
+                                                    <?php for($i=1;$i<=12;$i++){
+                                                        echo "<option value='$i'>".$i."</option>";
+                                                    }?>
+                                                </select>
+                    
+                                                <select id="birthDate" class="birthday" name="birthDate" required>
+                                                    <option selected disabled>Date</option>
+                                                    <?php for($i=1;$i<=31;$i++){
+                                                        echo "<option value='$i'>".$i."</option>";
+                                                    }?>
+                                                </select>
 
-                                        <div class="form-group">
-						                    <label>Sex:</label>
-						                    <select id="sex" class="" name="sex" required>
-                                                <option selected disabled> </option>
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>
-                                                <option value="Preferred Not to Answer">Preferred Not to Answer</option>
+                                                <select id="birthYear" class="birthday" name="birthYear" required>
+                                                    <option selected disabled>Year</option>
+                                                    <?php for($i=1990;$i<=2015;$i++){
+                                                        echo "<option value='$i'>".$i."</option>";
+                                                    }?>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group col-sm-4">
+                                                <label>Birth Place:</label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+
+                                            <div class="form-group col-sm-4">
+                                                <label>Sex:</label>
+                                                <select id="sex" class="" name="sex" required>
+                                                    <option selected disabled>Sex</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                    <option value="Preferred Not to Answer">Preferred Not to Answer</option>
                                             </select>
 					                    </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-sm-2">
+                                                <label>Civil Status:</label>
+                                                <select id="civilStatus" class="" name="civilStatus" required>
+                                                    <option selected disabled>Civil Status</option>
+                                                    <option value="Married">Married</option>
+                                                    <option value="Single">Single</option>
+                                                    <option value="Separated">Separated </option>
+                                                    <option value="Widowed ">Widowed </option>
+                                                    <option value="Divorced ">Divorced </option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-sm-10">
+                                                <label>Spouse Name:</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="form-group col-sm-6">
+                                                <label>Contact Number:</label>
+                                                <input type="number" class="form-control" required>
+                                            </div>
 
-                                        <div class="form-group">
-						                    <label>Birth Month/Date/Year:</label>
-                                            <select id="birthMonth" class="birthday" name="birthMonth" required>
-                                                <option selected disabled>Month</option>
-                                                <?php for($i=1;$i<=12;$i++){
-			                                        echo "<option value='$i'>".$i."</option>";
-                                                }?>
-                                            </select>
-                
-                                            <select id="birthDate" class="birthday" name="birthDate" required>
-                                                <option selected disabled>Date</option>
-                                                <?php for($i=1;$i<=31;$i++){
-			                                        echo "<option value='$i'>".$i."</option>";
-                                                }?>
-                                            </select>
-
-                                            <select id="birthYear" class="birthday" name="birthYear" required>
-                                                <option selected disabled>Year</option>
-                                                <?php for($i=1990;$i<=2015;$i++){
-			                                        echo "<option value='$i'>".$i."</option>";
-                                                }?>
-                                            </select>
-					                    </div>
-
-                                        <div class="form-group">
-						                    <label>Birth Place:</label>
-						                    <input type="text" class="form-control" required>
-					                    </div>
-
-                                        <div class="form-group">
-						                    <label>Civil Status:</label>
-						                    <select id="civilStatus" class="" name="civilStatus" required>
-                                                <option selected disabled> </option>
-                                                <option value="Married">Yes</option>
-                                                <option value="Single">No</option>
-                                            </select>
-					                    </div>
-
-                                        <div class="form-group">
-						                    <label>Contact Number:</label>
-						                    <input type="number" class="form-control" required>
-					                    </div>
-
-					                    <div class="form-group">
-						                    <label>Email:</label>
-						                    <input type="email" class="form-control" required>
-					                    </div>
+                                            <div class="form-group col-sm-6">
+                                                <label>Email:</label>
+                                                <input type="email" class="form-control" required>
+                                            </div>
+                                        </div>
 
 					                    <div class="form-group">
 						                    <label>Address:</label>
@@ -317,7 +341,7 @@
 	                    </div>
                     </div>
                     <!-- Delete Modal HTML -->
-                    <div id="deleteEmployeeModal" class="modal fade">
+                    <div id="deleteResidentModal" class="modal fade">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <form>

@@ -53,15 +53,6 @@
                         <span class="title">Resident Records</span>
                     </a>
                 </li>
-
-                <li class="list">
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="briefcase-outline"><ion-icon>    
-                        </span>
-                        <span class="title">Blotter Records</span>
-                    </a>
-                </li>
             
                 <li class="list">
                     <a href="#">
@@ -75,9 +66,18 @@
                 <li class="list">
                     <a href="#">
                         <span class="icon">
+                            <ion-icon name="albums-outline"><ion-icon>    
+                        </span>
+                        <span class="title">Certification Records</span>
+                    </a>
+                </li>
+
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
                             <ion-icon name="print-outline"><ion-icon>    
                         </span>
-                        <span class="title">Certificate Records</span>
+                        <span class="title">Certificate Request</span>
                     </a>
                 </li>
 
@@ -114,43 +114,43 @@
                 </div>
             </div>
             
-            <div class="col-md-auto mainPage" >
+            <div class="col-md-auto mainPage container" >
                 <h3 style="text-align: center; margin-bottom: 30px; font-size: 30px">Dashboard</h3>
                 <! -- cards -->
                 <div class="cardBox">
-                    <div class="card">
-                        <div>
+                    <div class="card row">
+                        <div class="col-sm-8">
                             <div class="numbers">0</div>
                             <div class="cardName">Resident Population</div>
                         </div>
-                        <div class="iconBx">
+                        <div class="iconBx col-sm-4">
                             <ion-icon name="people-outline"></ion-icon>
                         </div>
                     </div>
-                    <div class="card">
-                        <div>
+                    <div class="card row">
+                        <div class="col-sm-8">
                             <div class="numbers">0</div>
                             <div class="cardName">Registered Voters</div>
                         </div>
-                        <div class="iconBx">
+                        <div class="iconBx col-sm-4">
                             <ion-icon name="receipt-outline"></ion-icon>
                         </div>
                     </div>
-                    <div class="card">
-                        <div>
+                    <div class="card row">
+                        <div class="col-sm-8 ">
                             <div class="numbers">0</div>
                             <div class="cardName">Male</div>
                         </div>
-                        <div class="iconBx">
+                        <div class="iconBx col-sm-4">
                             <ion-icon name="man-outline"></ion-icon>
                         </div>
                     </div>
-                    <div class="card">
-                        <div>
+                    <div class="card row">
+                        <div class="col-sm-8 ">
                             <div class="numbers">0</div>
                             <div class="cardName">Female</div>
                         </div>
-                        <div class="iconBx">
+                        <div class="iconBx col-sm-4">
                             <ion-icon name="woman-outline"></ion-icon>
                         </div>
                     </div>

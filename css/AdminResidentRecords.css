@@ -224,6 +224,30 @@ body
 	margin: 5px 0 0;
 	font-size: 24px;
 }
+.table-title h2.resiTitle {
+	margin-bottom: 20px;
+}
+.search-box {
+	position: relative;        
+	float: left;
+}
+.search-box input {
+	height: 34px;
+	border-radius: 20px;
+	padding-left: 35px;
+	border-color: #ddd;
+	box-shadow: none;
+}
+.search-box input:focus {
+	border-color: #3FBAE4;
+}
+.search-box i {
+	color: #a0a5b1;
+	position: absolute;
+	font-size: 19px;
+	top: 8px;
+	left: 10px;
+}
 .table-title .btn-group {
 	float: right;
 }
@@ -388,7 +412,7 @@ table.table .avatar {
 }
 /* Modal styles */
 .modal .modal-dialog {
-	max-width: 400px;
+	max-width: 800px;
 }
 .modal .modal-header, .modal .modal-body, .modal .modal-footer {
 	padding: 20px 30px;
