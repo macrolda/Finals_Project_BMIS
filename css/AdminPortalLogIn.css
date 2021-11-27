@@ -48,7 +48,7 @@ body
     left: calc(50% - 50px);
     width: 110px;
     background: rgba(255,255,255, 0.8);
-    border-radius: 50%;
+    border-radius: 50%;  
 }
 .form h2 
 {

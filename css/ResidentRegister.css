@@ -19,8 +19,8 @@ body
 .form 
 {
     position: relative;
-    width: 400px;
-    max-width: 430px;
+
+    max-width: 380px;
     padding: 60px 40px 40px;
     background: rgba(0, 0, 0, 0.623);
     border-radius: 10px;
@@ -53,7 +53,7 @@ body
 .form h2 
 {
     text-align: center;
-    font-size: 1.9em;
+    font-size: 29px;
     letter-spacing: 1px;
     margin-bottom: 1.5rem;
     color: #e6e6e6;
@@ -68,7 +68,7 @@ body
     padding: 10px 0;
     font-size: 1rem;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid #fff;
     outline: none;
@@ -95,8 +95,7 @@ body
 .submit-btn 
 {
     display: block;
-    margin-left: 120px;
-    margin-top: 10px;
+    margin-left: auto;
     border: none;
     outline: none;
     background: #13a51f;
@@ -109,20 +108,11 @@ body
     border-radius: 5px;
     cursor: pointer;
 }
-.registerTxt
-{
-    font-size: 16px;
-}
-.registerTxt a
-{
-    font-size: 16px;
-    color: orange;
-}
 .forgot-pw
 {
     color: inherit;
-    font-size: 14px;
 }
+  
 #forgot-pw 
 {
     position: absolute;
