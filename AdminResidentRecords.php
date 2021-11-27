@@ -57,18 +57,9 @@
                 <li class="list">
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="briefcase-outline"><ion-icon>    
+                            <ion-icon name="albums-outline"><ion-icon>    
                         </span>
-                        <span class="title">Blotter Records</span>
-                    </a>
-                </li>
-            
-                <li class="list">
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="calendar-outline"><ion-icon>    
-                        </span>
-                        <span class="title">Settlement Schedules</span>
+                        <span class="title">Certification Records</span>
                     </a>
                 </li>
 
@@ -77,7 +68,7 @@
                         <span class="icon">
                             <ion-icon name="print-outline"><ion-icon>    
                         </span>
-                        <span class="title">Certificate Records</span>
+                        <span class="title">Certificate Request</span>
                     </a>
                 </li>
 
@@ -284,7 +275,7 @@
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
                                                     <option value="Preferred Not to Answer">Preferred Not to Answer</option>
-                                            </select>
+                                                </select>
 					                    </div>
                                         </div>
                                         <div class="row">

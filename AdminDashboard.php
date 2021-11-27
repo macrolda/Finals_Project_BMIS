@@ -53,15 +53,6 @@
                         <span class="title">Resident Records</span>
                     </a>
                 </li>
-            
-                <li class="list">
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="calendar-outline"><ion-icon>    
-                        </span>
-                        <span class="title">Settlement Schedules</span>
-                    </a>
-                </li>
 
                 <li class="list">
                     <a href="#">

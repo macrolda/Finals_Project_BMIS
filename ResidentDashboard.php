@@ -15,7 +15,7 @@
 
 <link rel="icon" type="image/png" sizes="32x32" href="image/logo_1.png">
 <head>
-    <link type="text/css" href="css/AdminSidebar.css" rel="stylesheet">
+    <link type="text/css" href="css/ResidentDashboard.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
                     <h1 class="brgyName">Barangay Tabunok</h1>
                 </div>
 
-                <li class="list">
+                <li class="list hovered">
                     <a href="ResidentDashboard.php">
                         <span class="icon">
                             <ion-icon name="home-outline"><ion-icon>    
@@ -40,7 +40,7 @@
                 </li>
 
                 <li class="list">
-                    <a href="#">
+                    <a href="ResidentProfile.php">
                         <span class="icon">
                             <ion-icon name="person-outline"><ion-icon>    
                         </span>
@@ -80,6 +80,7 @@
                     <img  src="image/default_img.png">
                 </div>
             </div>
+            <!-- userProfile -->
         </div>
     </div>
 

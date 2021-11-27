@@ -30,7 +30,7 @@
                     <h1 class="brgyName">Barangay Tabunok</h1>
                 </div>
 
-                <li class="list">
+                <li class="list hovered">
                     <a href="AdminDashboard.php">
                         <span class="icon">
                             <ion-icon name="home-outline"><ion-icon>    
@@ -39,8 +39,8 @@
                     </a>
                 </li>
 
-                <li class="list">
-                    <a href="#">
+                <li class="list ">
+                    <a href="AdminResidentRecords.php">
                         <span class="icon">
                             <ion-icon name="person-outline"><ion-icon>    
                         </span>
@@ -51,18 +51,9 @@
                 <li class="list">
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="briefcase-outline"><ion-icon>    
+                            <ion-icon name="albums-outline"><ion-icon>    
                         </span>
-                        <span class="title">Blotter Records</span>
-                    </a>
-                </li>
-            
-                <li class="list">
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="calendar-outline"><ion-icon>    
-                        </span>
-                        <span class="title">Settlement Schedules</span>
+                        <span class="title">Certification Records</span>
                     </a>
                 </li>
 
@@ -71,7 +62,7 @@
                         <span class="icon">
                             <ion-icon name="print-outline"><ion-icon>    
                         </span>
-                        <span class="title">Certificate Records</span>
+                        <span class="title">Certificate Request</span>
                     </a>
                 </li>
 
