@@ -81,6 +81,9 @@
                 </div>
             </div>
             <!-- userProfile -->
+            <h1>{{BARANGAY VISION MISSION TBA}}</h1>
+            <h1>{{BARANGAY EVENTS TBA}}</h1>
+            <h1>{{BARANGAY OFFICIALS TBA}}</h1>
         </div>
     </div>
 
