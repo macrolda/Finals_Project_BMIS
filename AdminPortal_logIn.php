@@ -5,13 +5,16 @@ require ("config.php");
 
 <!DOCTYPE HTML>
 <html lang="en">
+<head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <link rel="icon" type="image/png" sizes="32x32" href="image/logo_1.png">
-<head>
-    <title>Administrator | Log-In</title>
-    <link type="text/css" href="css/AdminPortalLogIn.css" rel="stylesheet">
+<title>Administrator | Log-In</title>
+<link type="text/css" href="css/AdminPortalLogIn.css" rel="stylesheet">   
+<script src="validation.js"></script>   
+    
 </head>
 <body>
     <div class="login-wrapper">
