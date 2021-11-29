@@ -33,7 +33,7 @@
                     <h1 class="brgyName">Barangay Tabunok</h1>
                 </div>
 
-                <li class="list hovered">
+                <li class="list">
                     <a href="ResidentDashboard.php">
                         <span class="icon">
                             <ion-icon name="home-outline"><ion-icon>    
@@ -51,7 +51,7 @@
                     </a>
                 </li>
 
-                <li class="list">
+                <li class="list hovered">
                     <a href="ResidentRequestCert.php">
                         <span class="icon">
                             <ion-icon name="documents-outline"></ion-icon>    
@@ -59,7 +59,7 @@
                         <span class="title">Document Request</span>
                     </a>
                 </li>
-
+                
                 <li class="list">
                     <a href="ResidentNotification.php">
                         <span class="icon">
@@ -100,9 +100,12 @@
                 </div>
             </div>
             <!-- userProfile-->
-            <h1>{{BARANGAY VISION MISSION TBA}}</h1>
-            <h1>{{BARANGAY EVENTS TBA}}</h1>
-            <h1>{{BARANGAY OFFICIALS TBA}}</h1> 
+            <br><br>
+            <br><br>
+            <button type="button" class="btn btn-outline-primary btn-lg">Certificate 1</button>
+            <button type="button" class="btn btn-outline-primary btn-lg">Certificate 2</button><br><br>
+            <button type="button" class="btn btn-outline-primary btn-lg">Certificate 3</button>
+            <button type="button" class="btn btn-outline-primary btn-lg">Certificate 4</button><br><br>
         </div>
     </div>
 

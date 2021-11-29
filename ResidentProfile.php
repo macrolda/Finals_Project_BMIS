@@ -52,11 +52,20 @@
                 </li>
 
                 <li class="list">
-                    <a href="#">
+                    <a href="ResidentRequestCert.php">
                         <span class="icon">
                             <ion-icon name="documents-outline"></ion-icon>    
                         </span>
                         <span class="title">Document Request</span>
+                    </a>
+                </li>
+                
+                <li class="list">
+                    <a href="ResidentNotification.php">
+                        <span class="icon">
+                            <ion-icon name="notifications-outline"></ion-icon>    
+                        </span>
+                        <span class="title">Notification</span>
                     </a>
                 </li>
             
@@ -77,128 +86,145 @@
         <!-- END OF SIDE BAR -->
      
         <div class="main">
-        
             <!-- userProfile -->
-            <hr>
+            
                 <div class="container bootstrap snippet">
-                    <h1>User name</h1>
-                
+                    <h1>Edit Profile</h1>
+                        <div class="text-center">
+                                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="user_image">
+                                <input type="file" class="text-center center-block file-upload upload_image">
+                        </div>
                     <div class="row">
-                        <div class="col-sm-3"><!--left col-->
-                            <div class="text-center">
-                                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-                                <input type="file" class="text-center center-block file-upload">
-                            </div></hr><br>
-                        </div><!--/col-3-->
-
-                        <div class="col-sm-9">
+                        <div class="col-12">
                             <div class="tab-content">
                                 <div class="tab-pane active" id="home">
-                                    <hr>
-                                        <form class="form" action="##" method="post" id="registrationForm">
-                                            <div class="form-group">
-                                                <div class="col-xs-4">
-                                                    <label for="first_name"><h4>First name</h4></label>
+                                
+                                    <label><h2 class="infoTitle">Personal Information</h2></label>
+                                    <hr size = 3 noshade color=black>
+                                    <form>
+                                        <div class="form-group">    
+                                            <div class="col-xs-3 inputTitle">
+                                                <label><h4>First Name</h4></label><br>
                                                     <input 
                                                     type="text" 
                                                     class="form-control"
                                                     name="first_name" 
                                                     id="first_name" 
-                                                    placeholder="First Name" 
-                                                    title="enter your first name if any." 
-                                                    disable>
+                                                    placeholder="First Name">
                                                 </div>
-                                            </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                <div class="col-xs-4">
-                                                    <label for="mirst_name"><h4>Middle name</h4></label>
+                                        <div class="form-group">
+                                            <div class="col-xs-3 inputTitle">
+                                                <label><h4>Middle Name</h4></label><br>
                                                     <input 
                                                     type="text" 
                                                     class="form-control" 
                                                     name="middleName" 
                                                     id="middleName" 
-                                                    placeholder="Middle Name" 
-                                                    title="enter your first name if any."
-                                                    disable>
-                                                </div>
+                                                    placeholder="Middle Name">
                                             </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                <div class="col-xs-4">
-                                                    <label for="last_name"><h4>Last name</h4></label>
+                                        <div class="form-group">
+                                            <div class="col-xs-3 inputTitle">
+                                                <label><h4>Last Name</h4></label><br>
                                                     <input 
                                                     type="text" 
                                                     class="form-control" 
                                                     name="last_name" 
                                                     id="last_name" 
-                                                    placeholder="Last Name" 
-                                                    title="enter your last name if any."
-                                                    disable>
+                                                    placeholder="Last Name">
                                             </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-xs-2 inputTitle">
+                                                <label><h4>Suffix</h4></label><br>
+                                                    <input 
+                                                    type="text" 
+                                                    class="form-control" 
+                                                    name="suffix_name" 
+                                                    id="suffix_name" 
+                                                    placeholder="Suffix">
                                             </div>
+                                        </div>
                             
-                                            <div class="form-group"> 
-                                            <div class="col-xs-2">
-                                                <label><h4>Birth Month</h4></label>
-                                                <select id="birthMonth" class="birthday" name="birthMonth" required>
+                                        <div class="form-group"> 
+                                            <div class="col-xs-3 inputTitle">
+                                                <label><h4>Birth Month</h4></label><br>
+                                                <select id="birthMonth" class="form-control" name="birthMonth" required>
                                                     <option selected disabled>Month</option>
                                                         <?php for($i=1;$i<=12;$i++){
                                                         echo "<option value='$i'>".$i."</option>";
                                                         }?>
                                                 </select>
                                             </div>
+                                        </div>
 
-                                            <div class="form-group"> 
-                                            <div class="col-xs-2">
-                                                <label><h4>Birth Day</h4></label>
-                                                <select id="birthMonth" class="birthday" name="birthMonth" required>
-                                                    <option selected disabled>Month</option>
+                                        <div class="form-group"> 
+                                            <div class="col-xs-2 inputTitle">
+                                                <label><h4>Birth Day</h4></label><br>
+                                                <select id="birthMonth" class="form-control" name="birthMonth" required>
+                                                    <option selected disabled>Day</option>
                                                         <?php for($i=1;$i<=31;$i++){
                                                         echo "<option value='$i'>".$i."</option>";
                                                         }?>
                                                 </select>
                                             </div>
+                                        </div>
 
-                                            <div class="form-group"> 
-                                            <div class="col-xs-2">
-                                                <label><h4>Birth Year</h4></label>
-                                                <select id="birthMonth" class="birthday" name="birthMonth" required>
-                                                    <option selected disabled>Month</option>
+                                        <div class="form-group"> 
+                                            <div class="col-xs-2 inputTitle">
+                                                <label><h4>Birth Year</h4></label><br>
+                                                <select id="birthMonth" class="form-control" name="birthMonth" required>
+                                                    <option selected disabled>Year</option>
                                                         <?php for($i=1990;$i<=2015;$i++){
                                                         echo "<option value='$i'>".$i."</option>";
                                                         }?>
                                                 </select>
                                             </div>
+                                        </div>
 
-                                            <div class="form-group"> 
-                                            <div class="col-xs-6">
-                                                <label><h4>Birth Place</h4></label>
+                                        <div class="form-group"> 
+                                            <div class="col-xs-2 inputTitle">
+                                                <label><h4>Age</h4></label><br>
+                                                <input 
+                                                type="text" 
+                                                class="form-control" 
+                                                name="age" 
+                                                id="age" 
+                                                placeholder="Age">    
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group"> 
+                                            <div class="col-xs-3 inputTitle">
+                                                <label><h4>Birth Place</h4></label><br>
                                                 <input 
                                                 type="text" 
                                                 class="form-control" 
                                                 name="birthPlace" 
                                                 id="birthPlace" 
-                                                placeholder="Birth Place" 
-                                                title="."
-                                                disable>    
+                                                placeholder="Birth Place">    
                                             </div>
-
-                                            <div class="form-group"> 
-                                            <div class="col-xs-3">
-                                                <label><h4>Sex</h4></label>
-                                                    <select id="sex" class="" name="sex" required>
+                                        </div>
+                                        
+                                        <div class="form-group"> 
+                                            <div class="col-xs-3 inputTitle">
+                                                <label><h4>Sex</h4></label><br>
+                                                    <select id="sex" class="form-control" name="sex" required>
                                                         <option selected disabled>Sex</option>
                                                         <option value="Male">Male</option>
                                                         <option value="Female">Female</option>
-                                                        <option value="Preferred Not to Answer">Preferred Not to Answer</option>
                                                     </select>
                                             </div>
+                                        </div>
 
-                                            <div class="form-group"> 
-                                            <div class="col-xs-3">
-                                                <label><h4>Civil Status</h4></label>
-                                                    <select id="civilStatus" class="" name="civilStatus" required>
+                                        <div class="form-group"> 
+                                            <div class="col-xs-3 inputTitle">
+                                                <label><h4>Civil Status</h4></label><br>
+                                                    <select id="civilStatus" class="form-control" name="civilStatus" required>
                                                         <option selected disabled>Civil Status</option>
                                                         <option value="Married">Married</option>
                                                         <option value="Single">Single</option>
@@ -207,52 +233,177 @@
                                                         <option value="Divorced ">Divorced </option>
                                                     </select>
                                             </div>
-
-                                            <div class="form-group"> 
-                                            <div class="col-xs-6">
+                                        </div>
+                                        
+                                        <div class="form-group"> 
+                                            <div class="col-xs-6 inputTitle">
                                                 <label><h4>Spouse Name</h4></label>
-                                                <input type="text" class="form-control">
+                                                <input 
+                                                type="text" 
+                                                class="form-control" 
+                                                name="spouseName" 
+                                                id="spouseName" 
+                                                placeholder="Spouse Name">
                                             </div>
-                                            
+                                        </div>
 
-                                            <div class="form-group">
-                                                <div class="col-xs-6">
-                                                    <label for="contactNumber"><h4>Contact Number</h4></label>
-                                                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Contact Number" title="enter your phone number if any.">
-                                                </div>
+                                        <div class="form-group"> 
+                                            <div class="col-xs-4 inputTitle">
+                                                <label><h4>Religion</h4></label>
+                                                <input 
+                                                type="text" 
+                                                class="form-control" 
+                                                name="religion" 
+                                                id="religion" 
+                                                placeholder="Religion">
                                             </div>
-                            
-                                            <div class="form-group">
-                                                <div class="col-xs-6">
-                                                    <label for="email"><h4>Email</h4></label>
-                                                    <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
-                                                </div>
-                                            </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                <div class="col-xs-12">
+                                        <div class="form-group"> 
+                                            <div class="col-xs-4 inputTitle">
+                                                <label><h4>Citizenship</h4></label>
+                                                <input 
+                                                type="text" 
+                                                class="form-control" 
+                                                name="citizenship" 
+                                                id="citizenship" 
+                                                placeholder="Citizenship">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group"> 
+                                            <div class="col-xs-4 inputTitle">
+                                                <label><h4>Job/Occupation</h4></label>
+                                                <input 
+                                                type="text" 
+                                                class="form-control" 
+                                                name="job" 
+                                                id="job" 
+                                                placeholder="Job/Occupation">
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <label><h2 class="infoTitle contactTitle">Educational Background</h2></label>
+                                    <hr size = 3 noshade color=black>
+                                    <form>
+                                        <div class="form-group"> 
+                                            <div class="col-xs-4 inputTitle">
+                                                <label><h4>Elementary</h4></label>
+                                                <input 
+                                                type="text" 
+                                                class="form-control" 
+                                                name="elementary" 
+                                                id="elementary" 
+                                                placeholder="Elementary">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group"> 
+                                            <div class="col-xs-4 inputTitle">
+                                                <label><h4>High School</h4></label>
+                                                <input 
+                                                type="text" 
+                                                class="form-control" 
+                                                name="highSchool" 
+                                                id="highSchool" 
+                                                placeholder="High School">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group"> 
+                                            <div class="col-xs-4 inputTitle">
+                                                <label><h4>College</h4></label>
+                                                <input 
+                                                type="text" 
+                                                class="form-control" 
+                                                name="College" 
+                                                id="College" 
+                                                placeholder="College">
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <label><h2 class="infoTitle contactTitle">Contact Information</h2></label>
+                                    <hr size = 3 noshade color=black>
+                                    <form>
+                                        <div class="form-group">
+                                            <div class="col-xs-6">
+                                                <div class="inputTitle">
+                                                    <label><h4>Cellphone Number</h4></label>
+                                                    <input 
+                                                    type="text" 
+                                                    class="form-control" 
+                                                    name="cellphone_number" 
+                                                    id="cellphone_number" 
+                                                    placeholder="Cellphone Number">
+                                                </div>
+                                                <div class="inputTitle">
+                                                    <label><h4>Telephone Number</h4></label>
+                                                    <input 
+                                                    type="text" 
+                                                    class="form-control" 
+                                                    name="telephone_number" 
+                                                    id="telephone_number" 
+                                                    placeholder="Telephone Number">
+                                                </div>
+
+                                                <div class="inputTitle">
+                                                    <label><h4>Email Address</h4></label>
+                                                    <input 
+                                                    type="email" 
+                                                    class="form-control" 
+                                                    name="email" 
+                                                    id="email" 
+                                                    placeholder="Email Address">
+                                                </div>
+
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <div class="inputTitle">
                                                     <label><h4>Address</h4></label>
-                                                    <input type="textarea" class="form-control" id="userEmail" placeholder="Address" title="enter a location">
+                                                    <input
+                                                    type="textarea" 
+                                                    class="form-control" 
+                                                    id="address"
+                                                    placeholder="Address">
+                                                </div>
+                                                
+                                                <div class="col-xs-5">
+                                                    <div class="inputTitle">
+                                                        <label><h4>Purok</h4></label>
+                                                        <input
+                                                        type="number" 
+                                                        class="form-control" 
+                                                        id="Purok"
+                                                        placeholder="Purok">
+                                                    </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                        
                                         
                                         
                                         <div class="form-group">
                                             <div class="col-xs-12">
-                                                    <br>
-                                                    <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                                                    <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                                                    <br><br><br>
+                                                    <button class="btn btn-lg btn-success" type="submit">
+                                                        <i class="glyphicon glyphicon-ok-sign"></i> Save
+                                                    </button>
+                                                    <button class="btn btn-lg btn-info" type="reset">
+                                                        <i class="glyphicon glyphicon-repeat"></i> Reset
+                                                    </button>
+                                                    <br><br><br><br>
                                                 </div>
                                         </div>
-                                        </form>
-                                
-                                    <hr>
+                                    
+                                    </form>
+
                                 </div><!--/tab-pane-->
                             </div><!--/col-9-->
                         </div><!--/row-->
                     </div>
                 </div>
-            </hr>
         </div>
     </div>
 

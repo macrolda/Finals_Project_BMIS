@@ -16,8 +16,8 @@ require ("config.php");
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link rel="icon" type="image/png" sizes="32x32" href="image/logo_1.png">
-<title>Resident | Log-In</title>
-<link type="text/css" href="css/ResidentPortalLogIn.css" rel="stylesheet">
+<title>Resident | Forgot Password</title>
+<link type="text/css" href="css/ResidentForgotPassword.css" rel="stylesheet">
 <script src="validation.js"></script>
 
 </head>
@@ -25,46 +25,52 @@ require ("config.php");
 <div class="login-wrapper">
         <form action="ResidentDashboard.php" method="post" class="form" id="residentPortal" name="residentPortal">
             <img src="image\logo_1.png" alt="barangayLogo1">
-            <h2>Resident's Log-In</h2>
+            <h2>Forgot Password</h2>
             <div class="input-group">
                 <input 
                 type="text" 
                 name="loginUser" 
                 id="loginUser" 
                 required>
-                <label for="loginUser">User Name</label>
+                <label>User Name</label>
+            </div>
+
+            <div class="input-group">
+                <input 
+                type="email" 
+                name="email" 
+                id="email" 
+                required>
+                <label>Email Address</label>
             </div>
 
             <div class="input-group">
                 <input 
                 type="password" 
-                name="loginPassword" 
-                id="loginPassword" 
+                name="newPassword" 
+                id="newPassword" 
                 required>
-                <label for="loginPassword">Password</label>
+                <label>New Password</label>
+            </div>
+
+            <div class="input-group">
+                <input 
+                type="password" 
+                name="confirmPassword" 
+                id="confirmPassword" 
+                required>
+                <label for="loginPassword">Confirm Password</label>
             </div>
             
-            <a href="ResidentForgotPassword.php" class="forgot-pw">Forgot Password?</a>
             
             <input 
             type="submit"
-            value="Login" 
-            class="btn submit-btn btn-success" 
-            onclick="loginValidation()">
-            
-            <hr size = 2 noshade color=white>
-
-            <div class="registerTxt">
-                <p>Don't have an account?</p>
-            </div>
-
-            <input 
-            type="submit"
-            value="Register Here" 
-            class="btn reg-btn btn-warning btn-lg btn-block" 
-            onClick="location.href='ResidentRegister.php'"
+            value="Confirm" 
+            class="submit-btn" 
+            onClick="location.href='ResidentPortal_logIn.php'"
             >
             <!--onclick="loginValidation()"-->
+
         </form>
     </div>
 </body>

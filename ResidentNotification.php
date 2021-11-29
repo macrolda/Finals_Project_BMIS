@@ -16,7 +16,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <link rel="icon" type="image/png" sizes="32x32" href="image/logo_1.png">
-<link type="text/css" href="css/ResidentDashboard.css" rel="stylesheet">
+<link type="text/css" href="css/ResidentNotification.css" rel="stylesheet">
 <script src="validation.js"></script>
 
 </head>
@@ -33,7 +33,7 @@
                     <h1 class="brgyName">Barangay Tabunok</h1>
                 </div>
 
-                <li class="list hovered">
+                <li class="list">
                     <a href="ResidentDashboard.php">
                         <span class="icon">
                             <ion-icon name="home-outline"><ion-icon>    
@@ -60,7 +60,7 @@
                     </a>
                 </li>
 
-                <li class="list">
+                <li class="list hovered">
                     <a href="ResidentNotification.php">
                         <span class="icon">
                             <ion-icon name="notifications-outline"></ion-icon>    
@@ -87,7 +87,6 @@
      
         <div class="main">
             <div class="topbar">
-                <!-- search C-->
                 <div class="search">
                     <label>
                         <input type="text" placeholder="Search here">
@@ -100,9 +99,6 @@
                 </div>
             </div>
             <!-- userProfile-->
-            <h1>{{BARANGAY VISION MISSION TBA}}</h1>
-            <h1>{{BARANGAY EVENTS TBA}}</h1>
-            <h1>{{BARANGAY OFFICIALS TBA}}</h1> 
         </div>
     </div>
 

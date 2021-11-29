@@ -17,63 +17,51 @@ require ("config.php");
 
 </head>
 <body>
+
     <div class="login-wrapper">
-        <form action="" class="form" name="res_register" id="res_register" onsubmit="return regValidation()">
-            <img src="image\logo_1.png" alt="barangayLogo1">
+        <form 
+        action="" 
+        class="form" 
+        name="res_register" 
+        id="res_register" 
+        onsubmit="return regValidation()">
+
+            <img class = "brgyImg"src="image\logo_1.png" alt="barangayLogo1">
             <h2>Resident's Registration</h2>
-            <div class="input-group">
-                <input 
-                type="text" 
-                name="loginUser" 
-                id="loginUser" 
-                required>
-                <label for="loginUser">User Name</label>
-            </div>
 
-            <div class="input-group">
-                <input 
-                type="email" 
-                name="res_registerEmail" 
-                id="res_registerEmail" 
-                required>
-                <label for="emailUser">Email</label>
+            <label><h3 class="infoTitle">Personal Information</h3></label>
+            <div class="container">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-xs-6 input-group">
+                            <input 
+                            type="text" 
+                            name="loginUser" 
+                            id="loginUser" 
+                            required>
+                            <label for="loginUser">User Name</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-6 input-group">
+                            <input 
+                            type="text" 
+                            name="loginUser" 
+                            id="loginUser" 
+                            required>
+                            <label for="loginUser">User Name</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="input-group">
-                <input 
-                type="password" 
-                name="loginPassword" 
-                id="loginPassword" 
-                required>
-                <label for="loginPassword">Password</label>
-            </div>
-
+            
+    
             <input 
             type="submit"
             value="Register" 
             class="submit-btn" 
             onclick="regValidation()">
         </form>
-
-        <div id="forgot-pw">
-            <form action="" class="form" name="res_forgotPassword" id="res_forgotPassword" onsubmit="return forgotPassValidation()">
-                <a href="#" class="close">&times;</a>
-                <h2>Reset Password</h2>
-                <div class="input-group">
-                    <input type="email" name="res_email" id="res_email" required>
-                    <label for="email">Email</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" name="res_newPassword" id="res_newPassword" required>
-                    <label for="newPassword">Password</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" name="res_confirmPassword" id="res_confirmPassword" required>
-                    <label for="confirmPassword">Confirm Password</label>
-                </div>
-                <input type="submit" value="Submit" class="submit-btn">
-            </form>
-        </div>
     </div>
 </body>
 </html>   
