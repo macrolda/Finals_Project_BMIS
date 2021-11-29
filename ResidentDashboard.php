@@ -60,7 +60,7 @@
                     </a>
                 </li>
             
-                <li class="list" style="margin-top: 130px;">
+                <li class="list" style="margin-top: 100px;">
                     <a href="index.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"><ion-icon>    
@@ -78,15 +78,22 @@
      
         <div class="main">
             <div class="topbar">
+                <!-- search C-->
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
                 <!-- userImg -->
                 <div class="user">
                     <img  src="image/default_img.png">
                 </div>
             </div>
-            <!-- userProfile -->
+            <!-- userProfile-->
             <h1>{{BARANGAY VISION MISSION TBA}}</h1>
             <h1>{{BARANGAY EVENTS TBA}}</h1>
-            <h1>{{BARANGAY OFFICIALS TBA}}</h1>
+            <h1>{{BARANGAY OFFICIALS TBA}}</h1> 
         </div>
     </div>
 

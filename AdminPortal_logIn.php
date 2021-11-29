@@ -58,7 +58,7 @@ require ("config.php");
                 </div>
                 <div class="input-group">
                     <input type="password" name="newPassword" id="newPassword" required>
-                    <label for="newPassword">Password</label>
+                    <label for="newPassword">New Password</label>
                 </div>
                 <div class="input-group">
                     <input type="password" name="confirmPassword" id="confirmPassword" required>

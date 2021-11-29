@@ -15,9 +15,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="icon" type="image/png" sizes="32x32" href="image/logo_1.png">
-<link type="text/css" href="css/AdminSidebar.css" rel="stylesheet">
+<link type="text/css" href="css/ResidentProfile.css" rel="stylesheet">
 <script src="validation.js"></script>
 
 </head>
@@ -43,8 +42,8 @@
                     </a>
                 </li>
 
-                <li class="list">
-                    <a href="#">
+                <li class="list hovered">
+                    <a href="ResidentProfile.php">
                         <span class="icon">
                             <ion-icon name="person-outline"><ion-icon>    
                         </span>
@@ -61,7 +60,7 @@
                     </a>
                 </li>
             
-                <li class="list" style="margin-top: 130px;">
+                <li class="list" style="margin-top: 100px;">
                     <a href="index.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"><ion-icon>    
@@ -78,12 +77,7 @@
         <!-- END OF SIDE BAR -->
      
         <div class="main">
-            <div class="topbar">
-                <!-- userImg -->
-                <div class="user">
-                    <img  src="image/default_img.png">
-                </div>
-            </div>
+        
             <!-- userProfile -->
             <hr>
                 <div class="container bootstrap snippet">
