@@ -137,11 +137,11 @@
                         </div>
                     </div>
                     <div class="card row">
-                        <div class="col-sm-8 ">
+                        <div class="col-sm-6 ">
                             <div class="numbers">0</div>
                             <div class="cardName">Female</div>
                         </div>
-                        <div class="iconBx col-sm-4">
+                        <div class="iconBx col-sm-6">
                             <ion-icon name="woman-outline"></ion-icon>
                         </div>
                     </div>

@@ -346,8 +346,8 @@ require ("config.php");
                                             <div class="form-group">
                                                 <div class="col-xs-12">
                                                         <br><br><br>
-                                                        <button class="btn btn-lg btn-success" type="submit">
-                                                            <i class="glyphicon glyphicon-ok-sign"></i> Save
+                                                        <button class="btn btn-lg btn-warning btn-orange" type="submit">
+                                                            <i class="glyphicon glyphicon-ok-sign"></i> Register
                                                         </button>
                                                         <button class="btn btn-lg btn-info" type="reset">
                                                             <i class="glyphicon glyphicon-repeat"></i> Reset
