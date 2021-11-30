@@ -23,25 +23,25 @@ require ("config.php");
 </head>
 <body>
 <div class="login-wrapper">
-        <form action="ResidentDashboard.php" method="post" class="form" id="residentPortal" name="residentPortal">
+        <form action="database.php" method="post" class="form" id="residentPortal" name="residentPortal">
             <img src="image\logo_1.png" alt="barangayLogo1">
             <h2>Resident's Log-In</h2>
             <div class="input-group">
                 <input 
                 type="text" 
-                name="loginUser" 
-                id="loginUser" 
+                name="res_logIn_Username" 
+                id="res_logIn_Username" 
                 required>
-                <label for="loginUser">User Name</label>
+                <label for="res_logIn_Username">User Name</label>
             </div>
 
             <div class="input-group">
                 <input 
                 type="password" 
-                name="loginPassword" 
-                id="loginPassword" 
+                name="res_logIn_password" 
+                id="res_logIn_password" 
                 required>
-                <label for="loginPassword">Password</label>
+                <label for="res_logIn_password">Password</label>
             </div>
             
             <a href="ResidentForgotPassword.php" class="forgot-pw">Forgot Password?</a>
@@ -50,7 +50,8 @@ require ("config.php");
             type="submit"
             value="Login" 
             class="btn submit-btn btn-success" 
-            onclick="loginValidation()">
+            onclick="loginValidation()"
+            name="res_logIn">
             
             <hr size = 2 noshade color=white>
 

@@ -28,8 +28,9 @@ function forgotPassValidation()
   }
 }
 
-function regValidation() {
-  var email = document.forms["res_register"]["res_registerEmail"];
+function regValidation() 
+{
+  var email = document.forms["res_register"]["res_regemail"];
   var parts = email.value.split("@");
 
   if (email.value == "")

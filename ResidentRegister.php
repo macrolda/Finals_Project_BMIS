@@ -1,6 +1,6 @@
 <?php
 session_start();
-require ("config.php");
+include ("config.php");
 ?>
 
 <!DOCTYPE HTML>
@@ -33,7 +33,7 @@ require ("config.php");
                 <img class = "brgyImg"src="image\logo_1.png" alt="barangayLogo1">
                 <h2>Resident's Registration</h2>
                 <form
-                action="" 
+                action="database.php" 
                 class="form" 
                 name="res_register" 
                 id="res_register" 
@@ -58,16 +58,17 @@ require ("config.php");
 
                                         
                                        <div class="col-sm-9">
-                                            <form>
+                                            
                                                 <div class="form-group">    
                                                     <div class="col-xs-3 inputTitle">
                                                         <label><h4>First Name</h4></label><br>
                                                             <input 
                                                             type="text" 
                                                             class="form-control"
-                                                            name="first_name" 
-                                                            id="first_name" 
-                                                            placeholder="First Name">
+                                                            name="res_regfirstname" 
+                                                            id="res_regfirstname" 
+                                                            placeholder="First Name"
+                                                            required/>
                                                         </div>
                                                 </div>
 
@@ -77,9 +78,10 @@ require ("config.php");
                                                             <input 
                                                             type="text" 
                                                             class="form-control" 
-                                                            name="middleName" 
-                                                            id="middleName" 
-                                                            placeholder="Middle Name">
+                                                            name="res_regmiddleName" 
+                                                            id="res_regmiddleName" 
+                                                            placeholder="Middle Name"
+                                                            required/>
                                                     </div>
                                                 </div>
 
@@ -89,28 +91,30 @@ require ("config.php");
                                                             <input 
                                                             type="text" 
                                                             class="form-control" 
-                                                            name="last_name" 
-                                                            id="last_name" 
-                                                            placeholder="Last Name">
+                                                            name="res_reglastname" 
+                                                            id="res_reglastname" 
+                                                            placeholder="Last Name"
+                                                            required/>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <div class="col-xs-2 inputTitle">
-                                                        <label><h4>Suffix</h4></label><br>
+                                                        <label><h4>UserName</h4></label><br>
                                                             <input 
                                                             type="text" 
                                                             class="form-control" 
-                                                            name="suffix_name" 
-                                                            id="suffix_name" 
-                                                            placeholder="Suffix">
+                                                            name="res_regusername" 
+                                                            id="res_regusername" 
+                                                            placeholder="User Name"
+                                                            required/>
                                                     </div>
                                                 </div>
                                 
                                                 <div class="form-group"> 
                                                     <div class="col-xs-3 inputTitle">
                                                         <label><h4>Birth Month</h4></label><br>
-                                                        <select id="birthMonth" class="form-control" name="birthMonth" required>
+                                                        <select id="res_regbirthMonth" class="form-control" name="res_regbirthMonth" required>
                                                             <option selected disabled>Month</option>
                                                                 <?php for($i=1;$i<=12;$i++){
                                                                 echo "<option value='$i'>".$i."</option>";
@@ -122,7 +126,7 @@ require ("config.php");
                                                 <div class="form-group"> 
                                                     <div class="col-xs-2 inputTitle">
                                                         <label><h4>Birth Day</h4></label><br>
-                                                        <select id="birthMonth" class="form-control" name="birthMonth" required>
+                                                        <select id="res_regbirthDay" class="form-control" name="res_regbirthDay" required>
                                                             <option selected disabled>Day</option>
                                                                 <?php for($i=1;$i<=31;$i++){
                                                                 echo "<option value='$i'>".$i."</option>";
@@ -134,7 +138,7 @@ require ("config.php");
                                                 <div class="form-group"> 
                                                     <div class="col-xs-2 inputTitle">
                                                         <label><h4>Birth Year</h4></label><br>
-                                                        <select id="birthMonth" class="form-control" name="birthMonth" required>
+                                                        <select id="res_regbirthYear" class="form-control" name="res_regbirthYear" required>
                                                             <option selected disabled>Year</option>
                                                                 <?php for($i=1990;$i<=2015;$i++){
                                                                 echo "<option value='$i'>".$i."</option>";
@@ -149,9 +153,9 @@ require ("config.php");
                                                         <input 
                                                         type="text" 
                                                         class="form-control" 
-                                                        name="age" 
-                                                        id="age" 
-                                                        placeholder="Age">    
+                                                        name="res_regAge" 
+                                                        id="res_regAge" 
+                                                        placeholder="Age"/>    
                                                     </div>
                                                 </div>
                                             
@@ -161,9 +165,9 @@ require ("config.php");
                                                         <input 
                                                         type="text" 
                                                         class="form-control" 
-                                                        name="birthPlace" 
-                                                        id="birthPlace" 
-                                                        placeholder="Birth Place">    
+                                                        name="res_regbirthPlace" 
+                                                        id="res_regbirthPlace" 
+                                                        placeholder="Birth Place"/>    
                                                     </div>
                                                 </div>
                                             
@@ -171,7 +175,7 @@ require ("config.php");
                                                 <div class="form-group"> 
                                                     <div class="col-xs-3 inputTitle">
                                                         <label><h4>Sex</h4></label><br>
-                                                            <select id="sex" class="form-control" name="sex" required>
+                                                            <select id="sex" class="form-control" name="res_regSex" required>
                                                                 <option selected disabled>Sex</option>
                                                                 <option value="Male">Male</option>
                                                                 <option value="Female">Female</option>
@@ -182,7 +186,7 @@ require ("config.php");
                                                 <div class="form-group"> 
                                                     <div class="col-xs-3 inputTitle">
                                                         <label><h4>Civil Status</h4></label><br>
-                                                            <select id="civilStatus" class="form-control" name="civilStatus" required>
+                                                            <select id="civilStatus" class="form-control" name="res_regcivilStatus" required>
                                                                 <option selected disabled>Civil Status</option>
                                                                 <option value="Married">Married</option>
                                                                 <option value="Single">Single</option>
@@ -199,9 +203,9 @@ require ("config.php");
                                                         <input 
                                                         type="text" 
                                                         class="form-control" 
-                                                        name="spouseName" 
-                                                        id="spouseName" 
-                                                        placeholder="Spouse Name">
+                                                        name="res_regspouseName" 
+                                                        id="res_regspouseName" 
+                                                        placeholder="Spouse Name"/>
                                                     </div>
                                                 </div>
 
@@ -211,9 +215,10 @@ require ("config.php");
                                                         <input 
                                                         type="text" 
                                                         class="form-control" 
-                                                        name="religion" 
-                                                        id="religion" 
-                                                        placeholder="Religion">
+                                                        name="res_regreligion" 
+                                                        id="res_regreligion" 
+                                                        placeholder="Religion"
+                                                        required/>
                                                     </div>
                                                 </div>
 
@@ -223,38 +228,39 @@ require ("config.php");
                                                         <input 
                                                         type="text" 
                                                         class="form-control" 
-                                                        name="citizenship" 
-                                                        id="citizenship" 
-                                                        placeholder="Citizenship">
+                                                        name="res_regcitizenship" 
+                                                        id="res_regcitizenship" 
+                                                        placeholder="Citizenship"
+                                                        required/>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group"> 
                                                     <div class="col-xs-4 inputTitle">
-                                                        <label><h4>Job/Occupation</h4></label>
-                                                        <input 
-                                                        type="text" 
-                                                        class="form-control" 
-                                                        name="job" 
-                                                        id="job" 
-                                                        placeholder="Job/Occupation">
+                                                        <label><h4>Voter Status</h4></label><br>
+                                                            <select id="res_regVoterStatus" class="form-control" name="res_regVoterStatus" required>
+                                                                <option selected disabled>Voter Status</option>
+                                                                <option value="Voter">Voter</option>
+                                                                <option value="Not">Not</option>
+                                                            </select>
                                                     </div>
                                                 </div>
-                                            </form>
+                                            
                                         </div>
 
                                         <label><h3 class="infoTitle contactTitle">Educational Background</h3></label>
                                         <hr size = 3 noshade color=black>
-                                        <form>
+                                        
                                             <div class="form-group"> 
                                                 <div class="col-xs-4 inputTitle">
                                                     <label><h4>Elementary</h4></label>
                                                     <input 
                                                     type="text" 
                                                     class="form-control" 
-                                                    name="elementary" 
-                                                    id="elementary" 
-                                                    placeholder="Elementary">
+                                                    name="res_regElementary" 
+                                                    id="res_regElementary" 
+                                                    placeholder="Elementary"
+                                                    required/>
                                                 </div>
                                             </div>
 
@@ -264,9 +270,10 @@ require ("config.php");
                                                     <input 
                                                     type="text" 
                                                     class="form-control" 
-                                                    name="highSchool" 
-                                                    id="highSchool" 
-                                                    placeholder="High School">
+                                                    name="res_reghighSchool" 
+                                                    id="res_reghighSchool" 
+                                                    placeholder="High School"
+                                                    required/>
                                                 </div>
                                             </div>
 
@@ -276,35 +283,37 @@ require ("config.php");
                                                     <input 
                                                     type="text" 
                                                     class="form-control" 
-                                                    name="College" 
-                                                    id="College" 
-                                                    placeholder="College">
+                                                    name="res_regCollege" 
+                                                    id="res_regCollege" 
+                                                    placeholder="College"
+                                                    required/>
                                                 </div>
                                             </div>
-                                        </form>
+                                        
 
                                         <label><h3 class="infoTitle contactTitle">Contact Information</h3></label>
                                         <hr size = 3 noshade color=black>
-                                        <form>
+                                        
                                             <div class="form-group">
                                                 <div class="col-xs-6">
                                                     <div class="inputTitle">
                                                         <label><h4>Cellphone Number</h4></label>
                                                         <input 
-                                                        type="text" 
+                                                        type="number" 
                                                         class="form-control" 
-                                                        name="cellphone_number" 
-                                                        id="cellphone_number" 
-                                                        placeholder="Cellphone Number">
+                                                        name="res_regcellphone_number" 
+                                                        id="res_regcellphone_number" 
+                                                        placeholder="Cellphone Number"
+                                                        required/>
                                                     </div>
                                                     <div class="inputTitle">
                                                         <label><h4>Telephone Number</h4></label>
                                                         <input 
-                                                        type="text" 
+                                                        type="number" 
                                                         class="form-control" 
-                                                        name="telephone_number" 
-                                                        id="telephone_number" 
-                                                        placeholder="Telephone Number">
+                                                        name="res_regtelephone_number" 
+                                                        id="res_regtelephone_number" 
+                                                        placeholder="Telephone Number"/>
                                                     </div>
 
                                                     <div class="inputTitle">
@@ -312,9 +321,10 @@ require ("config.php");
                                                         <input 
                                                         type="email" 
                                                         class="form-control" 
-                                                        name="email" 
-                                                        id="email" 
-                                                        placeholder="Email Address">
+                                                        name="res_regemail" 
+                                                        id="res_regemail" 
+                                                        placeholder="Email Address"
+                                                        required/>
                                                     </div>
 
                                                 </div>
@@ -322,10 +332,12 @@ require ("config.php");
                                                     <div class="inputTitle">
                                                         <label><h4>Address</h4></label>
                                                         <input
-                                                        type="textarea" 
+                                                        type="text" 
                                                         class="form-control" 
-                                                        id="address"
-                                                        placeholder="Address">
+                                                        id="res_regaddress"
+                                                        name="res_regaddress"
+                                                        placeholder="Address"
+                                                        required/>
                                                     </div>
                                                     
                                                     <div class="col-xs-5">
@@ -334,19 +346,18 @@ require ("config.php");
                                                             <input
                                                             type="number" 
                                                             class="form-control" 
-                                                            id="Purok"
-                                                            placeholder="Purok">
+                                                            id="res_regPurok"
+                                                            name="res_regPurok"
+                                                            placeholder="Purok"/>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             
-                                            
-                                            
                                             <div class="form-group">
                                                 <div class="col-xs-12">
                                                         <br><br><br>
-                                                        <button class="btn btn-lg btn-warning btn-orange" type="submit">
+                                                        <button class="btn btn-lg btn-warning btn-orange" type="submit" id="btnres_register" name="btnres_register">
                                                             <i class="glyphicon glyphicon-ok-sign"></i> Register
                                                         </button>
                                                         <button class="btn btn-lg btn-info" type="reset">
@@ -356,7 +367,7 @@ require ("config.php");
                                                     </div>
                                             </div>
                                         
-                                        </form>
+                                       
                                     </div>
                                 </div>
                             </div>
