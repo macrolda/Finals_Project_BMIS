@@ -60,7 +60,7 @@ include ("config.php");
                                        <div class="col-9">
                                                 <div class="form-group">    
                                                     <div class="row">
-                                                        <div class="col-3 inputTitle">
+                                                        <div class="col-4 inputTitle">
                                                             <label><h4>First Name</h4></label><br>
                                                                 <input 
                                                                 type="text" 
@@ -71,7 +71,7 @@ include ("config.php");
                                                                 required/>
                                                         </div>
 
-                                                        <div class="col-3 inputTitle">
+                                                        <div class="col-4 inputTitle">
                                                         <label><h4>Middle Name</h4></label><br>
                                                             <input 
                                                             type="text" 
@@ -82,7 +82,7 @@ include ("config.php");
                                                             required/>
                                                         </div>
 
-                                                        <div class="col-3 inputTitle">
+                                                        <div class="col-4 inputTitle">
                                                         <label><h4>Last Name</h4></label><br>
                                                             <input 
                                                             type="text" 
@@ -91,21 +91,6 @@ include ("config.php");
                                                             id="res_reglastname" 
                                                             placeholder="Last Name"
                                                             required/>
-                                                        </div>
-
-                                                        <div class="col-3 inputTitle">
-                                                        <label><h4>Suffix Name</h4></label><br>
-                                                            <select id="res_regsuffixname" class="form-control" name="res_regsuffixname" required>
-                                                                <option selected disabled>Suffix Name</option>
-                                                                <option value="Sr.">Sr.</option>
-                                                                <option value="Jr.">Jr.</option>
-                                                                <option value="II">II</option>
-                                                                <option value="III">III</option>
-                                                                <option value="IV">IV</option>
-                                                                <option value="M.Ed.">M.Ed.</option>
-                                                                <option value="PE.">PE.</option>
-                                                                <option value="Ph. D.">Ph. D.</option>
-                                                            </select>
                                                         </div>
 
                                                         <div class="col-3 inputTitle">
@@ -308,17 +293,6 @@ include ("config.php");
                                                             placeholder="Email Address"
                                                             required/>
                                                         </div>
-                                                    </div>
-
-                                                    <div class="inputTitle">
-                                                        <label><h4>Password</h4></label>
-                                                        <input 
-                                                        type="password" 
-                                                        class="form-control" 
-                                                        name="res_regpassword" 
-                                                        id="res_regpassword" 
-                                                        placeholder="Password"
-                                                        required/>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">

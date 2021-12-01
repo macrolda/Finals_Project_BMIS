@@ -77,7 +77,6 @@ if(isset($_POST['res_logIn']))
             $res_regtelephone_number = $qResult['res_telephone'];
             $res_regemail = $qResult['res_email'];
             $res_regusername = $qResult['res_alias'];
-            $res_regusername = $qResult['res_alias'];
             $res_regreligion = $qResult['res_religion'];
             $res_regcitizenship = $qResult['res_citizenship'];
             $res_regElementary = $qResult['res_elementary'];
@@ -89,7 +88,7 @@ if(isset($_POST['res_logIn']))
         $_SESSION['res_lastname'] = $res_reglastname;
         $_SESSION['res_firstname'] = $res_regfirstname;
         $_SESSION['res_middleName'] = $res_regmiddleName;
-        $_SESSION['res_alias'] = $res_regusername ;
+        $_SESSION['res_alias'] = $res_regusername;
         $_SESSION['res_spouseName'] = $res_regspouseName;
         $_SESSION['res_password'] = $res_regpassword ;
         $_SESSION['res_birthMonth'] = $res_regbirthMonth;
