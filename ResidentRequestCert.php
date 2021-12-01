@@ -8,7 +8,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -52,7 +51,6 @@
                 </li>
 
                 <li class="list hovered">
-                    <a href="ResidentRequestCert.php">
                         <span class="icon">
                             <ion-icon name="documents-outline"></ion-icon>    
                         </span>
@@ -100,16 +98,44 @@
                 </div>
             </div>
             <!-- userProfile-->
-            <br><br>
-            <br><br>
-            <button type="button" class="btn btn-outline-primary btn-lg">Certificate 1</button>
-            <button type="button" class="btn btn-outline-primary btn-lg">Certificate 2</button><br><br>
-            <button type="button" class="btn btn-outline-primary btn-lg">Certificate 3</button>
-            <button type="button" class="btn btn-outline-primary btn-lg">Certificate 4</button><br><br>
-        </div>
-    </div>
 
-    </div>
+            <br></br>
+            <br></br>
+        <div class="card">
+            <div class="box">
+                <div class="content" onclick="location='permit_print.php'">
+                    <h2>01</h2>
+                    <h3>Permit</h3>
+                    <p>Barangay Tabunok's Barangay Permit</p>
+                </div>
+            </div>
+        </div>
+
+             <br></br>
+
+        <div class="card">
+            <div class="box">
+                <div class="content" onclick="location='residency_print.php'">
+                    <h2>02</h2>
+                    <h3>Certificate of Indigency</h3>
+                    <p>Barangay Tabunok's Certificate of Residency</p>
+                </div>
+            </div>
+        </div>
+        
+             <br></br>
+
+        <div class="card">
+            <div class="box">
+                <div class="content" onclick="location='clearance_print.php'">
+                    <h2>03</h2>
+                    <h3>Clearance</h3>
+                    <p>Barangay Tabunok's Barangay Clearance</p>
+                </div>
+            </div>
+        </div>
+
+    </div> 
 <!---SCRIPTS--->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -125,6 +151,14 @@
         this.classList.add('hovered');
     }
     list.forEach((item) => item.addEventListener('mouseover',activeLink));
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        $('.title').click(function(){
+            $(this).next('.sub-menu').slideToggle();
+        });
+    });
 </script>
 <!---SCRIPTS--->
 </body>
