@@ -76,6 +76,8 @@ if(isset($_POST['res_logIn']))
             $res_regcellphone_number = $qResult['res_phoneNumber'];
             $res_regtelephone_number = $qResult['res_telephone'];
             $res_regemail = $qResult['res_email'];
+            $res_regusername = $qResult['res_alias'];
+            $res_regusername = $qResult['res_alias'];
             $res_regreligion = $qResult['res_religion'];
             $res_regcitizenship = $qResult['res_citizenship'];
             $res_regElementary = $qResult['res_elementary'];
