@@ -67,11 +67,11 @@
 		</div>
 		
 				<div class="content margin-top-50" style='text-indent: 50px;'>
-					<h4>THIS IS TO CERTIFY that <b class="uppercase"> "FULL NAME"</b>
-						legal age, "CIVIL STATUS" and resident of Barangay Tabunok Talisay Cebu City </h4>
+					<h4>THIS IS TO CERTIFY that <input type="text" name="name" value="FULLNAME">
+						legal age, <input type="text" name="name" value="CIVIL STATUS">  and resident of Barangay Tabunok Talisay Cebu City </h4>
 				</div>
 				<div class="content margin-top-50" style='text-indent: 50px;'>
-					<h4>This is to certify further that <b class="uppercase">"FULL NAME" </b> Barangay Tabunok Talisay Cebu City  since <b> "SINCE" </b>
+					<h4>This is to certify further that <input type="text" name="name" value="FULLNAME"> Barangay Tabunok Talisay Cebu City  since <input type="text" name="name" value="SINCE"> 
 					.</h4>
 				</div>
 				<div class="content margin-top-50" style='text-indent: 50px;'>
@@ -89,10 +89,8 @@
 						<div class="flex1"></div>
 						
 						<div class="flex1">
-							<h4 class="text-center">Certified Correct</h4>
-							<h4 class="uppercase text-center">
-								
-							</h4>
+							<div class="flex1">
+			<h4 class="text-center"><input type="text" name="name" value="BRGY. CAPTAIN NAME"> </h4>
 							<h4 class="text-center">Punong Barangay</h4>
 						</div>
 					</div>
@@ -100,7 +98,7 @@
 			</div>
 		</div>
 		<div class=" margin-top-50">
-			<h4 style="width: 100xp;">Paid OR No <span style="margin-left: 20px;">: "OR NUMBER" </span></h4>
+			<h4 style="width: 100xp;">Paid OR No <span style="margin-left: 20px;">: <input type="text" name="name" value="OR NUMBER"></span></h4>
 			<h4>Issued on <span style="margin-left: 38px;"></span>: <span id="month2"></span> <span id="date2"></span> <span id="year2"></span><h4>
 			<h4>Issued at <span  style="margin-left: 43px;"></span>: Barangay Tabunok Talisay Cebu City </h4>
 		</div>

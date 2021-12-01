@@ -51,7 +51,7 @@
 				
 
                                 <td><img class="image" src="image/logo_2.png"></td>
-                              
+                                
                           
                              
 				</div>
@@ -66,14 +66,13 @@
 		<div class="content margin-top-50">
 			<h4>TO WHOM IT MAY CONCERN:</h4>
 		</div>
-		
 				<div class="content margin-top-50" style='text-indent: 50px;'>
-					<h4>THIS IS TO CERTIFY that <b class="uppercase"> "FULL NAME"</b>
+					<h4>THIS IS TO CERTIFY that <input type="text" name="name" value="FULLNAME">
 						legal age and a bonafide resident of Barangay Tabunok Talisay Cebu City, is personally known to
 						me to be a person of good moral character and law-abiding citizen in the community.</h4>
 				</div>
 				<div class="content margin-top-50" style='text-indent: 50px;'>
-					<h4>That <b class="uppercase"> "FULL NAME" </b>  has not been convicted
+					<h4>That <input type="text" name="name" value="FULLNAME">  has not been convicted
 					 of any crime whatsoever neither is there any pending case filed against her before the 
 					 Barangay Court of Justice on the said barangay.</h4>
 				</div>
@@ -94,10 +93,7 @@
 						<div class="flex1"></div>
 						
 						<div class="flex1">
-							<h4 class="text-center">Certified Correct</h4>
-							<h4 class="uppercase text-center">
-								
-							</h4>
+			<h4 class="text-center"><input type="text" name="name" value="BRGY. CAPTAIN NAME"> </h4>
 							<h4 class="text-center">Punong Barangay</h4>
 						</div>
 					</div>
@@ -105,7 +101,7 @@
 			</div>
 		</div>
 		<div class=" margin-top-50">
-			<h4 style="width: 100xp;">Paid OR No <span style="margin-left: 20px;">: "OR NUMBER"</span></h4>
+			<h4 style="width: 100xp;">Paid OR No <span style="margin-left: 20px;">: <input type="text" name="name" value="OR NUMBER"> </span></h4>
 			<h4>Issued on <span style="margin-left: 38px;"></span>: <span id="month2"></span> <span id="date2"></span> <span id="year2"></span><h4>
 			<h4>Issued at <span  style="margin-left: 43px;"></span>: Barangay Tabunok Talisay Cebu City </h4>
 		</div>
