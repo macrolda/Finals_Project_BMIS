@@ -1,128 +1,124 @@
+<?php
+session_start();
+include ("config.php");
+?>
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Resident | Dashboard</title>
 
-<link rel="icon" type="image/png" sizes="32x32" href="image/logo_1.png">
-<link type="text/css" href="css/ResidentDashboard.css" rel="stylesheet">
-<script src="validation.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/ResidentDashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="image/logo_1.png">
 </head>
 
 <body>
-    <div class="container">
-        <!-- START OF SIDE BAR -->
-        <div class="navigation ">
-            <ul>
-                <div>
-                    <div class="user">
-                        <img class="imgLogo" src="image/logo_1.png">
-                    </div>
-                    <h1 class="brgyName">Barangay Tabunok</h1>
-                </div>
+    <div class="wrapper">
+         <!-- Sidebar  -->
+         <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
 
-                <li class="list hovered">
-                    <a href="ResidentDashboard.php">
-                        <span class="icon">
-                            <ion-icon name="home-outline"><ion-icon>    
-                        </span>
-                        <span class="title">Dashboard</span>
-                    </a>
-                </li>
-
-                <li class="list">
-                    <a href="ResidentProfile.php">
-                        <span class="icon">
-                            <ion-icon name="person-outline"><ion-icon>    
-                        </span>
-                        <span class="title">Profile</span>
-                    </a>
-                </li>
-
-                <li class="list">
-                    <a href="ResidentRequestCert.php">
-                        <span class="icon">
-                            <ion-icon name="documents-outline"></ion-icon>    
-                        </span>
-                        <span class="title">Document Request</span>
-                    </a>
-                </li>
-
-                <li class="list">
-                    <a href="ResidentNotification.php">
-                        <span class="icon">
-                            <ion-icon name="notifications-outline"></ion-icon>    
-                        </span>
-                        <span class="title">Notification</span>
-                    </a>
-                </li>
-            
-                <li class="list" style="margin-top: 100px;">
-                    <a href="index.php">
-                        <span class="icon">
-                            <ion-icon name="log-out-outline"><ion-icon>    
-                        </span>
-                        <span class="title">Log-Out</span>
-                    </a>
-                </li>
-
-                <div class="currentDayTime">
-                    <p>Date/Time: <br><span id="datetime"></span></p>
-                </div>
-            </ul>
-        </div>
-        <!-- END OF SIDE BAR -->
-     
-        <div class="main">
-            <div class="topbar">
-                <!-- search C-->
-                <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search here">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </label>
-                </div>
-                <!-- userImg -->
+            <div class="sidebar-header">
                 <div class="user">
-                    <img  src="image/default_img.png">
+                    <img class="imgLogo" src="image/logo_1.png">
                 </div>
             </div>
-            <!-- userProfile-->
-            <h1>{{BARANGAY VISION MISSION TBA}}</h1>
-            <h1>{{BARANGAY EVENTS TBA}}</h1>
-            <h1>{{BARANGAY OFFICIALS TBA}}</h1> 
+
+            <ul class="list-unstyled components">
+                <p class="brgyTitle">Barangay Tabunok</p>
+
+                <li class="active">
+                    <a href="ResidentDashboard.php">Dashboard</a>
+                </li>
+
+                <li>
+                    <a href="ResidentProfile.php">Profile</a>
+                </li>
+                <li>
+                    <a href="ResidentRequestCert.php">Document Request</a>
+                </li>
+                <li>
+                    <a href="ResidentNotification.php">Notification</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <div  class="currentDayTime">
+                        <p>Date/Time: <br><span id="datetime"></span></p>
+                    </div>
+                </li>
+                <li>
+                    <a href="index.php" class="download">Log-out</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn barBtn">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                    <h2 id="navHeader">Welcom to Barangay Tabunok</h2>
+                </div>
+            </nav>
+            <br><br>
+            <h1>{BARANGAY VISION & MISSION}</h1>
+            <br>
+            <h1>{BARANGAY ORGANIZATION CHART}</h1>
+            <br>
+            
         </div>
     </div>
-
-    </div>
-<!---SCRIPTS--->
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script>
-    var x = new Date()
-    var x1= x.getMonth() + 1+ "/" + x.getDate() + "/" + x.getFullYear() + " - " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds();
-    document.getElementById('datetime').innerHTML = x1;
     
-    // add hovered class in selected list item
-    let list = document.querySelectorAll('.navigation li');
-    function activeLink(){
-        list.forEach((item) => item.classList.remove('hovered'));
-        this.classList.add('hovered');
-    }
-    list.forEach((item) => item.addEventListener('mouseover',activeLink));
-</script>
-<!---SCRIPTS--->
+    <div class="overlay"></div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+    <script>
+        var x = new Date()
+        var x1= x.getMonth() + 1+ "/" + x.getDate() + "/" + x.getFullYear() + " - " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds();
+        document.getElementById('datetime').innerHTML = x1;
+    </script>
 </body>
 </html>
