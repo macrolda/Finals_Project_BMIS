@@ -1,0 +1,109 @@
+
+/* Modal styles */
+.modal .modal-dialog 
+{
+    max-width: 85%;
+}
+.modal .modal-header, 
+.modal .modal-body, 
+.modal .modal-footer 
+{
+    padding: 20px 30px;
+}
+.modal .modal-content 
+{
+    border-radius: 3px;
+}
+.modal .modal-footer 
+{
+    background: #ecf0f1;
+    border-radius: 0 0 3px 3px;
+}
+.modal .modal-title 
+{
+    display: inline-block;
+}
+.modal .form-control 
+{
+    border-radius: 2px;
+    box-shadow: none;
+    border-color: #dddddd;
+}
+.modal textarea.form-control 
+{
+    resize: vertical;
+}
+.modal .btn 
+{
+    border-radius: 2px;
+    min-width: 100px;
+}	
+.modal form label 
+{
+    font-weight: normal;
+}	
+  @media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .modal .modal-dialog {
+      width: 90%;
+    }
+  }
+
+
+.avatar
+{
+    width: 200px;
+    height:200px;
+    background-color: black;
+    justify-items: center;
+}
+.upload_image
+{
+    margin-top: 20px;
+    text-align: center;
+}
+h5
+{
+    margin: 0 0 0;
+}
+h3.infoTitle
+{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    align-content: center;
+    text-align: left;
+    color: #2c3e50;
+}
+hr
+{
+    margin: 0 0;
+}
+.inputTitle
+{
+    margin-top: 20px;
+}
+select
+{
+    justify-self: center;
+    width: auto;
+}
+.form-control
+{
+    font-size: 16px;
+}
+.form-control-option
+{
+    font-size: 12px;
+}
+h6
+{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    align-content: center;
+    text-align: center;
+    color: #2c3e50;
+}

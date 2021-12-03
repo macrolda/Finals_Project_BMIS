@@ -39,7 +39,6 @@ include ("config.php");
                 id="res_register" 
                 onsubmit="return regValidation()">
                     <div class="container bootstrap snippet">
-                           
                         <div class="row">
                             <div class="col-12">
                                 <div class="tab-content">
