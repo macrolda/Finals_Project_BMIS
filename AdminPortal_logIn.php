@@ -39,34 +39,27 @@ require ("config.php");
                 <label for="loginPassword">Password</label>
             </div>
 
+            <a href="AdminForgotPassword.php" class="forgot-pw">Forgot Password?</a>
+
             <input 
             type="submit"
             value="Login" 
             class="submit-btn" 
             onclick="location='AdminDashboard.php'">
             
-            <a href="#forgot-pw" class="forgot-pw">Forgot Password?</a>
-        </form>
+            <hr size = 2 noshade color=white>
 
-        <div id="forgot-pw">
-            <form action="" class="form">
-                <a href="#" class="close">&times;</a>
-                <h2>Reset Password</h2>
-                <div class="input-group">
-                    <input type="email" name="email" id="email" required>
-                    <label for="email">Email</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" name="newPassword" id="newPassword" required>
-                    <label for="newPassword">New Password</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" name="confirmPassword" id="confirmPassword" required>
-                    <label for="confirmPassword">Confirm Password</label>
-                </div>
-                <input type="submit" value="Submit" class="submit-btn">
-            </form>
-        </div>
+            <div class="registerTxt">
+                <p>Don't have an account?</p>
+            </div>
+
+            <input 
+            type="submit"
+            value="Register Here" 
+            class="btn reg-btn btn-warning btn-lg" 
+            onClick="location.href='AdminRegister.php'"
+            >
+        </form>
     </div>
 </body>
 </html>   

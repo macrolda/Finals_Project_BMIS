@@ -9,8 +9,8 @@ body
 }
 .login-wrapper 
 {
-    margin-top: 100px;
-    height: 100%;
+    margin-top: 80px;
+    height: fit-content;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -19,7 +19,6 @@ body
 .form 
 {
     position: relative;
-
     max-width: 380px;
     padding: 60px 40px 40px;
     background: rgba(0, 0, 0, 0.623);
@@ -108,39 +107,29 @@ body
     border-radius: 5px;
     cursor: pointer;
 }
-.forgot-pw
+.reg-btn 
 {
-    color: inherit;
+    display: block;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    background:orange;
+    color: blanchedalmond;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
 }
-  
-#forgot-pw 
+.registerTxt
 {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0;
-    z-index: 1;
-    background: #fff;
-    opacity: 0;
-    transition: 0.6s;
+    font-size: 16px;
 }
-#forgot-pw:target 
+.registerTxt a
 {
-    height: 100%;
-    opacity: 1;
+    font-size: 16px;
+    color: orange;
 }
-.close 
-{
-    position: absolute;
-    right: 1.5rem;
-    top: 0.5rem;
-    font-size: 2rem;
-    font-weight: 900;
-    text-decoration: none;
-    color: inherit;
-}
-  
