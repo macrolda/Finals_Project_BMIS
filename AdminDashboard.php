@@ -66,7 +66,10 @@
                     <a href="#">Document Request</a>
                 </li>
                 <li>
-                    <a href="#">Barangay Settings</a>
+                    <a href="BarangayMap.php">Map</a>
+                </li>
+                <li>
+                    <a href="AdminBarangaySettings.php">Barangay Settings</a>
                 </li>
             </ul>
 

@@ -48,8 +48,8 @@
                     <a href="AdminDashboard.php">Dashboard</a>
                 </li>
 
-                <li  class="active">
-                    <a href="#">Resident Records</a>
+                <li class="active">
+                    <a href="AdminResidentRecords.php">Resident Records</a>
                 </li>
 
                 <li>
@@ -70,7 +70,10 @@
                     <a href="#">Document Request</a>
                 </li>
                 <li>
-                    <a href="#">Barangay Settings</a>
+                    <a href="BarangayMap.php">Map</a>
+                </li>
+                <li>
+                    <a href="AdminBarangaySettings.php">Barangay Settings</a>
                 </li>
             </ul>
 
@@ -85,7 +88,7 @@
                 </li>
             </ul>
         </nav>
-        <!-- Page Content  -->
+        
         <div id="content">
             <nav class="navbar navbar-expand-lg ">
                 <div class="container-fluid">
@@ -95,103 +98,107 @@
                     <h2 id="navHeader">Barangay Tabunok's Resident Records</h2>
                 </div>
             </nav>
-            <div class="container">
-                <div class="table-responsive">
-                    <div class="table-wrapper">
-                        <div class="table-title">
-                            <div class="row">
-                                <div class="col-4">
-                                    <h2><b>Resident's Information</b></h2>
-                                </div>
-                                <div class="col-4">
-                                    <div class="search-box">
-                                        <i class="material-icons">&#xE8B6;</i>
-                                        <input type="text" class="form-control" placeholder="Search&hellip;">
+
+            <div class="container-fluid">
+                <section>
+                    <div class="container">
+                        <div class="table-responsive">
+                            <div class="table-wrapper">
+                                <div class="table-title">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <h2><b>Resident's Information</b></h2>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="search-box">
+                                                <i class="material-icons">&#xE8B6;</i>
+                                                <input type="text" class="form-control" placeholder="Search&hellip;">
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="#addResidentModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Resident</span></a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
-                                    <a href="#addResidentModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Resident</span></a>
-                                </div>
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <span class="custom-checkbox">
+                                                    <input type="checkbox" id="selectAll">
+                                                    <label for="selectAll"></label>
+                                                </span>
+                                            </th>
+                                            <th>ResidentNumber</th>
+                                            <th>FirstName</th>
+                                            <th>MiddleName</th>
+                                            <th>LastName</th>
+                                            <th>Age</th>
+                                            <th>Sex</th>
+                                            <th>VoterStatus</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="custom-checkbox">
+                                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                    <label for="checkbox1"></label>
+                                                </span>
+                                            </td>
+                                            <th>12345678901</th>
+                                            <th>Maria Ailah</th>
+                                            <th>Confiado</th>
+                                            <th>Rolda</th>
+                                            <th>21</th>
+                                            <th>Female</th>
+                                            <th>Yes</th>
+                                            <td>
+                                                <a href="#editResidentModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                <a href="#deleteResidentModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                <a href="#viewResidentModal" class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i></a>
+                                            </td>
+                                        </tr> 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>        
+                    </div>
+                    <!-- Add Modal HTML -->
+                    <div id="addResidentModal" class="modal fade"> 
+                        <?php include 'AdminAddResidentModal.php';?>
+                    </div>
+                    <!-- Edit Modal HTML -->
+                    <div id="editResidentModal" class="modal fade">
+                        <?php include 'AdminEditResidentModal.php';?>
+                    </div>
+                    <!-- Delete Modal HTML -->
+                    <div id="deleteResidentModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form>
+                                    <div class="modal-header">						
+                                        <h4 class="modal-title">Delete Resident</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">					
+                                        <p>Are you sure you want to delete these Records?</p>
+                                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                        <input type="submit" class="btn btn-danger" value="Delete">
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <span class="custom-checkbox">
-                                            <input type="checkbox" id="selectAll">
-                                            <label for="selectAll"></label>
-                                        </span>
-                                    </th>
-                                    <th>ResidentNumber</th>
-                                    <th>FirstName</th>
-                                    <th>MiddleName</th>
-                                    <th>LastName</th>
-                                    <th>Age</th>
-                                    <th>Sex</th>
-                                    <th>VoterStatus</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <span class="custom-checkbox">
-                                            <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                            <label for="checkbox1"></label>
-                                        </span>
-                                    </td>
-                                    <th>12345678901</th>
-                                    <th>Maria Ailah</th>
-                                    <th>Confiado</th>
-                                    <th>Rolda</th>
-                                    <th>21</th>
-                                    <th>Female</th>
-                                    <th>Yes</th>
-                                    <td>
-                                        <a href="#editResidentModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                        <a href="#deleteResidentModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                        <a href="#viewResidentModal" class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i></a>
-                                    </td>
-                                </tr> 
-                            </tbody>
-                        </table>
                     </div>
-                </div>        
-            </div>
-            <!-- Add Modal HTML -->
-            <div id="addResidentModal" class="modal fade"> 
-                <?php include 'AdminAddResidentModal.php';?>
-            </div>
-
-            <!-- View Modal HTML -->
-            <div id="viewResidentModal" class="modal fade">
-                <?php include 'AdminAddResidentModal.php';?>
-            </div>
-            <!-- Edit Modal HTML -->
-            <div id="editResidentModal" class="modal fade">
-                <?php include 'AdminEditResidentModal.php';?>
-            </div>
-            <!-- Delete Modal HTML -->
-            <div id="deleteResidentModal" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <form>
-                            <div class="modal-header">						
-                                <h4 class="modal-title">Delete Resident</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            </div>
-                            <div class="modal-body">					
-                                <p>Are you sure you want to delete these Records?</p>
-                                <p class="text-warning"><small>This action cannot be undone.</small></p>
-                            </div>
-                            <div class="modal-footer">
-                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                                <input type="submit" class="btn btn-danger" value="Delete">
-                            </div>
-                        </form>
+                    <!-- View Modal HTML -->
+                    <div id="viewResidentModal" class="modal fade">
+                        <?php include 'AdminViewResidentModal.php';?>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     </div>
