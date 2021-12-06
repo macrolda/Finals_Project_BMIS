@@ -64,10 +64,10 @@
                 <li>
                     <a href="#">Document Request</a>
                 </li>
-                <li class="active">
-                    <a href="BarangayMap.php">Map</a>
-                </li>
                 <li>
+                    <a href="BarangayMap.php">Barangay Information</a>
+                </li>
+                <li class="active">
                     <a href="AdminBarangaySettings.php">Barangay Settings</a>
                 </li>
             </ul>
@@ -96,13 +96,104 @@
 
             <div class="container-fluid">
                 <section>
-                    <div class="container">
+                    <div class="student-profile py-4">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card shadow-sm">
+                                        <div class="card-header bg-transparent text-center">
+                                            <img class="profile_img" src="image/logo_1.png" alt="brgyLogo">
+                                            <h3>Barangay Tabunok</h3>
+                                        </div>
+                                    <div class="card-body">
+                                        <p class="mb-0"><strong class="pr-1"><b>Barangay Name:</b></strong><p id="btgyName">Barangay Tabunok</p></p>
+                                        <p class="mb-0"><strong class="pr-1"><b>Municipality:</b></strong><p id="btgyMuni">{{municipality}}</p></p>
+                                        <p class="mb-0"><strong class="pr-1"><b>Province:</b></strong><p id="btgyProvince">{{province}}</p></p>
+                                        <p class="mb-0"><strong class="pr-1"><b>Contact Number:</b></strong><p id="btgyNum">{{number}}</p></p>
+                                        <p class="mb-0"><strong class="pr-1"><b>Email:</b></strong><p id="btgyEmail">{{email}}</p></p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="card shadow-sm">
+                                <div class="card-header bg-transparent border-0">
+                                    <h2 class="mb-0"><i class="far fa-clone pr-1"></i>Barangay Information</h2>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <form>
+                                        <table class="table table-bordered">
+                                            <tr>
+                                                <th width="40%">Barangay Name</th>
+                                                <td width="1%">:</td>
+                                                <td>
+                                                    <input 
+                                                    type="text" 
+                                                    class="form-control"
+                                                    placeholder="Barangay Name"
+                                                    required/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th width="40%">Municipality</th>
+                                                <td width="1%">:</td>
+                                                <td>
+                                                    <input 
+                                                    type="text" 
+                                                    class="form-control"
+                                                    placeholder="Municipality"
+                                                    required/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th width="40%">Province</th>
+                                                <td width="1%">:</td>
+                                                <td>
+                                                    <input 
+                                                    type="text" 
+                                                    class="form-control"
+                                                    placeholder="Province"
+                                                    required/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th width="40%">Contact Number</th>
+                                                <td width="1%">:</td>
+                                                <td>
+                                                    <input 
+                                                    type="text" 
+                                                    class="form-control"
+                                                    placeholder="Contact Number"
+                                                    required/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th width="40%">Email</th>
+                                                <td width="1%">:</td>
+                                                <td>
+                                                    <input 
+                                                    type="email" 
+                                                    class="form-control"
+                                                    placeholder="Email"
+                                                    required/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                               
+                            </div>
+                        
+                        </div>
+                    </div>
+                </section>
+                <section>
                         <div class="table-responsive">
                             <div class="table-wrapper">
                                 <div class="table-title">
                                     <div class="row">
                                         <div class="col-4">
-                                            <h2><b>Resident's Information</b></h2>
+                                            <h2><b>Admin's Information</b></h2>
                                         </div>
                                         <div class="col-4">
                                             <div class="search-box">
@@ -355,7 +446,6 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
                 </section>
             </div>
         </div>

@@ -50,7 +50,7 @@ include ("config.php");
                                         <div class="col-3 inputTitle">
                                             <div class="text-center">
                                                 <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="user_image">
-                                                <h6>Upload a photo or use your camera</h6>
+                                                <h6>Upload a photo</h6>
                                                 <input type="file" class="text-center center-block file-upload upload_image">
                                             </div>
                                         </div>
