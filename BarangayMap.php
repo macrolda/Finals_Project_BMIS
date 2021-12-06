@@ -40,10 +40,12 @@
             <ul class="list-unstyled components">
                 <p class="brgyTitle">Barangay Tabunok</p>
 
-                <li class="active">
+                <li>
                     <a href="AdminDashboard.php">Dashboard</a>
                 </li>
-
+                <li class="active">
+                    <a href="BarangayMap.php">Barangay Information</a>
+                </li>
                 <li>
                     <a href="AdminResidentRecords.php">Resident Records</a>
                 </li>
@@ -61,12 +63,6 @@
                             <a href="#">Barangay Clearance</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="#">Document Request</a>
-                </li>
-                <li>
-                    <a href="BarangayMap.php">Barangay Information</a>
                 </li>
                 <li>
                     <a href="AdminBarangaySettings.php">Barangay Settings</a>

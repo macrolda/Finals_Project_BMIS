@@ -47,7 +47,9 @@
                 <li>
                     <a href="AdminDashboard.php">Dashboard</a>
                 </li>
-
+                <li>
+                    <a href="BarangayMap.php">Barangay Information</a>
+                </li>
                 <li class="active">
                     <a href="AdminResidentRecords.php">Resident Records</a>
                 </li>
@@ -65,12 +67,6 @@
                             <a href="#">Barangay Clearance</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="#">Document Request</a>
-                </li>
-                <li>
-                    <a href="BarangayMap.php">Map</a>
                 </li>
                 <li>
                     <a href="AdminBarangaySettings.php">Barangay Settings</a>
