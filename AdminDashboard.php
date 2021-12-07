@@ -54,13 +54,13 @@
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Document Records</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
+                            <a href="#">Barangay Clearance</a>
+                        </li>
+                        <li>
                             <a href="#">Barangay Permit</a>
                         </li>
                         <li>
                             <a href="#">Certificate of Residency</a>
-                        </li>
-                        <li>
-                            <a href="#">Barangay Clearance</a>
                         </li>
                     </ul>
                 </li>
