@@ -50,9 +50,10 @@ a:focus {
     transition: all 0.3s;
 }
 
+
 .navbar {
     padding: 15px 10px;
-    background: rgb(195, 195, 195);
+    background:  #2c3e50;
     border: none;
     border-radius: 5px;
     margin-bottom: 40px;
@@ -61,13 +62,16 @@ a:focus {
 
 #navHeader{
     text-transform: uppercase;
-    margin-right: 20%;
     font-weight: 600;
+    color: #fff;
+    display: flex;
+    align-items: center;
 }
 .barBtn
 {
     background: #2c3e50;
     color: #fff;
+    font-size: 25px;
 }
 .line {
     width: 100%;

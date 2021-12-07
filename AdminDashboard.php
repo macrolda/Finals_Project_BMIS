@@ -98,12 +98,12 @@
                 <section>
                     <div class="row">
                         <div class="col-xl-6 col-md-12 mb-4">
-                            <div class="card">
+                            <div class="card l-bg-orange-dark">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between p-md-1">
                                         <div class="d-flex flex-row">
                                             <div class="align-self-center">
-                                                <i class="fas fa-user-friends text-secondary fa-3x me-4"></i>
+                                                <i class="fas fa-user-friends text-light fa-3x me-4"></i>
                                             </div>
                                             <div class="cardTitle">
                                                 <h4>Total Population</h4>
@@ -119,12 +119,12 @@
                         </div>
 
                         <div class="col-xl-6 col-md-12 mb-4">
-                            <div class="card">
+                            <div class="card l-bg-green-dark">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between p-md-1">
                                         <div class="d-flex flex-row">
                                             <div class="align-self-center">    
-                                                <i class="fas fa-file-alt text-success fa-3x me-4"></i>
+                                                <i class="fas fa-file-alt text-light fa-3x me-4"></i>
                                             </div>
                                             <div class="cardTitle">
                                                 <h4>Registered Voter</h4>
@@ -140,12 +140,12 @@
                         </div>
 
                         <div class="col-xl-6 col-md-12 mb-4">
-                            <div class="card">
+                            <div class="card l-bg-blue-dark">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between p-md-1">
                                         <div class="d-flex flex-row">
                                             <div class="align-self-center">
-                                                <i class="fas fa-male text-info fa-3x me-4"></i>
+                                                <i class="fas fa-male text-light fa-3x me-4"></i>
                                             </div>
                                             <div class="cardTitle">
                                                 <h4>Total Male</h4>
@@ -161,12 +161,12 @@
                         </div>
 
                         <div class="col-xl-6 col-md-12 mb-4">
-                            <div class="card">
+                            <div class="card l-bg-cherry">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between p-md-1">
                                         <div class="d-flex flex-row">
                                             <div class="align-self-center">
-                                                <i class="fas fa-female text-warning fa-3x me-4"></i>
+                                                <i class="fas fa-female text-light fa-3x me-4"></i>
                                             </div>
                                             <div class="cardTitle">
                                                 <h4>Total Female</h4>

@@ -19,7 +19,7 @@ include ("config.php");
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
     <link rel="icon" type="image/png" sizes="32x32" href="image/logo_1.png">
 </head>
 
@@ -43,7 +43,6 @@ include ("config.php");
                 <li class="active">
                     <a href="ResidentDashboard.php">Dashboard</a>
                 </li>
-
                 <li>
                     <a href="ResidentProfile.php">Profile</a>
                 </li>
@@ -68,19 +67,107 @@ include ("config.php");
         </nav>
         <!-- Page Content  -->
         <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn barBtn">
                         <i class="fas fa-align-justify"></i>
                     </button>
-                    <h2 id="navHeader">Welcom to Barangay Tabunok</h2>
+                    <h2 class="col-9" id="navHeader">Welcome to Barangay Tabunok's Dashboard</h2>
+                        
                 </div>
             </nav>
+            <div class="container-fluid">
+                <section>
+                <div class="row">
+                        <div class="col-xl-6 col-md-12 mb-4">
+                            <div class="card l-bg-orange-dark">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between p-md-1">
+                                        <div class="d-flex flex-row">
+                                            <div class="align-self-center">
+                                                <i class="fas fa-user-friends text-light fa-3x me-4"></i>
+                                            </div>
+                                            <div class="cardTitle">
+                                                <h4>Total Population</h4>
+                                                <p class="mb-0">Count of Registered Residents</p>
+                                            </div>
+                                        </div>
+                                            <div class="align-self-center">
+                                            <h2 class="h1 mb-0">{#}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-md-12 mb-4">
+                            <div class="card l-bg-green-dark">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between p-md-1">
+                                        <div class="d-flex flex-row">
+                                            <div class="align-self-center">    
+                                                <i class="fas fa-file-alt text-light fa-3x me-4"></i>
+                                            </div>
+                                            <div class="cardTitle">
+                                                <h4>Registered Voter</h4>
+                                                <p class="mb-0">Count of Registered Voters</p>
+                                            </div>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <h2 class="h1 mb-0">{#}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-md-12 mb-4">
+                            <div class="card l-bg-blue-dark">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between p-md-1">
+                                        <div class="d-flex flex-row">
+                                            <div class="align-self-center">
+                                                <i class="fas fa-male text-light fa-3x me-4"></i>
+                                            </div>
+                                            <div class="cardTitle">
+                                                <h4>Total Male</h4>
+                                                <p class="mb-0">Count of Male Residents</p>
+                                             </div>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <h2 class="h1 mb-0">{#}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-md-12 mb-4">
+                            <div class="card l-bg-cherry">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between p-md-1">
+                                        <div class="d-flex flex-row">
+                                            <div class="align-self-center">
+                                                <i class="fas fa-female text-light fa-3x me-4"></i>
+                                            </div>
+                                            <div class="cardTitle">
+                                                <h4>Total Female</h4>
+                                                <p class="mb-0">Count of Female Residents</p>
+                                            </div>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <h2 class="h1 mb-0">{#}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
             <br><br>
-            <h1>{BARANGAY VISION & MISSION}</h1>
-            <br>
-            <h1>{BARANGAY ORGANIZATION CHART}</h1>
-            <br>
+            
             
         </div>
     </div>

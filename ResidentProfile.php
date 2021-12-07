@@ -68,7 +68,7 @@ include ("config.php");
         </nav>
         <!-- Page Content  -->
         <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn barBtn">
                         <i class="fas fa-align-justify"></i>
@@ -77,7 +77,8 @@ include ("config.php");
                 </div>
             </nav>
             
-            <div class="container">
+            <div class="container-fluid">
+                <section>
                 <div class="login-wrapper">
                 <form
                 action="database.php" 
@@ -93,7 +94,7 @@ include ("config.php");
                                         <div class="profileImage inputTitle">
                                             <div class="text-center">
                                                 <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="user_image">
-                                                <h6>Upload a photo or use your camera</h6>
+                                                <h6>Upload a photo</h6>
                                                 <input type="file" class="text-center center-block file-upload upload_image">
                                             </div>
                                         </div>
@@ -384,7 +385,7 @@ include ("config.php");
                         </form>
         
                 </div>
-            </div>
+            </section>
                     
         </div>
     </div>
