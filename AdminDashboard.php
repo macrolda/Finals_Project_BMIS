@@ -65,6 +65,9 @@
                     </ul>
                 </li>
                 <li>
+                    <a href="CertificateTemplates/DocumentRequest.php">Document Request</a>
+                </li>
+                <li>
                     <a href="AdminBarangaySettings.php">Barangay Settings</a>
                 </li>
             </ul>
