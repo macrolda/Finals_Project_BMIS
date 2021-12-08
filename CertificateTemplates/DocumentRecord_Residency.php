@@ -64,12 +64,11 @@
                                             <label for="selectAll"></label>
                                         </span>
                                     </th>
-                                    <th>ResidentNumber</th>
-                                    <th>FirstName</th>
-                                    <th>MiddleName</th>
+                                   <th>ResidentNumber</th>
                                     <th>LastName</th>
-                                    <th>Age</th>
-                                    <th>Sex</th>
+                                    <th>Date In</th>
+                                    <th>Date Out</th>
+                                    <th>Document Type</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -81,19 +80,17 @@
                                             <label for="checkbox1"></label>
                                         </span>
                                     </td>
-                                    <th>12345678901</th>
-                                    <th>Kharla Jane</th>
-                                    <th>Cabanaoan</th>
+                                    <th>100666</th>
                                     <th>Pasia</th>
-                                    <th>23</th>
-                                    <th>Female</th>
+                                    <th>12/08/2021</th>
+                                    <th>12/09/2021</th>
+                                    <th>pdf</th>
                                     <td>
                                         <a href="#editResidentModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                         <a href="#deleteResidentModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                         <a href="#viewResidentModal" class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i></a>
-
-                                   <input type="file" class="text-center center-block file-upload">
-                                   
+                                     <input type="file" class="text-center center-block file-upload">
+                                     <form> <input type="submit" value="Save" /></form>
                                     </td>
                                 </tr> 
                             </tbody>
