@@ -58,13 +58,8 @@
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>
-                                        <span class="custom-checkbox">
-                                            <input type="checkbox" id="selectAll">
-                                            <label for="selectAll"></label>
-                                        </span>
-                                    </th>
-                                  <th>ResidentNumber</th>
+                                    
+                                    <th>ResidentNumber</th>
                                     <th>LastName</th>
                                     <th>Date In</th>
                                     <th>Date Out</th>
@@ -74,12 +69,24 @@
                             </thead>
                             <tbody>
                                 <tr>
+                                    
+                                    <th>100666</th>
+                                    <th>Pasia</th>
+                                    <th>12/08/2021</th>
+                                    <th>12/09/2021</th>
+                                    <th>pdf</th>
                                     <td>
-                                        <span class="custom-checkbox">
-                                            <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                            <label for="checkbox1"></label>
-                                        </span>
+                                        <a href="#editResidentModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                        <a href="#deleteResidentModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        <a href="#viewResidentModal" class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i></a>
+                                     <input type="file" class="text-center center-block file-upload">
+                                     <form> <input type="submit" value="Save" /></form>
+
                                     </td>
+                                </tr> 
+                            </tbody>
+                                 <tr>
+                                    
                                     <th>100666</th>
                                     <th>Pasia</th>
                                     <th>12/08/2021</th>
