@@ -59,11 +59,12 @@
                            <thead>
                                 <tr>
                                     
+                                       
                                     <th>ResidentNumber</th>
                                     <th>LastName</th>
                                     <th>Date In</th>
                                     <th>Date Out</th>
-                                    <th>Document Type</th>
+                                    <th>Document</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -74,14 +75,12 @@
                                     <th>Pasia</th>
                                     <th>12/08/2021</th>
                                     <th>12/09/2021</th>
-                                    <th>pdf</th>
+                                    <th><input type="file" class="text-center center-block file-upload"></th>
                                     <td>
-                                        <a href="#editResidentModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                       
                                         <a href="#deleteResidentModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                        <a href="#viewResidentModal" class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i></a>
-                                     <input type="file" class="text-center center-block file-upload">
-                                     <form> <input type="submit" value="Save" /></form>
-
+                                        <a href="#viewResidentModal" class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i></a>      
+                                    
                                     </td>
                                 </tr> 
                             </tbody>
@@ -91,13 +90,12 @@
                                     <th>Pasia</th>
                                     <th>12/08/2021</th>
                                     <th>12/09/2021</th>
-                                    <th>pdf</th>
+                                    <th><input type="file" class="text-center center-block file-upload"></th>
                                     <td>
-                                        <a href="#editResidentModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                       
                                         <a href="#deleteResidentModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                         <a href="#viewResidentModal" class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i></a>
-                                     <input type="file" class="text-center center-block file-upload">
-                                     <form> <input type="submit" value="Save" /></form>
+                                    
                                     </td>
                                 </tr> 
                             </tbody>
