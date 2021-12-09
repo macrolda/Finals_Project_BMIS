@@ -58,9 +58,10 @@ a:focus {
 
 #navHeader{
     text-transform: uppercase;
-    margin-right: 20%;
     font-weight: 600;
     color: #fff;
+    display: flex;
+    justify-content: center;
 }
 .barBtn
 {

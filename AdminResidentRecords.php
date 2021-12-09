@@ -47,9 +47,6 @@
                 <li>
                     <a href="AdminDashboard.php">Dashboard</a>
                 </li>
-                <li>
-                    <a href="BarangayMap.php">Barangay Information</a>
-                </li>
                 <li class="active">
                     <a href="AdminResidentRecords.php">Resident Records</a>
                 </li>
@@ -58,15 +55,18 @@
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Document Records</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Barangay Permit</a>
+                            <a href="CertificateTemplates/DocumentRecord_Clearance.php">Barangay Clearance</a>
                         </li>
                         <li>
-                            <a href="#">Certificate of Residency</a>
+                            <a href="CertificateTemplates/DocumentRecord_Permit.php">Barangay Permit</a>
                         </li>
                         <li>
-                            <a href="#">Barangay Clearance</a>
+                            <a href="CertificateTemplates/DocumentRecord_Residency.php">Certificate of Residency</a>
                         </li>
                     </ul>
+                </li>
+                <li>
+                    <a href="CertificateTemplates/DocumentRequest.php">Document Request</a>
                 </li>
                 <li>
                     <a href="AdminBarangaySettings.php">Barangay Settings</a>

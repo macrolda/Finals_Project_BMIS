@@ -20,6 +20,9 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
     <link rel="icon" type="image/png" sizes="32x32" href="image/logo_1.png">
 </head>
 
@@ -42,9 +45,6 @@
 
                 <li class="active">
                     <a href="AdminDashboard.php">Dashboard</a>
-                </li>
-                <li>
-                    <a href="BarangayMap.php">Barangay Information</a>
                 </li>
                 <li>
                     <a href="AdminResidentRecords.php">Resident Records</a>
@@ -180,8 +180,267 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
+                </section>
+                <section>
+                        <div class="table-responsive">
+                            <div class="table-wrapper">
+                                <div class="table-title">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <h2><b>Admin's Information</b></h2>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="search-box">
+                                                <i class="material-icons">&#xE8B6;</i>
+                                                <input type="text" class="form-control" placeholder="Search&hellip;">
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="#addAdminModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Resident</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <span class="custom-checkbox">
+                                                    <input type="checkbox" id="selectAll">
+                                                    <label for="selectAll"></label>
+                                                </span>
+                                            </th>
+                                            <th>Timestap</th>
+                                            <th>FirstName</th>
+                                            <th>LastName</th>
+                                            <th>Position</th>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="custom-checkbox">
+                                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                                    <label for="checkbox1"></label>
+                                                </span>
+                                            </td>
+                                            <th>{{time}}</th>
+                                            <th>Maria Ailah</th>
+                                            <th>Rolda</th>
+                                            <th>Admin</th>
+                                            <th>admin1</th>
+                                            <th>admin1@gmail.com</th>
+                                            <td>
+                                                <a href="#editResidentModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                <a href="#deleteResidentModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                                <a href="#viewResidentModal" class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i></a>
+                                            </td>
+                                        </tr> 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>        
+                    </div>
+                    
+                    <!-- Add Modal HTML -->
+                    <div id="addAdminModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form>
+                                    <div class="modal-header">						
+                                        <h4 class="modal-title">Add Barangay Admin</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group ">
+                                                    <label>First Name</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Middle Name</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Last Name</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                            </div>
+                                        </div>			
+                                        <div class="col-12 form-group">
+                                            <label>Birthday</label>
+                                            <input  type="date" name="adminRegBirthday" class="form-control" id="adminRegBirthday" required>
+                                        </div>
+
+                                        <div class="col-12 form-group">
+                                            <label>Barangay Position</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group">
+                                                    <label>Username</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-8 form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                        <input type="submit" class="btn btn-success" value="Add">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Edit Modal HTML -->
+                    <div id="editResidentModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form>
+                                    <div class="modal-header">						
+                                        <h4 class="modal-title">Edit Barangay Admin Information</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group ">
+                                                    <label>First Name</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Middle Name</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Last Name</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                            </div>
+                                        </div>			
+                                        <div class="col-12 form-group">
+                                            <label>Birthday</label>
+                                            <input  type="date" name="adminRegBirthday" class="form-control" id="adminRegBirthday" required>
+                                        </div>
+
+                                        <div class="col-12 form-group">
+                                            <label>Barangay Position</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group">
+                                                    <label>Username</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-8 form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="button" class="btn btn-info" data-dismiss="modal" value="Reset">
+                                        <input type="submit" class="btn btn-success" value="Edit">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Delete Modal HTML -->
+                    <div id="deleteResidentModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form>
+                                    <div class="modal-header">						
+                                        <h4 class="modal-title">Delete Resident</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">					
+                                        <p>Are you sure you want to delete these Records?</p>
+                                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                        <input type="submit" class="btn btn-danger" value="Delete">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- View Modal HTML -->
+                    <div id="viewResidentModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form>
+                                    <div class="modal-header">						
+                                        <h4 class="modal-title">View Barangay Admin Information</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group ">
+                                                    <label>First Name</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Middle Name</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Last Name</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                            </div>
+                                        </div>			
+                                        <div class="col-12 form-group">
+                                            <label>Birthday</label>
+                                            <input  type="date" name="adminRegBirthday" class="form-control" id="adminRegBirthday" required>
+                                        </div>
+
+                                        <div class="col-12 form-group">
+                                            <label>Barangay Position</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group">
+                                                    <label>Username</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-8 form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="submit" class="btn btn-success" value="Close">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                 </section>
             </div>
         </div>
