@@ -117,3 +117,24 @@ if(isset($_POST['res_logIn']))
         </script>';
     }
 }
+
+if(isset($_POST['btn_adminRegister']))
+{
+    $adminRegFirstName = $_POST['adminRegFirstName'];
+    $adminRegMiddleName = $_POST['adminRegMiddleName'];
+    $adminRegLastName = $_POST['adminRegLastName'];
+    $adminRegUsername = $_POST['adminRegUsername'];
+    $adminRegPosition = $_POST['adminRegPosition'];
+    $res_regpassword = $adminRegLastName.$adminRegFirstName;
+    $adminRegBirthday = $_POST['adminRegBirthday'];
+    $adminRegEmail= $_POST['adminRegEmail'];
+
+    $sql ="INSERT INTO admin_info (adminFirstName, adminMiddleName, adminLastname,adminUsername,
+    adminBirthday,	adminPosition, adminEmail, adminPassword,reg_date)
+    VALUES('$adminRegFirstName', '$adminRegMiddleName', '$adminRegLastName','$adminRegUsername ', 
+    '$adminRegBirthday', '$adminRegPosition','$adminRegEmail'', '$res_regpassword', );";
+
+    mysqli_query($conn, $sql);
+
+    header('Location: index.php');
+}

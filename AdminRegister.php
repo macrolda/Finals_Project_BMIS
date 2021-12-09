@@ -18,7 +18,7 @@ require ("config.php");
 </head>
 <body>
     <div class="login-wrapper">
-        <form action="" class="form">
+        <form action="" class="form" name="admin_registrationForm" onsubmit="return regValidation()">
             <img src="image\logo_1.png" alt="barangayLogo1">
             <h2>Administrator's Registration</h2>
                 <div class="col-12 input-group">
@@ -27,7 +27,7 @@ require ("config.php");
                     name="adminRegFirstName" 
                     id="adminRegFirstName" 
                     required>
-                    <label for="loginUser">First Name</label>
+                    <label for="adminRegFirstName">First Name</label>
                 </div>
                 <div class="input-group">
                     <input 
@@ -35,7 +35,7 @@ require ("config.php");
                     name="adminRegMiddleName" 
                     id="adminRegMiddleName" 
                     required>
-                    <label for="loginUser">Middle Name</label>
+                    <label for="adminRegMiddleName">Middle Name</label>
                 </div>
 
                 <div class="input-group">
@@ -44,7 +44,7 @@ require ("config.php");
                     name="adminRegLastName" 
                     id="adminRegLastName" 
                     required>
-                    <label for="loginUser">Last Name</label>
+                    <label for="adminRegLastName">Last Name</label>
                 </div>
 
                 <div class="input-groupp">
@@ -54,17 +54,17 @@ require ("config.php");
                     name="adminRegBirthday"
                     id="adminRegBirthday"
                     required>
-                    <label for="loginUser">Birthday</label>
+                    <label for="adminRegBirthday">Birthday</label>
                 </div>
 
                 
                 <div class="input-group">
                     <input 
                     type="text" 
-                    name="adminRegLastName" 
-                    id="adminRegLastName" 
+                    name="adminRegPosition" 
+                    id="adminRegPosition" 
                     required>
-                    <label for="loginUser">Barangay Position</label>
+                    <label for="adminRegPosition">Barangay Position</label>
                 </div> 
                 
                 <div class="input-group">
@@ -73,23 +73,24 @@ require ("config.php");
                     name="adminRegUsername" 
                     id="adminRegUsername" 
                     required/>
-                    <label for="loginUser">Username</label>
+                    <label for="adminRegUsername">Username</label>
                 </div>
 
                 <div class="input-group">
                     <input 
                     type="email" 
-                    name="adminRegLastName" 
-                    id="adminRegLastName" 
+                    name="adminRegEmail" 
+                    id="adminRegEmail" 
                     required/>
-                    <label for="loginUser">Email Address</label>
+                    <label for="adminRegEmail">Email Address</label>
                 </div>
                 
                 <input 
                 type="submit"
                 value="Register Account" 
                 class="reg-btn" 
-                onclick="location='AdminPortal_logIn.php'">
+                name="btn_adminRegister"
+                >
              
             </form>
         </div>
