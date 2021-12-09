@@ -11,10 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Admin | Dashboard</title>
+    <title>Resident | Barangay Information</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/AdminDashboard.css">
+    <link rel="stylesheet" href="css/BarangayMap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -41,31 +41,16 @@
                 <p class="brgyTitle">Barangay Tabunok</p>
 
                 <li>
-                    <a href="AdminDashboard.php">Dashboard</a>
+                    <a href="ResidentDashboard.php">Dashboard</a>
+                </li>
+                <li>
+                    <a href="ResidentProfile.php">Profile</a>
                 </li>
                 <li class="active">
                     <a href="BarangayMap.php">Barangay Information</a>
                 </li>
-                <li>
-                    <a href="AdminResidentRecords.php">Resident Records</a>
-                </li>
-
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Document Records</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Barangay Permit</a>
-                        </li>
-                        <li>
-                            <a href="#">Certificate of Residency</a>
-                        </li>
-                        <li>
-                            <a href="#">Barangay Clearance</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="AdminBarangaySettings.php">Barangay Settings</a>
+                <li  >
+                    <a href="ResidentRequestCert.php">Document Request</a>
                 </li>
             </ul>
 
@@ -87,19 +72,73 @@
                     <button type="button" id="sidebarCollapse" class="btn barBtn">
                         <i class="fas fa-align-justify"></i>
                     </button>
-                    <h2 id="navHeader">Barangay Tabunok's Dashboard</h2>
+                    <h2 id="navHeader">Barangay Tabunok's Information</h2>
                 </div>
             </nav>
 
-            <section class='map'>
-                <h1>Map</h1>
-                <div class="show_map">
-                    <h1 style="color='water'">Barangay Location</h1>
-                    <div class='show_map_inner'>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.15134621741!2d127.04850181531054!3d37.527929479805145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca47916d6cee9%3A0xaf7f92be5acffa56!2sSM%20Entertainment%20Studio%20Center!5e0!3m2!1sen!2sph!4v1638730474337!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            <div class="container-fluid">
+            <section>
+                    <div class="student-profile py-4">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="card shadow-sm">
+                                        <div class="card-header bg-transparent text-center">
+                                            <img class="profile_img" src="image/logo_1.png" alt="brgyLogo">
+                                            <h3>Barangay Tabunok's Official Logo</h3>
+                                        </div>
+                                    <div class="card-body">
+                                        <p class="mb-0">
+                                            <strong class="pr-1">
+                                                <b>Barangay Name:</b>
+                                            </strong>
+                                                    <h4 id="btgyName">Barangay Tabunok</h4>
+                                        </p>
+
+                                        <p class="mb-0">
+                                            <strong class="pr-1">
+                                                <b>Municipality:</b>
+                                            </strong>
+                                                <h4 id="btgyMuni">{{municipality}}</h4>
+                                        </p>
+                                        <p class="mb-0">
+                                            <strong class="pr-1">
+                                                <b>Province:</b>
+                                            </strong>
+                                            <h4 id="btgyProvince">{{province}}</h4>
+                                        </p>
+                                        <p class="mb-0">
+                                            <strong class="pr-1">
+                                                <b>Contact Number:</b>
+                                            </strong>
+                                            <h4 id="btgyNum">{{number}}</h4>
+                                        </p>
+                                        <p class="mb-0">
+                                            <strong class="pr-1">
+                                                <b>Email:</b>
+                                            </strong>
+                                            <h4 id="btgyEmail">{{email}}</h4>
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card shadow-sm">
+                                <div class="card-header bg-transparent border-0">
+                                    <h2 class="mb-0"><i class="far fa-clone pr-1"></i>Barangay Map/Location</h2>
+                                </div>
+                                <div class="card-body pt-0">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.15134621741!2d127.04850181531054!3d37.527929479805145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca47916d6cee9%3A0xaf7f92be5acffa56!2sSM%20Entertainment%20Studio%20Center!5e0!3m2!1sen!2sph!4v1638730474337!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                </div>
+                               
+                            </div>
+                        
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>        
         </div>
         
             

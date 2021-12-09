@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 body {
     font-family: 'Proza Libre', sans-serif;
     background: #fafafa;
@@ -48,7 +49,7 @@ a:focus {
 
 .navbar {
     padding: 15px 10px;
-    background:  #2c3e50;
+    background: #2c3e50;
     border: none;
     border-radius: 5px;
     margin-bottom: 40px;
@@ -57,10 +58,9 @@ a:focus {
 
 #navHeader{
     text-transform: uppercase;
+    margin-right: 20%;
     font-weight: 600;
     color: #fff;
-    display: flex;
-    justify-content: center;
 }
 .barBtn
 {
@@ -223,58 +223,29 @@ a.article:hover {
 }
 /*SIDEBAR*/
 
-
-
-.avatar
-{
-    width: 200px;
-    height:200px;
-    background-color: black;
-    justify-items: center;
+.student-profile .card {
+    border-radius: 10px;
 }
-.upload_image
-{
-    margin-top: 20px;
-    text-align: center;
+.student-profile .card .card-header .profile_img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 10px auto;
+    border: 10px solid #ccc;
+    border-radius: 50%;
 }
-
-h3.infoTitle
-{
-    margin-top: 40px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    align-content: center;
-    text-align: left;
-    color: black;
+.student-profile .card h3 {
+    font-size: 20px;
+    font-weight: 700;
 }
-hr
-{
-    margin: 0 0;
-}
-.inputTitle
-{
-    margin-top: 20px;
-}
-select
-{
-    justify-self: center;
-    width: auto;
-}
-.form-control
-{
+.student-profile .card p {
     font-size: 16px;
+    color: #000;
 }
-h6
-{
-    margin-top: 10px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    align-content: center;
-    text-align: center;
-    color: black;
+.student-profile .table th,
+.student-profile .table td {
+    font-size: 14px;
+    padding: 5px 10px;
+    color: #000;
 }
-.btn-orange
-{
-    background-color: orange;
-    color: #e6e6e6;
-}
+

@@ -46,11 +46,11 @@ include ("config.php");
                 <li>
                     <a href="ResidentProfile.php">Profile</a>
                 </li>
-                <li>
-                    <a href="ResidentRequestCert.php">Document Request</a>
+                <li >
+                    <a href="BarangayMap.php">Barangay Information</a>
                 </li>
                 <li>
-                    <a href="ResidentNotification.php">Notification</a>
+                    <a href="ResidentRequestCert.php">Document Request</a>
                 </li>
             </ul>
 
@@ -162,9 +162,93 @@ include ("config.php");
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </section>
+                <div class="container-fluid">
+                    <section>
+                        <div id="wrapper">
+                            <div id="container">
+                                <h1 id="brgyChartTitle">Barangay Tabunok's Organizational Chart</h1>
+                                <ol class="organizational-chart">
+                                    <li>
+                                        <div>
+                                            <h2 class="brgyOfficialName">{{Name}}</h2>
+                                            <h3 class="brgyPosition">Punong Barangay</h3>
+                                        </div>
+                                        <ol>
+                                            <li>
+                                                <div>
+                                                    <h3 class="brgyOfficialName">{{Name}}</h3>
+                                                    <h3 class="brgyPosition">Barangay Secretary</h3>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <h3 class="brgyOfficialName">{{Name}}</h3>
+                                                    <h3 class="brgyPosition">Barangay Treasurer</h3>
+                                                </div>
+                                            </li>
+                                            
+                                        </ol>
+                                        <ol>
+                                            <li>
+                                                <div>
+                                                    <h class="brgyOfficialName">{{Name}}</h2>
+                                                    <h4 class="brgyPosition">Barangay Kagawad</h4>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <h3 class="brgyOfficialName">{{Name}}</h3>
+                                                    <h4 class="brgyPosition">Barangay Kagawad</h4>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <h3 class="brgyOfficialName">{{Name}}</h3>
+                                                    <h4 class="brgyPosition">Barangay Kagawad</h4>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <h3 class="brgyOfficialName">{{Name}}</h3>
+                                                    <h4 class="brgyPosition">Barangay Kagawad</h2>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                        <ol>
+                                            <li>
+                                                <div>
+                                                    <h3 class="brgyOfficialName">{{Name}}</h3>
+                                                    <h4 class="brgyPosition">Barangay Health Worker</h4>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <h3 class="brgyOfficialName">{{Name}}</h3>
+                                                    <h4 class="brgyPosition">Barangay Nutrition Scholar</h4>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <h3 class="brgyOfficialName">{{Name}}</h3>
+                                                    <h4 class="brgyPosition">Chief Barangay Police</h4>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <h3 class="brgyOfficialName">{{Name}}</h3>
+                                                    <h4 class="brgyPosition">SK Chairman</h2>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </li>                
+                                </ol>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
             <br><br>
             

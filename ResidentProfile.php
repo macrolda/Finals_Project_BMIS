@@ -43,15 +43,14 @@ include ("config.php");
                 <li>
                     <a href="ResidentDashboard.php">Dashboard</a>
                 </li>
-
                 <li class="active">
                     <a href="ResidentProfile.php">Profile</a>
                 </li>
                 <li>
-                    <a href="ResidentRequestCert.php">Document Request</a>
+                    <a href="BarangayMap.php">Barangay Information</a>
                 </li>
                 <li>
-                    <a href="ResidentNotification.php">Notification</a>
+                    <a href="ResidentRequestCert.php">Document Request</a>
                 </li>
             </ul>
 
@@ -73,7 +72,7 @@ include ("config.php");
                     <button type="button" id="sidebarCollapse" class="btn barBtn">
                         <i class="fas fa-align-justify"></i>
                     </button>
-                    <h2 id="navHeader">Welcome to Barangay Tabunok</h2>
+                    <h2 id="navHeader">Resident's Profile</h2>
                 </div>
             </nav>
             

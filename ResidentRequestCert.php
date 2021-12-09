@@ -42,15 +42,14 @@ include ("config.php");
                 <li>
                     <a href="ResidentDashboard.php">Dashboard</a>
                 </li>
-
                 <li>
                     <a href="ResidentProfile.php">Profile</a>
                 </li>
-                <li  class="active">
-                    <a href="ResidentRequestCert.php">Document Request</a>
+                <li >
+                    <a href="BarangayMap.php">Barangay Information</a>
                 </li>
-                <li>
-                    <a href="ResidentNotification.php">Notification</a>
+                <li class="active">
+                    <a href="ResidentRequestCert.php">Document Request</a>
                 </li>
             </ul>
 
@@ -72,38 +71,48 @@ include ("config.php");
                     <button type="button" id="sidebarCollapse" class="btn barBtn">
                         <i class="fas fa-align-justify"></i>
                     </button>
-                    <h2 id="navHeader">Welcome to Barangay Tabunok</h2>
+                    <h2 id="navHeader">Documents Request</h2>
                 </div>
             </nav>
-            <br><br>
-            <div class="row">
-                <div class="card col-4" style="width: 18rem;">
-                    <div class="card-body" onclick="location='CertificateTemplates/permit_print.php'">
-                        <h5 class="card-title">Barangay Permit</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Barangay Tabunok's Barangay Permit</h6>
-                        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci voluptatem eius, unde accusantium sint praesentium perferendis, veniam, impedit cum maiores. Harum atque id totam placeat facilis dolorum quidem obcaecati.</p>
-                        
+            <div class="container-fluid">
+                <section>
+                    <div class="containerr">
+                        <div class="card">
+                            <div class="box">
+                                <div class="content">
+                                    <h2>01</h2>
+                                    <h3>Barangay Permit</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
+                                    <a href="CertificateTemplates/permit_print.php">Get It Here</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="box">
+                                <div class="content">
+                                    <h2>02</h2>
+                                    <h3>Certificate of Indigency</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
+                                    <a href="CertificateTemplates/residency_print.php">Get It Here</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="box">
+                                <div class="content">
+                                    <h2>03</h2>
+                                    <h3>Barangay Clearance</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
+                                    <a href="CertificateTemplates/clearance_print.php">Get It Here</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card col-4" style="width: 18rem;">
-                    <div class="card-body" onclick="location='CertificateTemplates/residency_print.php'">
-                        <h5 class="card-title">Certificate of Indigency</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Barangay Tabunok's Certificate of Residency</h6>
-                        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci voluptatem eius, unde accusantium sint praesentium perferendis, veniam, impedit cum maiores. Harum atque id totam placeat facilis dolorum quidem obcaecati.</p>
-                        
-                    </div>
-                </div>
-                <div class="card col-4" style="width: 18rem;">
-                    <div class="card-body" onclick="location='CertificateTemplates/clearance_print.php'">
-                        <h5 class="card-title">Barangay Clearance</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Barangay Tabunok's Barangay Clearance</h6>
-                        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci voluptatem eius, unde accusantium sint praesentium perferendis, veniam, impedit cum maiores. Harum atque id totam placeat facilis dolorum quidem obcaecati.</p>
-                        
-                    </div>
-                </div>
+                </section>
             </div>
-            
-            
         </div>
     </div>
     
