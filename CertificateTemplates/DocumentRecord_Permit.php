@@ -50,9 +50,7 @@
                                         <input type="text" class="form-control" placeholder="Search&hellip;">
                                     </div>
                                 </div>
-                                <div class="col-4">
-                                    <a href="#addResidentModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Resident</span></a>
-                                </div>
+                                
                             </div>
                         </div>
                         <table class="table table-striped table-hover">
@@ -77,9 +75,9 @@
                                     <th><input type="file" class="text-center center-block file-upload"></th>
                                     <td>
                                        
-                                        <a href="#deleteResidentModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                        <a href="#viewResidentModal" class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i></a>      
-                                    
+                                         <a href="#addDocumentModal" class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i></a>
+                                     <a href="#deleteResidentModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            
                                     </td>
                                 </tr> 
                             </tbody>
@@ -91,10 +89,9 @@
                                     <th>12/09/2021</th>
                                     <th><input type="file" class="text-center center-block file-upload"></th>
                                     <td>
-                                       
+                                        <a href="#addDocumentModal" class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i></a>
                                         <a href="#deleteResidentModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                        <a href="#viewResidentModal" class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i></a>
-                                    
+                                       
                                     </td>
                                 </tr> 
                             </tbody>
@@ -103,17 +100,8 @@
                 </div>        
             </div>
             <!-- Add Modal HTML -->
-            <div id="addResidentModal" class="modal fade"> 
-                <?php include 'AdminAddResidentModal.php';?>
-            </div>
-
-            <!-- View Modal HTML -->
-            <div id="ViewPermit" class="modal fade">
-                <?php include 'ViewPermit.php';?>
-            </div>
-            <!-- Edit Modal HTML -->
-            <div id="editResidentModal" class="modal fade">
-                <?php include 'AdminEditResidentModal.php';?>
+            <div id="addDocumentModal" class="modal fade"> 
+                <?php include 'AdminViewDocumentModal.php';?>
             </div>
             <!-- Delete Modal HTML -->
             <div id="deleteResidentModal" class="modal fade">
