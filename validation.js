@@ -1,7 +1,7 @@
 function loginValidation()
 {
-  var loginUsername = document.forms["residentPortal"]["loginUser"];
-  var loginPassword = document.forms["residentPortal"]["loginUser"];
+  var loginUsername = document.forms["residentPortal"]["res_logIn_Username"];
+  var loginPassword = document.forms["residentPortal"]["res_logIn_password"];
 
   if (loginUsername == "")
   {

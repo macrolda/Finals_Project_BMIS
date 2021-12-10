@@ -109,10 +109,11 @@ include ("config.php");
                                                                         <input 
                                                                         type="text" 
                                                                         class="form-control"
-                                                                        name="res_regfirstname" 
-                                                                        id="res_regfirstname" 
+                                                                        name="res_profilefirstname" 
+                                                                        id="res_profilefirstname" 
                                                                         placeholder="First Name"
-                                                                        required/>
+                                                                        value= <?php echo $_SESSION['res_firstaName'];?>
+                                                                        readonly/>
                                                                 </div>
 
                                                                 <div class="col-4 inputTitle">
@@ -120,10 +121,11 @@ include ("config.php");
                                                                     <input 
                                                                     type="text" 
                                                                     class="form-control" 
-                                                                    name="res_regmiddleName" 
-                                                                    id="res_regmiddleName" 
+                                                                    name="res_profilemiddleName" 
+                                                                    id="res_profilemiddleName" 
                                                                     placeholder="Middle Name"
-                                                                    required/>
+                                                                    value= <?php echo $_SESSION['res_middleName'];?>
+                                                                    readonly/>
                                                                 </div>
 
                                                                 <div class="col-4 inputTitle">
@@ -131,15 +133,16 @@ include ("config.php");
                                                                     <input 
                                                                     type="text" 
                                                                     class="form-control" 
-                                                                    name="res_reglastname" 
-                                                                    id="res_reglastname" 
+                                                                    name="res_profilelastname" 
+                                                                    id="res_profilelastname" 
                                                                     placeholder="Last Name"
-                                                                    required/>
+ 		                                                            value= <?php echo $_SESSION['res_lastName'];?>
+                                                                    readonly/>
                                                                 </div>
 
                                                                 <div class="col-3 inputTitle">
                                                                     <label><h4>Birth Month</h4></label><br>
-                                                                    <select id="res_regbirthMonth" class="form-control" name="res_regbirthMonth" required>
+                                                                    <select id="res_profilebirthMonth" class="form-control" name="res_profilebirthMonth" required>
                                                                         <option selected disabled>Month</option>
                                                                             <?php for($i=1;$i<=12;$i++){
                                                                             echo "<option value='$i'>".$i."</option>";
@@ -149,7 +152,7 @@ include ("config.php");
 
                                                                 <div class="col-2 inputTitle">
                                                                     <label><h4>Birth Day</h4></label><br>
-                                                                    <select id="res_regbirthDay" class="form-control" name="res_regbirthDay" required>
+                                                                    <select id="res_profilebirthDay" class="form-control" name="res_profilebirthDay" required>
                                                                         <option selected disabled>Day</option>
                                                                             <?php for($i=1;$i<=31;$i++){
                                                                             echo "<option value='$i'>".$i."</option>";
@@ -159,7 +162,7 @@ include ("config.php");
 
                                                                 <div class="col-2 inputTitle">
                                                                     <label><h4>Birth Year</h4></label><br>
-                                                                    <select id="res_regbirthYear" class="form-control" name="res_regbirthYear" required>
+                                                                    <select id="res_profilebirthYear" class="form-control" name="res_profilebirthYear" required>
                                                                         <option selected disabled>Year</option>
                                                                             <?php for($i=1990;$i<=2015;$i++){
                                                                             echo "<option value='$i'>".$i."</option>";
@@ -172,9 +175,12 @@ include ("config.php");
                                                                     <input 
                                                                     type="text" 
                                                                     class="form-control" 
-                                                                    name="res_regAge" 
-                                                                    id="res_regAge" 
-                                                                    placeholder="Age"/>    
+                                                                    name="res_profileAge" 
+                                                                    id="res_profileAge" 
+                                                                    placeholder="Age"
+                                                                    value= <?php echo $_SESSION['res_age'];?>
+                                                                    readonly
+                                                                />    
                                                                 </div>
 
                                                                 <div class="col-3 inputTitle">
@@ -182,29 +188,31 @@ include ("config.php");
                                                                     <input 
                                                                     type="text" 
                                                                     class="form-control" 
-                                                                    name="res_regbirthPlace" 
-                                                                    id="res_regbirthPlace" 
-                                                                    placeholder="Birth Place"/>    
+                                                                    name="res_profilebirthPlace" 
+                                                                    id="res_profilebirthPlace" 
+                                                                    placeholder="Birth Place"
+                                                                    value= <?php echo $_SESSION['res_birthPlace'];?>
+                                                                    readonly/>    
                                                                 </div>
 
                                                                 <div class="col-3 inputTitle">
                                                                     <label><h4>Sex</h4></label><br>
-                                                                        <select id="sex" class="form-control" name="res_regSex" required>
+                                                                        <select id="res_profileSex" class="form-control" name="res_profileSex" name="info-gender"  value=<?php echo $_SESSION['res_gender'];?>>
                                                                             <option selected disabled>Sex</option>
-                                                                            <option value="Male">Male</option>
-                                                                            <option value="Female">Female</option>
+                                                                            <option value="Male" <?php echo ($_SESSION['res_gender']=='Male')?('selected'):(''); ?>>Male</option>
+                                                                            <option value="Female" <?php echo ($_SESSION['res_gender']=='Female')?('selected'):(''); ?>>Female</option>
                                                                         </select>
                                                                 </div>
 
                                                                 <div class="col-3 inputTitle">
                                                                     <label><h4>Civil Status</h4></label><br>
-                                                                        <select id="civilStatus" class="form-control" name="res_regcivilStatus" required>
+                                                                        <select id="res_profilecivilStatus" class="form-control" name="res_profilecivilStatus"  value= <?php echo $_SESSION['res_civilStatus'];?> >
                                                                             <option selected disabled>Civil Status</option>
-                                                                            <option value="Married">Married</option>
-                                                                            <option value="Single">Single</option>
-                                                                            <option value="Separated">Separated </option>
-                                                                            <option value="Widowed ">Widowed </option>
-                                                                            <option value="Divorced ">Divorced </option>
+                                                                            <option value="Married" <?php echo ($_SESSION['res_civilStatus']=='Married')?('selected'):(''); ?>>Married</option>
+                                                                            <option value="Single" <?php echo ($_SESSION['res_civilStatus']=='Single')?('selected'):(''); ?>>Single</option>
+                                                                            <option value="Separated" <?php echo ($_SESSION['res_civilStatus']=='Separated')?('selected'):(''); ?>>Separated </option>
+                                                                            <option value="Widowed" <?php echo ($_SESSION['res_civilStatus']=='Widowed')?('selected'):(''); ?>>Widowed </option>
+                                                                            <option value="Divorced" <?php echo ($_SESSION['res_civilStatus']=='Divorced')?('selected'):(''); ?>>Divorced </option>
                                                                         </select>
                                                                 </div>  
                                                                 <div class="col-6 inputTitle">
@@ -212,9 +220,11 @@ include ("config.php");
                                                                     <input 
                                                                     type="text" 
                                                                     class="form-control" 
-                                                                    name="res_regspouseName" 
-                                                                    id="res_regspouseName" 
-                                                                    placeholder="Spouse Name"/>
+                                                                    name="res_profilespouseName" 
+                                                                    id="res_profilespouseName" 
+                                                                    placeholder="Spouse Name"
+                                                                    value= <?php echo $_SESSION['res_spouseName'];?>
+                                                                    />
                                                                 </div>
 
                                                                 <div class="col-4 inputTitle">
@@ -222,9 +232,10 @@ include ("config.php");
                                                                     <input 
                                                                     type="text" 
                                                                     class="form-control" 
-                                                                    name="res_regreligion" 
-                                                                    id="res_regreligion" 
+                                                                    name="res_profilereligion" 
+                                                                    id="res_profilereligion" 
                                                                     placeholder="Religion"
+                                                                    value= <?php echo $_SESSION['res_religion'];?>
                                                                     required/>
                                                                 </div>
 
@@ -233,18 +244,19 @@ include ("config.php");
                                                                     <input 
                                                                     type="text" 
                                                                     class="form-control" 
-                                                                    name="res_regcitizenship" 
-                                                                    id="res_regcitizenship" 
+                                                                    name="res_profilecitizenship" 
+                                                                    id="res_profilecitizenship" 
                                                                     placeholder="Citizenship"
+                                                                    value= <?php echo $_SESSION['res_citizenship'];?>
                                                                     required/>
                                                                 </div>
 
                                                                 <div class="col-4 inputTitle">
                                                                     <label><h4>Voter Status</h4></label><br>
-                                                                        <select id="res_regVoterStatus" class="form-control" name="res_regVoterStatus" required>
+                                                                        <select id="res_profileVoterStatus" class="form-control" name="res_profileVoterStatus" value= <?php echo $_SESSION['res_voterStatus'];?>>
                                                                             <option selected disabled>Voter Status</option>
-                                                                            <option value="Voter">Voter</option>
-                                                                            <option value="Not">Not</option>
+                                                                            <option value="Voter" <?php echo ($_SESSION['res_voterStatus']=='Voter')?('selected'):(''); ?>>Voter</option>
+                                                                            <option value="Not" <?php echo ($_SESSION['res_voterStatus']=='Not')?('selected'):(''); ?>>Not</option>
                                                                         </select>
                                                                 </div>
                                                             </div>
@@ -260,10 +272,11 @@ include ("config.php");
                                                             <input 
                                                             type="text" 
                                                             class="form-control" 
-                                                            name="res_regElementary" 
-                                                            id="res_regElementary" 
+                                                            name="res_profileElementary" 
+                                                            id="res_profileElementary" 
                                                             placeholder="Elementary"
-                                                            required/>
+                                                            value= <?php echo $_SESSION['res_elementary'];?>
+                                                            readonly/>
                                                         </div>
 
                                                         <div class="col-4 inputTitle">
@@ -271,10 +284,11 @@ include ("config.php");
                                                             <input 
                                                             type="text" 
                                                             class="form-control" 
-                                                            name="res_reghighSchool" 
-                                                            id="res_reghighSchool" 
+                                                            name="res_profilehighSchool" 
+                                                            id="res_profilehighSchool" 
                                                             placeholder="High School"
-                                                            required/>
+                                                            value= <?php echo $_SESSION['res_highSchool'];?>
+                                                            readonly/>
                                                         </div>
 
                                                         <div class="col-4 inputTitle">
@@ -282,10 +296,11 @@ include ("config.php");
                                                             <input 
                                                             type="text" 
                                                             class="form-control" 
-                                                            name="res_regCollege" 
-                                                            id="res_regCollege" 
+                                                            name="res_profileCollege" 
+                                                            id="res_profileCollege" 
                                                             placeholder="College"
-                                                            required/>
+                                                            value= <?php echo $_SESSION['res_college'];?>
+                                                            readonly/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -301,9 +316,10 @@ include ("config.php");
                                                                     <input 
                                                                     type="number" 
                                                                     class="form-control" 
-                                                                    name="res_regcellphone_number" 
-                                                                    id="res_regcellphone_number" 
+                                                                    name="res_profilecellphone_number" 
+                                                                    id="res_profilecellphone_number" 
                                                                     placeholder="Cellphone Number"
+                                                                    value= <?php echo $_SESSION['res_phoneNumber'];?>
                                                                     required/>
                                                                 </div>
                                                                 
@@ -312,9 +328,10 @@ include ("config.php");
                                                                     <input 
                                                                     type="number" 
                                                                     class="form-control" 
-                                                                    name="res_regtelephone_number" 
-                                                                    id="res_regtelephone_number" 
-                                                                    placeholder="Telephone Number"/>
+                                                                    name="res_profiletelephone_number" 
+                                                                    id="res_profiletelephone_number" 
+                                                                    placeholder="Telephone Number"
+                                                                    value= <?php echo $_SESSION['res_telephone'];?>/>
                                                                 </div>
                                                             
                                                                 <div class="inputTitle col-4">
@@ -322,9 +339,10 @@ include ("config.php");
                                                                         <input 
                                                                         type="text" 
                                                                         class="form-control" 
-                                                                        name="res_regusername" 
-                                                                        id="res_regusername" 
+                                                                        name="res_profileusername" 
+                                                                        id="res_profileusername" 
                                                                         placeholder="User Name"
+                                                                        value= <?php echo $_SESSION['res_alias'];?>
                                                                         required/>
                                                                     </div>
                                                                 <div class="inputTitle col-8">
@@ -332,9 +350,10 @@ include ("config.php");
                                                                     <input 
                                                                     type="email" 
                                                                     class="form-control" 
-                                                                    name="res_regemail" 
-                                                                    id="res_regemail" 
+                                                                    name="res_profileemail" 
+                                                                    id="res_profileemail" 
                                                                     placeholder="Email Address"
+                                                                    value= <?php echo $_SESSION['res_email'];?>
                                                                     required/>
                                                                 </div>
                                                             </div>
@@ -345,9 +364,10 @@ include ("config.php");
                                                                 <input
                                                                 type="text" 
                                                                 class="form-control" 
-                                                                id="res_regaddress"
-                                                                name="res_regaddress"
+                                                                id="res_profileaddress"
+                                                                name="res_profileaddress"
                                                                 placeholder="Address"
+                                                                value= <?php echo $_SESSION['res_address'];?>
                                                                 required/>
                                                             </div>
                                                             
@@ -357,9 +377,10 @@ include ("config.php");
                                                                     <input
                                                                     type="number" 
                                                                     class="form-control" 
-                                                                    id="res_regPurok"
-                                                                    name="res_regPurok"
-                                                                    placeholder="Purok"/>
+                                                                    id="res_profilePurok"
+                                                                    name="res_profilePurok"
+                                                                    placeholder="Purok"
+                                                                    value= <?php echo $_SESSION['res_purok'];?>/>
                                                                 </div>
                                                             </div>
                                                         </div>

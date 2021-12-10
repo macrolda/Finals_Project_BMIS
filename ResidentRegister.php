@@ -34,11 +34,12 @@ include ("config.php");
                 <h2>Resident's Registration</h2>
                 <form
                 action="database.php" 
+                method="post"
                 class="form" 
                 name="res_register" 
                 id="res_register" 
                 onsubmit="return regValidation()"
-                method="post">
+                >
                     <div class="container bootstrap snippet">
                         <div class="row">
                             <div class="col-12">
@@ -145,7 +146,7 @@ include ("config.php");
 
                                                         <div class="col-3 inputTitle">
                                                             <label><h4>Sex</h4></label><br>
-                                                                <select id="sex" class="form-control" name="res_regSex" required>
+                                                                <select id="res_regSex" class="form-control" name="res_regSex" required>
                                                                     <option selected disabled>Sex</option>
                                                                     <option value="Male">Male</option>
                                                                     <option value="Female">Female</option>
@@ -154,7 +155,7 @@ include ("config.php");
 
                                                         <div class="col-3 inputTitle">
                                                             <label><h4>Civil Status</h4></label><br>
-                                                                <select id="civilStatus" class="form-control" name="res_regcivilStatus" required>
+                                                                <select id="res_regcivilStatus" class="form-control" name="res_regcivilStatus" required>
                                                                     <option selected disabled>Civil Status</option>
                                                                     <option value="Married">Married</option>
                                                                     <option value="Single">Single</option>

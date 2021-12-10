@@ -23,7 +23,7 @@ require ("config.php");
 </head>
 <body>
 <div class="login-wrapper">
-        <form action="database.php" method="post" class="form" id="residentPortal" name="residentPortal">
+        <form action="database.php" method="post" class="form" id="residentPortal" name="residentPortal" onsubmit="return loginValidation()">
             <img src="image\logo_1.png" alt="barangayLogo1">
             <h2>Resident's Log-In</h2>
             <div class="input-group">
@@ -50,7 +50,6 @@ require ("config.php");
             type="submit"
             value="Login" 
             class="btn submit-btn btn-success" 
-            onclick="loginValidation()"
             name="res_logIn">
             
             <hr size = 2 noshade color=white>

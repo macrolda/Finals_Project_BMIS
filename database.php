@@ -28,6 +28,8 @@ if(isset($_POST['btnres_register']))
     $res_regElementary = $_POST['res_regElementary'];
     $res_reghighSchool= $_POST['res_reghighSchool'];
     $res_regCollege = $_POST['res_regCollege'];
+    
+    $res_regpassword = $res_reglastname.$res_regfirstname;
 
     if(strlen($res_regcellphone_number) != 11 )
     {
@@ -36,87 +38,89 @@ if(isset($_POST['btnres_register']))
         echo $alert;
     }
 
-    $sql ="INSERT INTO resident_info (res_lastName, res_firstaName, res_middleName, res_alias,	res_spouseName, res_password, res_birthMonth,
+    $res_sql ="INSERT INTO resident_info (res_lastName, res_firstaName, res_middleName, res_alias,	res_spouseName, res_password, res_birthMonth,
      res_birthDate, res_birthYear, res_age, res_purok, res_address, res_birthPlace, res_gender, res_civilStatus, res_voterStatus, res_phoneNumber, res_telephone, res_email,
      res_religion, res_citizenship, res_elementary, res_highSchool, res_college)
     VALUES('$res_reglastname', '$res_regfirstname', '$res_regmiddleName', '$res_regusername', '$res_regspouseName','$res_regpassword', '$res_regbirthMonth', 
-    '$res_regbirthDay', '$res_regbirthYear','$res_regAge', '$res_regPurok','$res_regaddress','$res_regbirthPlace', '$res_regSex', '$res_regcivilStatus', '$res_regVoterStatus', 
-    '$res_regcellphone_number','$res_regtelephone_number', '$res_regemail','$res_regreligion','$res_regcitizenship','$res_regElementary','$res_reghighSchool,'$res_regCollege');";
+    '$res_regbirthDay', '$res_regbirthYear', '$res_regAge', '$res_regPurok', '$res_regaddress', '$res_regbirthPlace', '$res_regSex', '$res_regcivilStatus', '$res_regVoterStatus', 
+    '$res_regcellphone_number', '$res_regtelephone_number', '$res_regemail', '$res_regreligion', '$res_regcitizenship', '$res_regElementary', '$res_reghighSchool', '$res_regCollege');";
 
-    mysqli_query($conn, $sql);
+    mysqli_query($conn, $res_sql);
 
     header('Location: ResidentPortal_logIn.php');
 }
 
-
 if(isset($_POST['res_logIn']))
 {
     $res_logIn_Username = $_POST['res_logIn_Username'];
-    $res_logIn_password = $_POST['res_logIn_password'];
+    $res_logIn_password= $_POST['res_logIn_password'];
     $res_sql= "SELECT * FROM resident_info WHERE res_alias='$res_logIn_Username' AND res_password='$res_logIn_password'";
     $res_info = mysqli_query($conn, $res_sql);
     if (mysqli_num_rows($res_info) == 1){
         while($qResult = mysqli_fetch_assoc($res_info)){
-            $res_reglastname = $qResult['res_lastname'];
-            $res_regfirstname = $qResult['res_firstname'];
-            $res_regmiddleName = $qResult['res_middleName'];
-            $res_regusername = $qResult['res_alias'];
-            $res_regspouseName = $qResult['res_spouseName'];
-            $res_regpassword = $qResult['res_password'];
-            $res_regbirthMonth = $qResult['res_birthMonth'];
-            $res_regbirthDay = $qResult['res_birthDay'];
-            $res_regbirthYear = $qResult['res_birthYear'];
-            $res_regAge = $qResult['res_age'];
-            $res_regPurok = $qResult['res_purok'];
-            $res_regaddress = $qResult['res_address'];
-            $res_regbirthPlace = $qResult['res_birthPlace'];
-            $res_regSex = $qResult['res_gender'];
-            $res_regcivilStatus = $qResult['res_civilStatus'];
-            $res_regVoterStatus = $qResult['res_voterStatus'];
-            $res_regcellphone_number = $qResult['res_phoneNumber'];
-            $res_regtelephone_number = $qResult['res_telephone'];
-            $res_regemail = $qResult['res_email'];
-            $res_regusername = $qResult['res_alias'];
-            $res_regreligion = $qResult['res_religion'];
-            $res_regcitizenship = $qResult['res_citizenship'];
-            $res_regElementary = $qResult['res_elementary'];
-            $res_reghighSchool= $qResult['res_highSchool'];
-            $res_regCollege = $qResult['res_College'];
+                    $res_lastName = $qResult['res_lastName'];
+                    $res_firstaName= $qResult['res_firstaName'];
+                    $res_middleName = $qResult['res_middleName'];
+                    $res_alias = $qResult['res_alias'];
+                    $res_spouseName = $qResult['res_spouseName'];
+                    $res_password = $qResult['res_password'];
+                    $res_birthMonth= $qResult['res_birthMonth'];
+                    $res_birthDate = $qResult['res_birthDate'];
+                    $res_birthYear = $qResult['res_birthYear'];
+                    $res_age = $qResult['res_age'];
+                    $res_purok = $qResult['res_purok'];
+                    $res_address = $qResult['res_address'];
+                    $res_birthPlace = $qResult['res_birthPlace'];
+                    $res_gender = $qResult['res_gender'];
+                    $res_civilStatus = $qResult['res_civilStatus'];
+                    $res_voterStatus = $qResult['res_voterStatus'];
+                    $res_phoneNumber = $qResult['res_phoneNumber'];
+                    $res_telephone = $qResult['res_telephone'];
+                    $res_email = $qResult['res_email'];
+                    $res_religion = $qResult['res_religion'];
+                    $res_citizenship = $qResult['res_citizenship'];
+                    $res_elementary = $qResult['res_elementary'];
+                    $res_highSchool = $qResult['res_highSchool'];
+                    $res_college = $qResult['res_college'];
                 }
-
         session_start();
-        $_SESSION['res_lastname'] = $res_reglastname;
-        $_SESSION['res_firstname'] = $res_regfirstname;
-        $_SESSION['res_middleName'] = $res_regmiddleName;
-        $_SESSION['res_alias'] = $res_regusername;
-        $_SESSION['res_spouseName'] = $res_regspouseName;
-        $_SESSION['res_password'] = $res_regpassword ;
-        $_SESSION['res_birthMonth'] = $res_regbirthMonth;
-        $_SESSION['res_birthDay'] = $res_regbirthDay;
-        $_SESSION['res_birthYear'] = $res_regbirthYear;
-        $_SESSION['res_age'] = $res_regAge;
-        $_SESSION['res_purok'] = $res_regPurok ;
-        $_SESSION['res_address'] = $res_regaddress;
-        $_SESSION['res_birthPlace'] = $res_regbirthPlace;
-        $_SESSION['res_gender'] = $res_regSex ;
-        $_SESSION['res_civilStatus'] = $res_regcivilStatus;
-        $_SESSION['res_voterStatus'] = $res_regVoterStatus ;
-        $_SESSION['res_phoneNumber'] = $res_regcellphone_number;
-        $_SESSION['res_telephone'] =  $res_regtelephone_number ;
-        $_SESSION['res_email'] = $res_regemail;
-        $_SESSION['res_religion'] =$res_regreligion ;
-        $_SESSION['res_citizenship'] =$res_regcitizenship ;
-        $_SESSION['res_elementary'] = $res_regElementary ;
-        $_SESSION['res_highSchool'] = $res_reghighSchool;
-        $_SESSION['res_College'] = $res_regCollege ;
+        $_SESSION['res_lastName'] = $res_lastName;
+        $_SESSION['res_firstaName'] = $res_firstaName;
+        $_SESSION['res_middleName'] = $res_middleName;
+        $_SESSION['res_alias'] = $res_alias;
+        $_SESSION['res_spouseName'] = $res_spouseName;
+        $_SESSION['res_password'] = $res_password;
+        $_SESSION['res_birthMonth'] = $res_birthMonth;
+        $_SESSION['res_birthDate'] = $res_birthDate;
+        $_SESSION['res_birthYear'] = $res_birthYear;
+        $_SESSION['res_age'] = $res_age;
+        $_SESSION['res_purok'] = $res_purok;
+        $_SESSION['res_address'] = $res_address; 
+        $_SESSION['res_birthPlace'] = $res_birthPlace;
+        $_SESSION['res_gender'] = $res_gender;
+        $_SESSION['res_civilStatus'] = $res_civilStatus;
+        $_SESSION['res_voterStatus'] = $res_voterStatus;
+        $_SESSION['res_phoneNumber'] = $res_phoneNumber;
+        $_SESSION['res_telephone'] = $res_telephone;
+        $_SESSION['res_email'] = $res_email;
+        $_SESSION['res_religion'] = $res_religion;
+        $_SESSION['res_citizenship'] = $res_citizenship;
+        $_SESSION['res_elementary'] = $res_elementary;
+        $_SESSION['res_highSchool'] = $res_highSchool;
+        $_SESSION['res_college'] = $res_college;
         header('Location: ResidentDashboard.php');
     }
     else if (mysqli_num_rows($res_info) < 1){
-        echo '<script>alert("User Name or Password.")
-        window.location.href="ResidentPortal_login.php";
+        echo '<script>alert("Wrong username or Password.")
+        window.location.href=" ResidentPortal_logIn.php";
         </script>';
     }
 }
+
+
+
+
+
 
 if(isset($_POST['btn_adminRegister']))
 {
