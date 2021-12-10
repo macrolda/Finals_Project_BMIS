@@ -45,7 +45,7 @@ if(isset($_POST['btnres_register']))
 
     mysqli_query($conn, $sql);
 
-    header('Location: index.php');
+    header('Location: ResidentPortal_logIn.php');
 }
 
 
@@ -125,16 +125,18 @@ if(isset($_POST['btn_adminRegister']))
     $adminRegLastName = $_POST['adminRegLastName'];
     $adminRegUsername = $_POST['adminRegUsername'];
     $adminRegPosition = $_POST['adminRegPosition'];
-    $res_regpassword = $adminRegLastName.$adminRegFirstName;
+    $admin_regpassword = $adminRegLastName.$adminRegFirstName;
     $adminRegBirthday = $_POST['adminRegBirthday'];
     $adminRegEmail= $_POST['adminRegEmail'];
 
-    $sql ="INSERT INTO admin_info (adminFirstName, adminMiddleName, adminLastname,adminUsername,
-    adminBirthday,	adminPosition, adminEmail, adminPassword,reg_date)
+    $admin_sql ="INSERT INTO admin_info (adminFirstName, adminMiddleName, adminLastname,adminUsername,
+    adminBirthday,	adminPosition, adminEmail, adminPassword)
     VALUES('$adminRegFirstName', '$adminRegMiddleName', '$adminRegLastName','$adminRegUsername ', 
-    '$adminRegBirthday', '$adminRegPosition','$adminRegEmail'', '$res_regpassword', );";
+    '$adminRegBirthday', '$adminRegPosition','$adminRegEmail', '$admin_regpassword');";
+   
+    mysqli_query($conn, $admin_sql);
+  
+    header('Location: AdminPortal_logIn.php');
 
-    mysqli_query($conn, $sql);
 
-    header('Location: index.php');
 }

@@ -18,7 +18,7 @@ require ("config.php");
 </head>
 <body>
     <div class="login-wrapper">
-        <form action="" class="form" name="admin_registrationForm" onsubmit="return regValidation()">
+        <form action="database.php" method="post" class="form" id="admin_registrationForm" name="admin_registrationForm" onsubmit="return regAdminValidation()">
             <img src="image\logo_1.png" alt="barangayLogo1">
             <h2>Administrator's Registration</h2>
                 <div class="col-12 input-group">
@@ -85,12 +85,12 @@ require ("config.php");
                     <label for="adminRegEmail">Email Address</label>
                 </div>
                 
-                <input 
-                type="submit"
-                value="Register Account" 
+                <button
+                type="submit" 
                 class="reg-btn" 
                 name="btn_adminRegister"
-                >
+                id= "btn_adminRegister"
+                >REGISTER ACCOUNT</button>
              
             </form>
         </div>

@@ -37,7 +37,8 @@ include ("config.php");
                 class="form" 
                 name="res_register" 
                 id="res_register" 
-                onsubmit="return regValidation()">
+                onsubmit="return regValidation()"
+                method="post">
                     <div class="container bootstrap snippet">
                         <div class="row">
                             <div class="col-12">

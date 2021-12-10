@@ -12,6 +12,7 @@ $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if ($conn === false) {
     die("ERROR: Could not connect. " . $mysqli->connect_error);
 }
+
 // sql to create table
 $sql = "CREATE TABLE IF NOT EXISTS admin_info (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -22,8 +23,7 @@ $sql = "CREATE TABLE IF NOT EXISTS admin_info (
     adminBirthday INT NOT NULL,
     adminPosition VARCHAR(30) NOT NULL,
     adminEmail VARCHAR(50),
-    adminPassword VARCHAR(50),
-    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    adminPassword VARCHAR(50)
     )";
     /*
     if ($conn->query($sql) === TRUE) {
@@ -32,4 +32,4 @@ $sql = "CREATE TABLE IF NOT EXISTS admin_info (
       echo "Error creating table: " . $conn->error;
     }*/
     
-    $conn->close();
+

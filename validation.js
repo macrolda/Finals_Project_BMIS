@@ -57,6 +57,35 @@ function regValidation()
   }
 }
 
+function regAdminValidation() 
+{
+  var email = document.forms["admin_registrationForm"]["adminRegEmail"];
+  var parts = email.value.split("@");
+
+  if (email.value == "")
+  {
+    window.alert("Please enter your e-mail.");
+    return false;
+  } 
+  else if (parts.length === 2)
+  {
+    console.log(parts[1]);
+    if (parts[1] === "gmail.com" || parts[1] === "yahoo.com")
+      {
+        return true;
+      } 
+    else
+    {
+      window.alert("Invalid domain. (use @gmail.com or @yahoo.com");
+      return false;
+    }
+  } 
+  else {
+    window.alert("E-mail error.");
+    return false;
+  }
+}
+
 $(document).ready(function() {
 
     

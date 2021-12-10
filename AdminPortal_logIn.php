@@ -18,7 +18,7 @@ require ("config.php");
 </head>
 <body>
     <div class="login-wrapper">
-        <form action="" class="form">
+        <form action="database.php" class="form" name="adminLogIn" >
             <img src="image\logo_1.png" alt="barangayLogo1">
             <h2>Administrator's Log-In</h2>
             <div class="input-group">
