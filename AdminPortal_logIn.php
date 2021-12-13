@@ -18,25 +18,25 @@ require ("config.php");
 </head>
 <body>
     <div class="login-wrapper">
-        <form action="database.php" class="form" name="adminLogIn" >
+        <form action="database.php" class="form" name="adminLogIn" method="post" onsubmit="return loginAdminValidation()">
             <img src="image\logo_1.png" alt="barangayLogo1">
             <h2>Administrator's Log-In</h2>
             <div class="input-group">
                 <input 
                 type="text" 
-                name="loginUser" 
-                id="loginUser" 
+                name="admin_loginUserName" 
+                id="admin_loginUserName" 
                 required>
-                <label for="loginUser">User Name</label>
+                <label for="admin_loginUserName">User Name</label>
             </div>
 
             <div class="input-group">
                 <input 
                 type="password" 
-                name="loginPassword" 
-                id="loginPassword" 
+                name="admin_loginPassword" 
+                id="admin_loginPassword" 
                 required>
-                <label for="loginPassword">Password</label>
+                <label for="admin_loginPassword">Password</label>
             </div>
 
             <a href="AdminForgotPassword.php" class="forgot-pw">Forgot Password?</a>
@@ -45,7 +45,8 @@ require ("config.php");
             type="submit"
             value="Login" 
             class="submit-btn" 
-            onclick="location='AdminDashboard.php'">
+            name="btn_adminLogin"
+            >
             
             <hr size = 2 noshade color=white>
 

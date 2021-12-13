@@ -144,9 +144,18 @@ include ("config.php");
                                                                     <label><h4>Birth Month</h4></label><br>
                                                                     <select id="res_profilebirthMonth" class="form-control" name="res_profilebirthMonth" required>
                                                                         <option selected disabled>Month</option>
-                                                                            <?php for($i=1;$i<=12;$i++){
-                                                                            echo "<option value='$i'>".$i."</option>";
-                                                                            }?>
+                                                                        <option value="01" <?php echo ($_SESSION['res_birthMonth']=='01')?('selected'):(''); ?>>January </option>
+                                                                        <option value="02" <?php echo ($_SESSION['res_birthMonth']=='02')?('selected'):(''); ?>>February </option>
+                                                                        <option value="03" <?php echo ($_SESSION['res_birthMonth']=='03')?('selected'):(''); ?>>March</option>
+                                                                        <option value="04" <?php echo ($_SESSION['res_birthMonth']=='04')?('selected'):(''); ?>>April </option>
+                                                                        <option value="05" <?php echo ($_SESSION['res_birthMonth']=='05')?('selected'):(''); ?>>May </option>
+                                                                        <option value="06" <?php echo ($_SESSION['res_birthMonth']=='06')?('selected'):(''); ?>>June </option>
+                                                                        <option value="07" <?php echo ($_SESSION['res_birthMonth']=='07')?('selected'):(''); ?>>July</option>
+                                                                        <option value="08" <?php echo ($_SESSION['res_birthMonth']=='08')?('selected'):(''); ?>>August </option>
+                                                                        <option value="09" <?php echo ($_SESSION['res_birthMonth']=='09')?('selected'):(''); ?>>September </option>
+                                                                        <option value="10" <?php echo ($_SESSION['res_birthMonth']=='10')?('selected'):(''); ?>>October </option>
+                                                                        <option value="11" <?php echo ($_SESSION['res_birthMonth']=='11')?('selected'):(''); ?>>November</option>
+                                                                        <option value="12" <?php echo ($_SESSION['res_birthMonth']=='12')?('selected'):(''); ?>>December</option>
                                                                     </select>
                                                                 </div>
 
@@ -154,9 +163,38 @@ include ("config.php");
                                                                     <label><h4>Birth Day</h4></label><br>
                                                                     <select id="res_profilebirthDay" class="form-control" name="res_profilebirthDay" required>
                                                                         <option selected disabled>Day</option>
-                                                                            <?php for($i=1;$i<=31;$i++){
-                                                                            echo "<option value='$i'>".$i."</option>";
-                                                                            }?>
+                                                                        <option value="01" <?php echo ($_SESSION['res_birthDate']=='01')?('selected'):(''); ?>>01</option>
+                                                                        <option value="02" <?php echo ($_SESSION['res_birthDate']=='02')?('selected'):(''); ?>>02</option>
+                                                                        <option value="03" <?php echo ($_SESSION['res_birthDate']=='03')?('selected'):(''); ?>>03</option>
+                                                                        <option value="04" <?php echo ($_SESSION['res_birthDate']=='04')?('selected'):(''); ?>>04</option>
+                                                                        <option value="05" <?php echo ($_SESSION['res_birthDate']=='05')?('selected'):(''); ?>>05</option>
+                                                                        <option value="06" <?php echo ($_SESSION['res_birthDate']=='06')?('selected'):(''); ?>>06</option>
+                                                                        <option value="07" <?php echo ($_SESSION['res_birthDate']=='07')?('selected'):(''); ?>>07</option>
+                                                                        <option value="08" <?php echo ($_SESSION['res_birthDate']=='08')?('selected'):(''); ?>>08</option>
+                                                                        <option value="09" <?php echo ($_SESSION['res_birthDate']=='09')?('selected'):(''); ?>>09</option>
+                                                                        <option value="10" <?php echo ($_SESSION['res_birthDate']=='10')?('selected'):(''); ?>>10</option>
+                                                                        <option value="11" <?php echo ($_SESSION['res_birthDate']=='11')?('selected'):(''); ?>>11</option>
+                                                                        <option value="12" <?php echo ($_SESSION['res_birthDate']=='12')?('selected'):(''); ?>>12</option>
+                                                                        <option value="13" <?php echo ($_SESSION['res_birthDate']=='13')?('selected'):(''); ?>>13</option>
+                                                                        <option value="14" <?php echo ($_SESSION['res_birthDate']=='14')?('selected'):(''); ?>>14</option>
+                                                                        <option value="15" <?php echo ($_SESSION['res_birthDate']=='15')?('selected'):(''); ?>>15</option>
+                                                                        <option value="16" <?php echo ($_SESSION['res_birthDate']=='16')?('selected'):(''); ?>>16</option>
+                                                                        <option value="17" <?php echo ($_SESSION['res_birthDate']=='17')?('selected'):(''); ?>>17</option>
+                                                                        <option value="18" <?php echo ($_SESSION['res_birthDate']=='18')?('selected'):(''); ?>>18</option>
+                                                                        <option value="19" <?php echo ($_SESSION['res_birthDate']=='19')?('selected'):(''); ?>>19</option>
+                                                                        <option value="20" <?php echo ($_SESSION['res_birthDate']=='20')?('selected'):(''); ?>>20</option>
+                                                                        <option value="21" <?php echo ($_SESSION['res_birthDate']=='21')?('selected'):(''); ?>>21</option>
+                                                                        <option value="22" <?php echo ($_SESSION['res_birthDate']=='22')?('selected'):(''); ?>>22</option>
+                                                                        <option value="23" <?php echo ($_SESSION['res_birthDate']=='23')?('selected'):(''); ?>>23</option>
+                                                                        <option value="24" <?php echo ($_SESSION['res_birthDate']=='24')?('selected'):(''); ?>>24</option>
+                                                                        <option value="25" <?php echo ($_SESSION['res_birthDate']=='25')?('selected'):(''); ?>>25</option>
+                                                                        <option value="26" <?php echo ($_SESSION['res_birthDate']=='26')?('selected'):(''); ?>>26</option>
+                                                                        <option value="27" <?php echo ($_SESSION['res_birthDate']=='27')?('selected'):(''); ?>>27</option>
+                                                                        <option value="28" <?php echo ($_SESSION['res_birthDate']=='28')?('selected'):(''); ?>>28</option>
+                                                                        <option value="29" <?php echo ($_SESSION['res_birthDate']=='29')?('selected'):(''); ?>>29</option>
+                                                                        <option value="30" <?php echo ($_SESSION['res_birthDate']=='30')?('selected'):(''); ?>>30</option>
+                                                                        <option value="31" <?php echo ($_SESSION['res_birthDate']=='31')?('selected'):(''); ?>>31</option>
+                                                                
                                                                     </select>
                                                                 </div>
 
@@ -164,9 +202,20 @@ include ("config.php");
                                                                     <label><h4>Birth Year</h4></label><br>
                                                                     <select id="res_profilebirthYear" class="form-control" name="res_profilebirthYear" required>
                                                                         <option selected disabled>Year</option>
-                                                                            <?php for($i=1990;$i<=2015;$i++){
-                                                                            echo "<option value='$i'>".$i."</option>";
-                                                                            }?>
+                                                                        <option value="1990" <?php echo ($_SESSION['res_birthYear']=='1990')?('selected'):(''); ?>>1990</option>
+                                                                        <option value="1991" <?php echo ($_SESSION['res_birthYear']=='1991')?('selected'):(''); ?>>1991</option>
+                                                                        <option value="1992" <?php echo ($_SESSION['res_birthYear']=='1992')?('selected'):(''); ?>>1992</option>
+                                                                        <option value="1993" <?php echo ($_SESSION['res_birthYear']=='1993')?('selected'):(''); ?>>1993</option>
+                                                                        <option value="1994" <?php echo ($_SESSION['res_birthYear']=='1994')?('selected'):(''); ?>>1994</option>
+                                                                        <option value="1995" <?php echo ($_SESSION['res_birthYear']=='1995')?('selected'):(''); ?>>1995</option>
+                                                                        <option value="1996" <?php echo ($_SESSION['res_birthYear']=='1996')?('selected'):(''); ?>>1996</option>
+                                                                        <option value="1997" <?php echo ($_SESSION['res_birthYear']=='1997')?('selected'):(''); ?>>1997</option>
+                                                                        <option value="1998" <?php echo ($_SESSION['res_birthYear']=='1998')?('selected'):(''); ?>>1998</option>
+                                                                        <option value="1999" <?php echo ($_SESSION['res_birthYear']=='1999')?('selected'):(''); ?>>1999</option>
+                                                                        <option value="2000" <?php echo ($_SESSION['res_birthYear']=='2000')?('selected'):(''); ?>>2000</option>
+                                                                        <option value="2001" <?php echo ($_SESSION['res_birthYear']=='2001')?('selected'):(''); ?>>2001</option>
+                                                                        <option value="2002" <?php echo ($_SESSION['res_birthYear']=='2002')?('selected'):(''); ?>>2002</option>
+                                                                        <option value="2003" <?php echo ($_SESSION['res_birthYear']=='2003')?('selected'):(''); ?>>2003</option>
                                                                     </select>
                                                                 </div>
 
@@ -374,13 +423,13 @@ include ("config.php");
                                                             <div class="row">
                                                                 <div class="inputTitle col-5">
                                                                     <label><h4>Purok</h4></label>
-                                                                    <input
-                                                                    type="number" 
-                                                                    class="form-control" 
-                                                                    id="res_profilePurok"
-                                                                    name="res_profilePurok"
-                                                                    placeholder="Purok"
-                                                                    value= <?php echo $_SESSION['res_purok'];?>/>
+                                                                    <select id="res_profilePurok" class="form-control" name="res_profilePurok">
+                                                                            <option selected disabled>Purok</option>
+                                                                            <option value="1" <?php echo ($_SESSION['res_purok']=='1')?('selected'):(''); ?>>1</option>
+                                                                            <option value="2" <?php echo ($_SESSION['res_purok']=='2')?('selected'):(''); ?>>2</option>
+                                                                            <option value="3" <?php echo ($_SESSION['res_purok']=='3')?('selected'):(''); ?>>3</option>
+                                                                            <option value="4" <?php echo ($_SESSION['res_purok']=='4')?('selected'):(''); ?>>4</option>
+                                                                        </select>
                                                                 </div>
                                                             </div>
                                                         </div>

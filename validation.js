@@ -106,3 +106,20 @@ $(document).ready(function() {
       readURL(this);
   });
 });
+
+function loginAdminValidation()
+{
+  var loginUsername = document.forms["adminLogIn"]["admin_loginUserName"];
+  var loginPassword = document.forms["adminLogIn"]["admin_loginPassword"];
+
+  if (loginUsername == "")
+  {
+    window.alert("Input Username");
+    return false;
+  }
+  if (loginPassword == "")
+  {
+    window.alert("Input Password");
+    return false;
+  }
+}

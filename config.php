@@ -24,6 +24,7 @@ $sql = "CREATE TABLE IF NOT EXISTS admin_info (
     adminPosition VARCHAR(30) NOT NULL,
     adminEmail VARCHAR(50),
     adminPassword VARCHAR(50)
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
     /*
     if ($conn->query($sql) === TRUE) {
