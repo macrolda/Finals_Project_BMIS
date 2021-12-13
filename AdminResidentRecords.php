@@ -119,12 +119,7 @@
                                 <table class="table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>
-                                                <span class="custom-checkbox">
-                                                    <input type="checkbox" id="selectAll">
-                                                    <label for="selectAll"></label>
-                                                </span>
-                                            </th>
+
                                             <th>ResidentNumber</th>
                                             <th>FirstName</th>
                                             <th>MiddleName</th>
