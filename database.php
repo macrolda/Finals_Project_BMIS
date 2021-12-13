@@ -147,7 +147,7 @@ if(isset($_POST['btn_adminLogin']))
     $admin_sql= "SELECT * FROM admin_info WHERE adminUsername='$admin_loginUserName' AND adminPassword='$admin_loginPassword";
     $admin_info = mysqli_query($conn, $admin_sql);
     header('Location: AdminDashboard.php');
-    /*
+    
     if (mysqli_num_rows($admin_info) == 1)
     {
         while($qResult = mysqli_fetch_assoc($admin_info))
@@ -156,16 +156,7 @@ if(isset($_POST['btn_adminLogin']))
         header('Location: AdminDashboard.php');
         }
     }
-*/
+
 
 }
 
-if(isset($_POST['btnInfoDelete']))
-{
-    echo '<script>alert("Bye Bye!.") </script>';
-    $cEmail = $_POST['info-email'];
-    $getStudentNumber = $_POST['info-sNumber'];
-    $delete = "DELETE FROM student_info WHERE email = '$cEmail' AND sNumber = '$getStudentNumber';";
-    mysqli_query($conn, $delete);
-    header("Location: register.php");
-}

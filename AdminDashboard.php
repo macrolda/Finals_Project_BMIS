@@ -210,9 +210,8 @@
                                                     <label for="selectAll"></label>
                                                 </span>
                                             </th>
-                                            <th>Timestap</th>
-                                            <th>FirstName</th>
                                             <th>LastName</th>
+                                            <th>FirstName</th>
                                             <th>Position</th>
                                             <th>Username</th>
                                             <th>Email</th>
@@ -220,25 +219,31 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <span class="custom-checkbox">
-                                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                                    <label for="checkbox1"></label>
-                                                </span>
-                                            </td>
-                                            <th>{{time}}</th>
-                                            <th>Maria Ailah</th>
-                                            <th>Rolda</th>
-                                            <th>Admin</th>
-                                            <th>admin1</th>
-                                            <th>admin1@gmail.com</th>
-                                            <td>
-                                                <a href="#editResidentModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                                <a href="#deleteResidentModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                                <a href="#viewResidentModal" class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i></a>
-                                            </td>
-                                        </tr> 
+                                    <?php
+                                        include_once("config.php");
+                                        $getOfficials = "SELECT * FROM admin_info";
+                                        $result = mysqli_query($conn, $getOfficials);
+                                        if (mysqli_num_rows($result) > 0) {
+                                            while ($officials = mysqli_fetch_assoc($result)) {
+                                            $lastName = $officials['adminLastname'];
+                                            $firstName = $officials['adminFirstName'];
+                                            $position = $officials['adminPosition'];
+                                            $userName = $officials['adminUsername'];
+                                            $adminEmail = $officials['adminEmail'];
+                                            echo "<tr>"
+                                                . "<td>" . $officials['id']
+                                                . "</td><td>" . $officials['adminLastname']
+                                                . "</td><td>" . $officials['adminFirstName']
+                                                . "</td><td>" . $officials['adminPosition']
+                                                . "</td><td>" . $officials['adminUsername']
+                                                . "</td><td>" . $officials['adminEmail']
+                                                . "</td><td><button name='btnView' type='submit' value=" . $officials['id'] . " class='btn btn-success text-dark bg-gradient fa fa-eye'></button>
+                                                    <button name='btnEdit' type='submit' value=" . $officials['id'] . " class='btn btn-warning text-dark bg-gradient fa fa-edit'></button>
+                                                    <button name='btnDelete' type='submit' value=" . $officials['id'] . " class='btn btn-danger text-dark bg-gradient fa fa-trash'>".$officials['id']."</button></td>"
+                                                . "</tr>";
+                                            }
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

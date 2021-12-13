@@ -136,26 +136,33 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <span class="custom-checkbox">
-                                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                                    <label for="checkbox1"></label>
-                                                </span>
-                                            </td>
-                                            <th>12345678901</th>
-                                            <th>Maria Ailah</th>
-                                            <th>Confiado</th>
-                                            <th>Rolda</th>
-                                            <th>21</th>
-                                            <th>Female</th>
-                                            <th>Yes</th>
-                                            <td>
-                                                <a href="#editResidentModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                                <a href="#deleteResidentModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                                <a href="#viewResidentModal" class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i></a>
-                                            </td>
-                                        </tr> 
+                                        <?php
+                                        include_once("config.php");
+                                        $getResident = "SELECT * FROM resident_info";
+                                        $result = mysqli_query($conn, $getResident);
+                                        if (mysqli_num_rows($result) > 0) {
+                                            while ($resident = mysqli_fetch_assoc($result)) {
+                                            $lastName = $resident['res_lastName'];
+                                            $firstName = $resident['res_firstaName'];
+                                            $middleName = $resident['res_middleName'];
+                                            $age = $resident['res_age'];
+                                            $sex = $resident['res_gender'];
+                                            $voterStatus = $resident['res_voterStatus'];
+                                            echo "<tr>"
+                                                . "<td>" . $resident['user_id']
+                                                . "</td><td>" . $resident['res_lastName']
+                                                . "</td><td>" . $resident['res_firstaName']
+                                                . "</td><td>" . $resident['res_middleName']
+                                                . "</td><td>" . $resident['res_age']
+                                                . "</td><td>" . $resident['res_gender']
+                                                . "</td><td>" . $resident['res_voterStatus']
+                                                . "</td><td><button name='btnView' type='submit' value=" . $resident['user_id'] . " class='btn btn-success text-dark bg-gradient fa fa-eye'></button>
+                                                    <button name='btnEdit' type='submit' value=" . $resident['user_id'] . " class='btn btn-warning text-dark bg-gradient fa fa-edit'></button>
+                                                    <button name='btnDelete' type='submit' value=" . $resident['user_id'] . " class='btn btn-danger text-dark bg-gradient fa fa-trash'>".$resident['user_id']."</button></td>"
+                                                . "</tr>";
+                                            }
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -184,7 +191,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                                        <input type="submit" class="btn btn-danger" value="Delete">
+                                        <input type="submit" class="btn btn-danger" value="Delete" name="btnInfoDelete">
                                     </div>
                                 </form>
                             </div>
