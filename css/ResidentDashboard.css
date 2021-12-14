@@ -37,7 +37,8 @@ p {
 }
 
 .brgyTitle{
-    text-transform: uppercase;
+    text-transform: none;
+    font-weight: 600;
     text-align: center;
     font-size: 1.2em;
 }
@@ -63,8 +64,6 @@ a:focus {
     text-transform: uppercase;
     font-weight: 600;
     color: #fff;
-    display: flex;
-    justify-content: center;
 }
 .barBtn
 {
@@ -143,7 +142,7 @@ a:focus {
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #3282B8;
 }
 
 #sidebar ul p {
@@ -236,25 +235,25 @@ a.article:hover {
     border-radius: 10px;
     border: none;
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,0.1), 0 0.9375rem 1.40625rem rgba(90,97,105,0.1), 0 0.25rem 0.53125rem rgba(90,97,105,0.12), 0 0.125rem 0.1875rem rgba(90,97,105,0.1);
 }
 .l-bg-cherry {
-    background: linear-gradient(to right, #493240, #f09) !important;
+    background: #C0392B !important;
     color: #fff;
 }
 .l-bg-blue-dark {
-    background: linear-gradient(to right, #373b44, #4286f4) !important;
+    background: #287db6 !important;
     color: #fff;
 }
 
 .l-bg-green-dark {
-    background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+    background: #16A085 !important;
     color: #fff;
 }
 
 .l-bg-orange-dark {
-    background: linear-gradient(to right, #a86008, #ffba56) !important;
+    background: #d6ae0b !important;
     color: #fff;
 }
 /*organizational chart*/
@@ -418,22 +417,12 @@ ol.organizational-chart > li > ol:after {
 }
 
 ol.organizational-chart > li > ol > li > div {
-    background-color: #3e4b62;
+    background-color: #566787;
 }
 
 /*** TERTIARY ***/
 ol.organizational-chart > li > ol > li > ol > li > div {
     background-color: #fd6470;
-}
-
-/*** QUATERNARY ***/
-ol.organizational-chart > li > ol > li > ol > li > ol > li > div {
-    background-color: #fca858;
-}
-
-/*** QUINARY ***/
-ol.organizational-chart > li > ol > li > ol > li > ol > li > ol > li > div {
-    background-color: #fddc32;
 }
 
 /*** MEDIA QUERIES ***/

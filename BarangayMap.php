@@ -72,8 +72,8 @@
                     <button type="button" id="sidebarCollapse" class="btn barBtn">
                         <i class="fas fa-align-justify"></i>
                     </button>
-                    <h2 id="navHeader">Barangay Tabunok's Information</h2>
                 </div>
+                <h2 class="col-12" id="navHeader">Barangay Tabunok's Information</h2>
             </nav>
 
 
@@ -130,7 +130,7 @@
                                     <h2 class="mb-0"><i class="far fa-clone pr-1"></i>Barangay Map/Location</h2>
                                 </div>
                                 <div class="card-body pt-0">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.15134621741!2d127.04850181531054!3d37.527929479805145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca47916d6cee9%3A0xaf7f92be5acffa56!2sSM%20Entertainment%20Studio%20Center!5e0!3m2!1sen!2sph!4v1638730474337!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15703.87331693718!2d123.83321282739236!3d10.264135432725087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99cffe8504c7d%3A0x813c9586130f9183!2sTabunok%2C%20Antuwanga%2C%20Talisay%2C%20Cebu!5e0!3m2!1sen!2sph!4v1639514215510!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                                 </div>
                                
                             </div>

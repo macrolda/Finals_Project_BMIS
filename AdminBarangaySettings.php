@@ -50,18 +50,12 @@
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Document Records</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="CertificateTemplates/DocumentRecord_Clearance.php">Barangay Clearance</a>
+                            <a href="AdminBarangayClearance.php">Barangay Clearance</a>
                         </li>
                         <li>
-                            <a href="CertificateTemplates/DocumentRecord_Permit.php">Barangay Permit</a>
-                        </li>
-                        <li>
-                            <a href="CertificateTemplates/DocumentRecord_Residency.php">Certificate of Residency</a>
+                            <a href="AdminResidencyCertificate.php">Certificate of Residency</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="CertificateTemplates/DocumentRequest.php">Document Request</a>
                 </li>
                 <li class="active">
                     <a href="AdminBarangaySettings.php">Barangay Settings</a>
@@ -86,8 +80,8 @@
                     <button type="button" id="sidebarCollapse" class="btn barBtn">
                         <i class="fas fa-align-justify"></i>
                     </button>
-                    <h2 id="navHeader">Barangay Tabunok's Barangay Settings</h2>
                 </div>
+                <h2 class="col-12" id="navHeader">Barangay Tabunok's Barangay Settings</h2>
             </nav>
 
             <div class="container-fluid">

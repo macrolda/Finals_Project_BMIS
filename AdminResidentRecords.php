@@ -14,7 +14,7 @@
     <title>Admin | Resident Records</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/AdminResidentRecords.css">
+    <link rel="stylesheet" href="css/AdminDashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -22,7 +22,6 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <link rel="icon" type="image/png" sizes="32x32" href="image/logo_1.png">
 </head>
@@ -55,18 +54,12 @@
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Document Records</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="CertificateTemplates/DocumentRecord_Clearance.php">Barangay Clearance</a>
+                            <a href="AdminBarangayClearance.php">Barangay Clearance</a>
                         </li>
                         <li>
-                            <a href="CertificateTemplates/DocumentRecord_Permit.php">Barangay Permit</a>
-                        </li>
-                        <li>
-                            <a href="CertificateTemplates/DocumentRecord_Residency.php">Certificate of Residency</a>
+                            <a href="AdminResidencyCertificate.php">Certificate of Residency</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="CertificateTemplates/DocumentRequest.php">Document Request</a>
                 </li>
                 <li>
                     <a href="AdminBarangaySettings.php">Barangay Settings</a>
@@ -84,20 +77,19 @@
                 </li>
             </ul>
         </nav>
-        
+        <!-- Page Content  -->
         <div id="content">
-            <nav class="navbar navbar-expand-lg ">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn barBtn">
                         <i class="fas fa-align-justify"></i>
                     </button>
-                    <h2 id="navHeader">Barangay Tabunok's Resident Records</h2>
                 </div>
+                <h2 class="col-12" id="navHeader">Barangay Tabunok's Resident Records</h2>
             </nav>
 
             <div class="container-fluid">
                 <section>
-                    <div class="container">
                         <div class="table-responsive">
                             <div class="table-wrapper">
                                 <div class="table-title">
@@ -119,7 +111,12 @@
                                 <table class="table table-striped table-hover">
                                     <thead>
                                         <tr>
-
+                                            <th>
+                                                <span class="custom-checkbox">
+                                                    <input type="checkbox" id="selectAll">
+                                                    <label for="selectAll"></label>
+                                                </span>
+                                            </th>
                                             <th>ResidentNumber</th>
                                             <th>FirstName</th>
                                             <th>MiddleName</th>
@@ -131,70 +128,42 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                        include_once("config.php");
-                                        $getResident = "SELECT * FROM resident_info";
-                                        $result = mysqli_query($conn, $getResident);
-                                        if (mysqli_num_rows($result) > 0) {
-                                            while ($resident = mysqli_fetch_assoc($result)) {
-                                            $lastName = $resident['res_lastName'];
-                                            $firstName = $resident['res_firstaName'];
-                                            $middleName = $resident['res_middleName'];
-                                            $age = $resident['res_age'];
-                                            $sex = $resident['res_gender'];
-                                            $voterStatus = $resident['res_voterStatus'];
-                                            echo "<tr>"
-                                                . "<td>" . $resident['user_id']
-                                                . "</td><td>" . $resident['res_lastName']
-                                                . "</td><td>" . $resident['res_firstaName']
-                                                . "</td><td>" . $resident['res_middleName']
-                                                . "</td><td>" . $resident['res_age']
-                                                . "</td><td>" . $resident['res_gender']
-                                                . "</td><td>" . $resident['res_voterStatus']
-                                                . "</td><td><button name='btnView' type='submit' value=" . $resident['user_id'] . " class='btn btn-success text-dark bg-gradient fa fa-eye'></button>
-                                                    <button name='btnEdit' type='submit' value=" . $resident['user_id'] . " class='btn btn-warning text-dark bg-gradient fa fa-edit'></button>
-                                                    <button name='btnDelete' type='submit' value=" . $resident['user_id'] . " class='btn btn-danger text-dark bg-gradient fa fa-trash'>".$resident['user_id']."</button></td>"
-                                                . "</tr>";
-                                            }
-                                        }
-                                        ?>
+                                    <td>
+                                                <span class="custom-checkbox">
+                                                    <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                    <label for="checkbox5"></label>
+                                                </span>
+                                            </td>
+                                            <td>Maria Ailah</td>
+                                            <td>Confiado</td>
+                                            <td>Rolda</td>
+                                            <td>Maria Ailah</td>
+                                            <td>Confiado</td>
+                                            <td>Rolda</td>
+                                            <td>Maria Ailah</td>
+                                            <td>
+                                                <a href='#viewResidentModal' class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xe8f4;</i></a>
+                                                <a href="#editResidentModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                <a class="delete" data-toggle="tooltip"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                            </td>
                                     </tbody>
                                 </table>
                             </div>
                         </div>        
                     </div>
+                    
                     <!-- Add Modal HTML -->
-                    <div id="addResidentModal" class="modal fade"> 
+                    <div id="addResidentModal" class="modal fade">
                         <?php include 'AdminAddResidentModal.php';?>
                     </div>
-                    <!-- Edit Modal HTML -->
-                    <div id="editResidentModal" class="modal fade">
-                        <?php include 'AdminEditResidentModal.php';?>
-                    </div>
-                    <!-- Delete Modal HTML -->
-                    <div id="deleteResidentModal" class="modal fade">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <form>
-                                    <div class="modal-header">						
-                                        <h4 class="modal-title">Delete Resident</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    </div>
-                                    <div class="modal-body">					
-                                        <p>Are you sure you want to delete these Records?</p>
-                                        <p class="text-warning"><small>This action cannot be undone.</small></p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                                        <input type="submit" class="btn btn-danger" value="Delete" name="btnInfoDelete">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- View Modal HTML -->
+
+                    <!-- view Modal HTML -->
                     <div id="viewResidentModal" class="modal fade">
                         <?php include 'AdminViewResidentModal.php';?>
+                    </div>
+                    <!-- edit Modal HTML -->
+                    <div id="editResidentModal" class="modal fade">
+                        <?php include 'AdminEditResidentModal.php';?>
                     </div>
                 </section>
             </div>
@@ -235,6 +204,12 @@
         var x = new Date()
         var x1= x.getMonth() + 1+ "/" + x.getDate() + "/" + x.getFullYear() + " - " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds();
         document.getElementById('datetime').innerHTML = x1;
+
+        // Delete row on delete button click
+        $(document).on("click", ".delete", function(){
+            $(this).parents("tr").remove();
+            $(".add-new").removeAttr("disabled");
+        });
     </script>
 </body>
 </html>

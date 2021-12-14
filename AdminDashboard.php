@@ -54,18 +54,12 @@
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Document Records</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="CertificateTemplates/DocumentRecord_Clearance.php">Barangay Clearance</a>
+                            <a href="AdminBarangayClearance.php">Barangay Clearance</a>
                         </li>
                         <li>
-                            <a href="CertificateTemplates/DocumentRecord_Permit.php">Barangay Permit</a>
-                        </li>
-                        <li>
-                            <a href="CertificateTemplates/DocumentRecord_Residency.php">Certificate of Residency</a>
+                            <a href="AdminResidencyCertificate.php">Certificate of Residency</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="CertificateTemplates/DocumentRequest.php">Document Request</a>
                 </li>
                 <li>
                     <a href="AdminBarangaySettings.php">Barangay Settings</a>
@@ -90,8 +84,8 @@
                     <button type="button" id="sidebarCollapse" class="btn barBtn">
                         <i class="fas fa-align-justify"></i>
                     </button>
-                    <h2 id="navHeader">Barangay Tabunok's Dashboard</h2>
                 </div>
+                <h2 class="col-12" id="navHeader">Barangay Tabunok's Dashboard</h2>
             </nav>
 
             <div class="container-fluid">
@@ -197,7 +191,7 @@
                                             </div>
                                         </div>
                                         <div class="col-4">
-                                            <a href="#addAdminModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Resident</span></a>
+                                            <a href="#addAdminModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Admin</span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -219,31 +213,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php
-                                        include_once("config.php");
-                                        $getOfficials = "SELECT * FROM admin_info";
-                                        $result = mysqli_query($conn, $getOfficials);
-                                        if (mysqli_num_rows($result) > 0) {
-                                            while ($officials = mysqli_fetch_assoc($result)) {
-                                            $lastName = $officials['adminLastname'];
-                                            $firstName = $officials['adminFirstName'];
-                                            $position = $officials['adminPosition'];
-                                            $userName = $officials['adminUsername'];
-                                            $adminEmail = $officials['adminEmail'];
-                                            echo "<tr>"
-                                                . "<td>" . $officials['id']
-                                                . "</td><td>" . $officials['adminLastname']
-                                                . "</td><td>" . $officials['adminFirstName']
-                                                . "</td><td>" . $officials['adminPosition']
-                                                . "</td><td>" . $officials['adminUsername']
-                                                . "</td><td>" . $officials['adminEmail']
-                                                . "</td><td><button name='btnView' type='submit' value=" . $officials['id'] . " class='btn btn-success text-dark bg-gradient fa fa-eye'></button>
-                                                    <button name='btnEdit' type='submit' value=" . $officials['id'] . " class='btn btn-warning text-dark bg-gradient fa fa-edit'></button>
-                                                    <button name='btnDelete' type='submit' value=" . $officials['id'] . " class='btn btn-danger text-dark bg-gradient fa fa-trash'>".$officials['id']."</button></td>"
-                                                . "</tr>";
-                                            }
-                                        }
-                                        ?>
+                                    <td>
+                                                <span class="custom-checkbox">
+                                                    <input type="checkbox" id="checkbox5" name="options[]" value="1">
+                                                    <label for="checkbox5"></label>
+                                                </span>
+                                            </td>
+                                            <td>Maria Ailah</td>
+                                            <td>Confiado</td>
+                                            <td>Rolda</td>
+                                            <td>Maria Ailah</td>
+                                            <td>Confiado</td>
+
+                                            <td>
+                                                <a href='#viewAdminModal' class="view" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xe8f4;</i></a>
+                                                <a href="#editAdminModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                                <a class="delete" data-toggle="tooltip"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                            </td>
                                     </tbody>
                                 </table>
                             </div>
@@ -309,89 +295,8 @@
                         </div>
                     </div>
 
-                    <!-- Edit Modal HTML -->
-                    <div id="editResidentModal" class="modal fade">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <form>
-                                    <div class="modal-header">						
-                                        <h4 class="modal-title">Edit Barangay Admin Information</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-                                        
-                                        <div class="col-12">
-                                            <div class="row">
-                                                <div class="col-4 form-group ">
-                                                    <label>First Name</label>
-                                                    <input type="text" class="form-control" required>
-                                                </div>
-                                                <div class="col-4 form-group ">
-                                                    <label>Middle Name</label>
-                                                    <input type="text" class="form-control" required>
-                                                </div>
-                                                <div class="col-4 form-group ">
-                                                    <label>Last Name</label>
-                                                    <input type="text" class="form-control" required>
-                                                </div>
-                                            </div>
-                                        </div>			
-                                        <div class="col-12 form-group">
-                                            <label>Birthday</label>
-                                            <input  type="date" name="adminRegBirthday" class="form-control" id="adminRegBirthday" required>
-                                        </div>
-
-                                        <div class="col-12 form-group">
-                                            <label>Barangay Position</label>
-                                            <input type="text" class="form-control" required>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <div class="row">
-                                                <div class="col-4 form-group">
-                                                    <label>Username</label>
-                                                    <input type="text" class="form-control" required>
-                                                </div>
-                                                <div class="col-8 form-group">
-                                                    <label>Email</label>
-                                                    <input type="email" class="form-control" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <input type="button" class="btn btn-info" data-dismiss="modal" value="Reset">
-                                        <input type="submit" class="btn btn-success" value="Edit">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Delete Modal HTML -->
-                    <div id="deleteResidentModal" class="modal fade">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <form>
-                                    <div class="modal-header">						
-                                        <h4 class="modal-title">Delete Resident</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    </div>
-                                    <div class="modal-body">					
-                                        <p>Are you sure you want to delete these Records?</p>
-                                        <p class="text-warning"><small>This action cannot be undone.</small></p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                                        <input type="submit" class="btn btn-danger" value="Delete">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- View Modal HTML -->
-                    <div id="viewResidentModal" class="modal fade">
+                    <!-- view Modal HTML -->
+                    <div id="viewAdminModal" class="modal fade">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <form>
@@ -405,21 +310,78 @@
                                             <div class="row">
                                                 <div class="col-4 form-group ">
                                                     <label>First Name</label>
-                                                    <input type="text" class="form-control" required>
+                                                    <input type="text" class="form-control" readonly>
                                                 </div>
                                                 <div class="col-4 form-group ">
                                                     <label>Middle Name</label>
-                                                    <input type="text" class="form-control" required>
+                                                    <input type="text" class="form-control" readonly>
                                                 </div>
                                                 <div class="col-4 form-group ">
                                                     <label>Last Name</label>
-                                                    <input type="text" class="form-control" required>
+                                                    <input type="text" class="form-control" readonly>
                                                 </div>
                                             </div>
                                         </div>			
                                         <div class="col-12 form-group">
                                             <label>Birthday</label>
-                                            <input  type="date" name="adminRegBirthday" class="form-control" id="adminRegBirthday" required>
+                                            <input  type="date" name="adminRegBirthday" class="form-control" id="adminRegBirthday" readonly>
+                                        </div>
+
+                                        <div class="col-12 form-group">
+                                            <label>Barangay Position</label>
+                                            <input type="text" class="form-control" readonly>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group">
+                                                    <label>Username</label>
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-8 form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="button" class="btn btn-info" data-dismiss="modal" value="Close">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- edit Modal HTML -->
+                    <div id="editAdminModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form>
+                                    <div class="modal-header">						
+                                        <h4 class="modal-title">Edit Barangay Admin Information</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group ">
+                                                    <label>First Name</label>
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Middle Name</label>
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Last Name</label>
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>			
+                                        <div class="col-12 form-group">
+                                            <label>Birthday</label>
+                                            <input  type="date" name="adminRegBirthday" class="form-control" id="adminRegBirthday" readonly>
                                         </div>
 
                                         <div class="col-12 form-group">
@@ -441,7 +403,8 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <input type="submit" class="btn btn-success" value="Close">
+                                        <input type="submit" class="btn btn-info" value="Confirm">
+                                        <input type="button" class="btn btn-danger" value="Reset">
                                     </div>
                                 </form>
                             </div>
@@ -485,6 +448,12 @@
         var x = new Date()
         var x1= x.getMonth() + 1+ "/" + x.getDate() + "/" + x.getFullYear() + " - " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds();
         document.getElementById('datetime').innerHTML = x1;
+
+        // Delete row on delete button click
+        $(document).on("click", ".delete", function(){
+            $(this).parents("tr").remove();
+            $(".add-new").removeAttr("disabled");
+        });
     </script>
 </body>
 </html>

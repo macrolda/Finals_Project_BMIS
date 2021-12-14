@@ -22,12 +22,12 @@
                             <div class="tab-content">
                                 <div class="tab-pane active" id="home">
                                     <label><h3 class="infoTitle">Personal Information</h3></label>
-                                        <hr size = 3 noshade color=black>
-                                        <div class="row">
+                                    <hr size = 3 noshade color=black>
+                                    <div class="row">
                                             <div class="col-3 inputTitle">
                                                 <div class="text-center">
                                                     <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="user_image">
-                                                    <h6>Upload a photo or use your camera</h6>
+                                                    <h6>Upload a photo</h6>
                                                     <input type="file" class="text-center center-block file-upload upload_image">
                                                 </div>
                                             </div>
@@ -123,9 +123,6 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-
-                                                            <div class="col-6">
                                                                 <div class="col-12">
                                                                     <div class="row">
                                                                         <div class="col-6 inputTitle">
@@ -150,7 +147,9 @@
                                                                         </div> 
                                                                     </div> 
                                                                 </div>
-                                                                 
+                                                            </div>
+
+                                                            <div class="col-6">
                                                                 <div class="col-12 inputTitle">
                                                                     <label><h5>Spouse Name</h5></label>
                                                                     <input 
@@ -189,6 +188,35 @@
                                                                             <option selected disabled>Voter Status</option>
                                                                             <option value="Voter">Voter</option>
                                                                             <option value="Not">Not</option>
+                                                                        </select>
+                                                                </div>
+
+                                                                <div class="col-12 inputTitle">
+                                                                    <label><h5>Occupation:</h5></label><br>
+                                                                    <input 
+                                                                    type="text" 
+                                                                    class="form-control" 
+                                                                    name="res_occupation" 
+                                                                    id="res_occupation" 
+                                                                    placeholder="Occupation"
+                                                                    required/>
+                                                                </div>
+                                                                <div class="col-12 inputTitle">
+                                                                    <label><h5>Sector </h5></label><br>
+                                                                        <select id="res_sector" class="form-control" name="res_sector" required>
+                                                                            <option selected disabled>Sector</option>
+                                                                            <option value="Private">Private</option>
+                                                                            <option value="Public">Public</option>
+                                                                            <option value="Government">Government</option>
+                                                                            <option value="Unemployed">Unemployed</option>
+                                                                            <option value="Out of School Youth (OSY)">Out of School Youth (OSY)</option>
+                                                                            <option value="Out of School Children (OSC)">Out of School Children (OSC)</option>
+                                                                            <option value="Person with Disability (PWD)">Person with Disability (PWD)</option>
+                                                                            <option value="Senior Citizen (SC)">Senior Citizen (SC)</option>
+                                                                            <option value="Overseas Filipino Worker (OFW)">Gov Overseas Filipino Worker (OFW)</option>
+                                                                            <option value="Solo Parent">Solo Parent</option>
+                                                                            <option value="Indigenous People (IP)">Indigenous People (IP)</option>
+                                                                            <option value="Others">Others</option>
                                                                         </select>
                                                                 </div>
                                                             </div>
@@ -238,65 +266,32 @@
                                             </div>
 
                                             <div class="col-12">
-                                            <label><h3 class="infoTitle contactTitle">Contact Information</h3></label>
-                                            <hr size = 3 noshade color=black>
-                                                <div class="form-group">
-                                                    <div class="col-12">
-                                                        <div class="row">
-                                                            <div class="col-6">
-                                                                <div class="inputTitle col-12">
-                                                                    <label><h5>Cellphone Number</h5></label>
-                                                                    <input 
-                                                                    type="number" 
+                                                <label><h3 class="infoTitle contactTitle">Contact Information</h3></label>
+                                                <hr size = 3 noshade color=black>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="form-group">    
+                                                            <div class="row">
+                                                                <div class="col-12 inputTitle">
+                                                                    <label><h5>City Address</h5></label>
+                                                                    <textarea 
+                                                                    type="textarea" 
                                                                     class="form-control" 
-                                                                    name="res_regcellphone_number" 
-                                                                    id="res_regcellphone_number" 
-                                                                    placeholder="Cellphone Number"
-                                                                    required/>
+                                                                    name="res_cityaddress" 
+                                                                    id="res_cityaddress" 
+                                                                    placeholder="City Address"
+                                                                    required></textarea>
                                                                 </div>
-                                                                
-                                                                <div class="inputTitle col-12">
-                                                                    <label><h5>Telephone Number</h4></label>
-                                                                    <input 
-                                                                    type="number" 
-                                                                    class="form-control" 
-                                                                    name="res_regtelephone_number" 
-                                                                    id="res_regtelephone_number" 
-                                                                    placeholder="Telephone Number"/>
-                                                                </div>
-                                                            
-                                                                <div class="inputTitle col-12">
-                                                                    <label><h5>Username</h4></label><br>
-                                                                        <input 
-                                                                        type="text" 
-                                                                        class="form-control" 
-                                                                        name="res_regusername" 
-                                                                        id="res_regusername" 
-                                                                        placeholder="User Name"
-                                                                        required/>
-                                                                </div>
-                                                            </div> 
 
-                                                            <div class="col-6">
-                                                                <div class="inputTitle col-12">
-                                                                    <label><h5>Email Address</h5></label>
-                                                                    <input 
-                                                                    type="email" 
+                                                                <div class="col-12 inputTitle ">
+                                                                    <label><h5>Provincial Address</h5></label>
+                                                                    <textarea 
+                                                                    type="textarea" 
                                                                     class="form-control" 
-                                                                    name="res_regemail" 
-                                                                    id="res_regemail" 
-                                                                    placeholder="Email Address"
-                                                                    required/>
-                                                                </div>
-                                                                <div class="inputTitle col-12">
-                                                                    <label><h5>Address</h5></label>
-                                                                    <input
-                                                                    type="text" 
-                                                                    class="form-control" 
-                                                                    id="res_regaddress"
-                                                                    name="res_regaddress"
-                                                                    placeholder="Address"
-                                                                    required/>
+                                                                    name="res_provincialaddress" 
+                                                                    id="res_provincialaddress" 
+                                                                    placeholder="Provincial Address"
+                                                                    required></textarea>
                                                                 </div>
 
                                                                 <div class="inputTitle col-12">
@@ -311,11 +306,59 @@
 
                                                             </div>
                                                         </div>
-                                                    
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="form-group">    
+                                                            <div class="row">
+                                                                <div class="inputTitle col-12">
+                                                                    <label><h5>Cellphone Number</h5></label>
+                                                                    <input 
+                                                                    type="number" 
+                                                                    class="form-control" 
+                                                                    name="res_regcellphone_number" 
+                                                                    id="res_regcellphone_number" 
+                                                                    placeholder="Cellphone Number"
+                                                                    required/>
+                                                                </div>
+                                                                
+                                                                <div class="inputTitle col-12">
+                                                                    <label><h5>Telephone Number</h5></label>
+                                                                    <input 
+                                                                    type="number" 
+                                                                    class="form-control" 
+                                                                    name="res_regtelephone_number" 
+                                                                    id="res_regtelephone_number" 
+                                                                    placeholder="Telephone Number"/>
+                                                                </div>
+
+                                                                <div class="inputTitle col-4">
+                                                                    <label><h5>Username</h5></label><br>
+                                                                        <input 
+                                                                        type="text" 
+                                                                        class="form-control" 
+                                                                        name="res_regusername" 
+                                                                        id="res_regusername" 
+                                                                        placeholder="User Name"
+                                                                        required/>
+                                                                    </div>
+                                                                <div class="inputTitle col-8">
+                                                                    <label><h5>Email Address</h4></label>
+                                                                    <input 
+                                                                    type="email" 
+                                                                    class="form-control" 
+                                                                    name="res_regemail" 
+                                                                    id="res_regemail" 
+                                                                    placeholder="Email Address"
+                                                                    required/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                        </div>
+                                            </div>
                                     </div>
+                                </div>            
+                            </div>        
                         </div>
                     </form>
 					<div class="modal-footer">

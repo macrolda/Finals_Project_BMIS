@@ -71,29 +71,18 @@ include ("config.php");
                     <button type="button" id="sidebarCollapse" class="btn barBtn">
                         <i class="fas fa-align-justify"></i>
                     </button>
-                    <h2 id="navHeader">Documents Request</h2>
                 </div>
+                <h2 Class="col-12" id="navHeader">Documents Request</h2>
             </nav>
             <div class="container-fluid">
                 <section>
                     <div class="containerr">
+                        
                         <div class="card">
                             <div class="box">
                                 <div class="content">
                                     <h2>01</h2>
-                                    <h3>Barangay Permit</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
-                                    <a href="CertificateTemplates/permit_print.php">Get It Here</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="box">
-                                <div class="content">
-                                    <h2>02</h2>
-                                    <h3>Certificate of Indigency</h3>
+                                    <h3>Certificate of Residency</h3>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
                                     <a href="CertificateTemplates/residency_print.php">Get It Here</a>
                                 </div>
@@ -103,7 +92,7 @@ include ("config.php");
                         <div class="card">
                             <div class="box">
                                 <div class="content">
-                                    <h2>03</h2>
+                                    <h2>02</h2>
                                     <h3>Barangay Clearance</h3>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
                                     <a href="CertificateTemplates/clearance_print.php">Get It Here</a>

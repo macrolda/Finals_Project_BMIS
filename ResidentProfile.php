@@ -72,8 +72,9 @@ include ("config.php");
                     <button type="button" id="sidebarCollapse" class="btn barBtn">
                         <i class="fas fa-align-justify"></i>
                     </button>
-                    <h2 id="navHeader">Resident's Profile</h2>
+                    
                 </div>
+                <h2 class="col-12" id="navHeader">Resident's Profile</h2>
             </nav>
             
             <div class="container-fluid">
@@ -112,7 +113,7 @@ include ("config.php");
                                                                         name="res_profilefirstname" 
                                                                         id="res_profilefirstname" 
                                                                         placeholder="First Name"
-                                                                        value= <?php echo $_SESSION['res_firstaName'];?>
+                                                                        value= <?php echo $_SESSION['res_firstName'];?>
                                                                         readonly/>
                                                                 </div>
 
@@ -308,6 +309,35 @@ include ("config.php");
                                                                             <option value="Not" <?php echo ($_SESSION['res_voterStatus']=='Not')?('selected'):(''); ?>>Not</option>
                                                                         </select>
                                                                 </div>
+
+                                                                <div class="col-6 inputTitle">
+                                                            <label><h4>Occupation:</h4></label><br>
+                                                            <input 
+                                                            type="text" 
+                                                            class="form-control" 
+                                                            name="res_occupation" 
+                                                            id="res_occupation" 
+                                                            placeholder="Occupation"
+                                                            required/>
+                                                        </div>
+                                                        <div class="col-6 inputTitle">
+                                                            <label><h4>Sector </h4></label><br>
+                                                                <select id="res_sector" class="form-control" name="res_sector" required>
+                                                                    <option selected disabled>Sector</option>
+                                                                    <option value="Private">Private</option>
+                                                                    <option value="Public">Public</option>
+                                                                    <option value="Government">Government</option>
+                                                                    <option value="Unemployed">Unemployed</option>
+                                                                    <option value="Out of School Youth (OSY)">Out of School Youth (OSY)</option>
+                                                                    <option value="Out of School Children (OSC)">Out of School Children (OSC)</option>
+                                                                    <option value="Person with Disability (PWD)">Person with Disability (PWD)</option>
+                                                                    <option value="Senior Citizen (SC)">Senior Citizen (SC)</option>
+                                                                    <option value="Overseas Filipino Worker (OFW)">Gov Overseas Filipino Worker (OFW)</option>
+                                                                    <option value="Solo Parent">Solo Parent</option>
+                                                                    <option value="Indigenous People (IP)">Indigenous People (IP)</option>
+                                                                    <option value="Others">Others</option>
+                                                                </select>
+                                                        </div>
                                                             </div>
                                                         </div>
                                                
@@ -357,10 +387,50 @@ include ("config.php");
                                                 <label><h3 class="infoTitle contactTitle">Contact Information</h3></label>
                                                 <hr size = 3 noshade color=black>
                                                 
-                                                    <div class="form-group">
-                                                        <div class="col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="form-group">    
                                                             <div class="row">
-                                                                <div class="inputTitle col-6">
+                                                                <div class="col-12 inputTitle">
+                                                                    <label><h4>City Address</h4></label>
+                                                                    <textarea 
+                                                                    type="textarea" 
+                                                                    class="form-control" 
+                                                                    name="res_cityaddress" 
+                                                                    id="res_cityaddress" 
+                                                                    placeholder="City Address"
+                                                                    required></textarea>
+                                                                </div>
+
+                                                                <div class="col-12 inputTitle ">
+                                                                    <label><h4>Provincial Address</h4></label>
+                                                                    <textarea 
+                                                                    type="textarea" 
+                                                                    class="form-control" 
+                                                                    name="res_provincialaddress" 
+                                                                    id="res_provincialaddress" 
+                                                                    placeholder="Provincial Address"
+                                                                    required></textarea>
+                                                                </div>
+
+                                                                <div class="inputTitle col-12">
+                                                                    <label><h4>Purok</h4></label>
+                                                                    <select id="res_profilePurok" class="form-control" name="res_profilePurok">
+                                                                        <option selected disabled>Purok</option>
+                                                                        <option value="1" <?php echo ($_SESSION['res_purok']=='1')?('selected'):(''); ?>>1</option>
+                                                                        <option value="2" <?php echo ($_SESSION['res_purok']=='2')?('selected'):(''); ?>>2</option>
+                                                                        <option value="3" <?php echo ($_SESSION['res_purok']=='3')?('selected'):(''); ?>>3</option>
+                                                                        <option value="4" <?php echo ($_SESSION['res_purok']=='4')?('selected'):(''); ?>>4</option>
+                                                                    </select>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="form-group">    
+                                                            <div class="row">
+                                                                <div class="inputTitle col-12">
                                                                     <label><h4>Cellphone Number</h4></label>
                                                                     <input 
                                                                     type="number" 
@@ -372,7 +442,7 @@ include ("config.php");
                                                                     required/>
                                                                 </div>
                                                                 
-                                                                <div class="inputTitle col-6">
+                                                                <div class="inputTitle col-12">
                                                                     <label><h4>Telephone Number</h4></label>
                                                                     <input 
                                                                     type="number" 
@@ -382,7 +452,7 @@ include ("config.php");
                                                                     placeholder="Telephone Number"
                                                                     value= <?php echo $_SESSION['res_telephone'];?>/>
                                                                 </div>
-                                                            
+
                                                                 <div class="inputTitle col-4">
                                                                     <label><h4>Username</h4></label><br>
                                                                         <input 
@@ -407,42 +477,17 @@ include ("config.php");
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="inputTitle">
-                                                                <label><h4>Address</h4></label>
-                                                                <input
-                                                                type="text" 
-                                                                class="form-control" 
-                                                                id="res_profileaddress"
-                                                                name="res_profileaddress"
-                                                                placeholder="Address"
-                                                                value= <?php echo $_SESSION['res_address'];?>
-                                                                required/>
-                                                            </div>
-                                                            
-                                                            <div class="row">
-                                                                <div class="inputTitle col-5">
-                                                                    <label><h4>Purok</h4></label>
-                                                                    <select id="res_profilePurok" class="form-control" name="res_profilePurok">
-                                                                            <option selected disabled>Purok</option>
-                                                                            <option value="1" <?php echo ($_SESSION['res_purok']=='1')?('selected'):(''); ?>>1</option>
-                                                                            <option value="2" <?php echo ($_SESSION['res_purok']=='2')?('selected'):(''); ?>>2</option>
-                                                                            <option value="3" <?php echo ($_SESSION['res_purok']=='3')?('selected'):(''); ?>>3</option>
-                                                                            <option value="4" <?php echo ($_SESSION['res_purok']=='4')?('selected'):(''); ?>>4</option>
-                                                                        </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
                                                     </div>
+                                                </div>    
                                                     
                                                     <div class="form-group">
                                                         <div class="col-xs-12">
-                                                                <br><br><br>
-                                                                <button class="btn btn-lg btn-warning btn-orange" type="submit" id="btnres_register" name="btnres_register">
-                                                                    <i class="glyphicon glyphicon-ok-sign"></i> Save
-                                                                </button>
-                                                                <br><br>
-                                                            </div>
+                                                            <br><br><br>
+                                                            <button class="btn btn-lg btn-warning btn-orange" type="submit" id="btnres_register" name="btnres_register">
+                                                                <i class="glyphicon glyphicon-ok-sign"></i> Save
+                                                            </button>
+                                                            <br><br>
+                                                        </div>
                                                     </div>
                                                 
                                             

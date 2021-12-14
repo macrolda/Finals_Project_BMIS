@@ -72,9 +72,10 @@ include ("config.php");
                     <button type="button" id="sidebarCollapse" class="btn barBtn">
                         <i class="fas fa-align-justify"></i>
                     </button>
-                    <h2 class="col-9" id="navHeader">Welcome to Barangay Tabunok's Dashboard</h2>
+                    
                         
                 </div>
+                <h2 class="col-12" id="navHeader">Welcome to Barangay Tabunok's Dashboard</h2>
             </nav>
             <div class="container-fluid">
                 <section>

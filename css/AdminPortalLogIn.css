@@ -133,3 +133,13 @@ body
     font-size: 16px;
     color: orange;
 }
+.forgot-pw {
+  color: #fff;
+  background-color: transparent;
+  text-decoration: none;
+}
+.forgot-pw:hover {
+    color: green;
+    background-color: transparent;
+    text-decoration: underline;
+}

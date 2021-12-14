@@ -37,7 +37,8 @@ p {
 }
 
 .brgyTitle{
-    text-transform: uppercase;
+    text-transform: none;
+    font-weight: 600;
     text-align: center;
     font-size: 1.2em;
 }
@@ -49,7 +50,6 @@ a:focus {
     text-decoration: none;
     transition: all 0.3s;
 }
-
 
 .navbar {
     padding: 15px 10px;
@@ -64,8 +64,6 @@ a:focus {
     text-transform: uppercase;
     font-weight: 600;
     color: #fff;
-    display: flex;
-    align-items: center;
 }
 .barBtn
 {
@@ -144,7 +142,7 @@ a:focus {
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #3282B8;
 }
 
 #sidebar ul p {
@@ -254,11 +252,11 @@ a.article:hover {
   }
   
 .containerr .card:nth-child(1) .box .content a {
-    background: #2196f3;
+    background: #C0392B;
   }
   
 .containerr .card:nth-child(2) .box .content a {
-    background: #e91e63;
+    background: #16A085;
   }
   
 .containerr .card:nth-child(3) .box .content a {
