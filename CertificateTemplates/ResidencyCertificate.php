@@ -1,10 +1,19 @@
 <?php
 require('fpdf17/fpdf.php');
-
+include_once("../config.php");
 
 //A4 width : 219mm
 //default margin : 10mm each side
 //writable horizontal : 219-(10*2)=189mm
+
+//$data_resident = "SELECT  res_lastName, res_firstName, res_middleName FROM resident_info";
+//$result_resident = $conn -> query($data_resident);
+
+session_start();
+$res_lastName = $_SESSION['res_lastName'];
+$res_firstName = $_SESSION['res_firstaName'];
+$res_middleName = $_SESSION['res_middleName'];
+$currentDate = date("F d, Y");
 
 $pdf = new FPDF('L','mm','A4');
 $pdf->AddPage();
@@ -30,7 +39,7 @@ $pdf->SetFont('Arial','',16);
 $pdf->Cell(0,5,'',0,9,'C');
 $pdf->Cell(0,5,'',0,10,'C');
 $pdf->Cell(0,5,'',0,11,'C');
-$pdf->Cell(0,5,'This is to certify that, .$firstName .$middleName .$lastName of legal age,',0,12,'C');
+$pdf->Cell(0,5,'This is to certify that,' .$res_firstName. " ".$res_middleName." " .$res_lastName.' that is of legal age,',0,12,'C');
 $pdf->Cell(0,5,'',5,13,'C');
 
 $pdf->SetFont('Arial','',16);
@@ -50,14 +59,14 @@ $pdf->Cell(0,5,'',5,23,'C');
 $pdf->Cell(0,5,'whatever legal purpose it may serve.',0,24,'C');
 $pdf->Cell(0,5,'',5,25,'C');
 
-$pdf->Cell(0,5,'Issued this .$currentDate, at Barangay Tabunok, Talisay City, Cebu.',5,27,'C');
+$pdf->Cell(0,5,'Issued this '.$currentDate. 'at Barangay Tabunok, Talisay City, Cebu.',5,27,'C');
 
 $pdf->Cell(0,5,'',5,28,'C');
 $pdf->Cell(0,5,'',5,29,'C');
 $pdf->Cell(0,5,'',5,30,'C');
 $pdf->Cell(0,5,'',5,31,'C');
 
-$pdf->Cell(0,5,'.$AdminFirstName .$AdminMiddleName .$AdminLastName',0,32,'R');
+$pdf->Cell(0,5,'captain',0,32,'R');
 $pdf->Cell(0,5,'______________________________',0,33,'R');
 $pdf->Cell(0,5,' Punong Barangay              ',0,34,'R');
 

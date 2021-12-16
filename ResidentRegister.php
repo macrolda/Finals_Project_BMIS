@@ -208,14 +208,14 @@ include ("config.php");
                                                             <input 
                                                             type="text" 
                                                             class="form-control" 
-                                                            name="res_occupation" 
-                                                            id="res_occupation" 
+                                                            name="res_regOccupation" 
+                                                            id="res_regOccupation" 
                                                             placeholder="Occupation"
                                                             required/>
                                                         </div>
                                                         <div class="col-6 inputTitle">
                                                             <label><h4>Sector </h4></label><br>
-                                                                <select id="res_sector" class="form-control" name="res_sector" required>
+                                                                <select id="res_regSector" class="form-control" name="res_regSector" required>
                                                                     <option selected disabled>Sector</option>
                                                                     <option value="Private">Private</option>
                                                                     <option value="Public">Public</option>
@@ -283,26 +283,17 @@ include ("config.php");
                                                 <div class="form-group">    
                                                     <div class="row">
                                                         <div class="col-12 inputTitle">
-                                                            <label><h4>City Address</h4></label>
+                                                            <label><h4>Address</h4></label>
                                                             <textarea 
                                                             type="textarea" 
                                                             class="form-control" 
-                                                            name="res_cityaddress" 
-                                                            id="res_cityaddress" 
-                                                            placeholder="City Address"
+                                                            name="res_regaddress" 
+                                                            id="res_regaddress" 
+                                                            placeholder="Address"
                                                             required></textarea>
                                                         </div>
 
-                                                        <div class="col-12 inputTitle ">
-                                                            <label><h4>Provincial Address</h4></label>
-                                                            <textarea 
-                                                            type="textarea" 
-                                                            class="form-control" 
-                                                            name="res_provincialaddress" 
-                                                            id="res_provincialaddress" 
-                                                            placeholder="Provincial Address"
-                                                            required></textarea>
-                                                        </div>
+
 
                                                         <div class="inputTitle col-12">
                                                             <label><h4>Purok</h4></label>

@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once ("config.php");
+?>
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -60,6 +65,9 @@
                 <li class="active">
                     <a href="AdminBarangaySettings.php">Barangay Settings</a>
                 </li>
+                <li>
+                    <a href="logs.php">Barangay Logs</a>
+                </li>
             </ul>
 
             <ul class="list-unstyled CTAs">
@@ -111,7 +119,7 @@
                                     <h2 class="mb-0"><i class="far fa-clone pr-1"></i>Barangay Information</h2>
                                 </div>
                                 <div class="card-body pt-0">
-                                    <form>
+                                    <form action="database.php" method="post" name="brgy_Settings">
                                         <table class="table table-bordered">
                                             <tr>
                                                 <th width="40%">Barangay Name</th>
@@ -120,8 +128,8 @@
                                                     <input 
                                                     type="text" 
                                                     class="form-control"
-                                                    placeholder="Barangay Name"
-                                                    required/>
+                                                    name="brgy_bName"
+                                                    />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -129,10 +137,11 @@
                                                 <td width="1%">:</td>
                                                 <td>
                                                     <input 
+                                                    readonly
                                                     type="text" 
                                                     class="form-control"
-                                                    placeholder="Municipality"
-                                                    required/>
+                                                    name="brgy_bMunicipality"
+                                                    />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -140,10 +149,11 @@
                                                 <td width="1%">:</td>
                                                 <td>
                                                     <input 
+                                                    readonly
                                                     type="text" 
                                                     class="form-control"
-                                                    placeholder="Province"
-                                                    required/>
+                                                    name="brgy_Province"
+                                                    />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -153,8 +163,8 @@
                                                     <input 
                                                     type="text" 
                                                     class="form-control"
-                                                    placeholder="Contact Number"
-                                                    required/>
+                                                    name="brgy_cNumber"
+                                                    />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -164,11 +174,17 @@
                                                     <input 
                                                     type="email" 
                                                     class="form-control"
-                                                    placeholder="Email"
-                                                    required/>
+                                                    name="brgy_email"
+                                                    />
                                                 </td>
                                             </tr>
                                         </table>
+                                        <button class="btn btn-lg btn-success " type="submit" id="btn_brgyViews" name="btn_brgyViews" value= <?php echo $_SESSION['brgy_bMunicipality'];?>
+                                        <i class="glyphicon glyphicon-ok-sign"></i> View Details
+                                         </button>
+                                        <button class="btn btn-lg btn-success " type="submit" id="btn_brgySettings" name="btn_brgySettings">
+                                        <i class="glyphicon glyphicon-ok-sign"></i> Save Changes
+                                         </button>
                                     </form>
                                 </div>
                                

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ("config.php");
+include_once ("config.php");
 ?>
 
 <!DOCTYPE HTML>
@@ -21,6 +21,7 @@ include ("config.php");
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
     <link rel="icon" type="image/png" sizes="32x32" href="image/logo_1.png">
+    <script src="validation.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -83,9 +84,9 @@ include ("config.php");
                 <form
                 action="database.php" 
                 class="form" 
-                name="res_register" 
-                id="res_register" 
-                onsubmit="return regValidation()">
+                name="res_profile" 
+                id="res_profile" 
+                method="post">
                     <div class="container bootstrap snippet">
                         <div class="row">
                             <div class="col-12">
@@ -107,14 +108,15 @@ include ("config.php");
                                                             <div class="row">
                                                                 <div class="col-4 inputTitle">
                                                                     <label><h4>First Name</h4></label><br>
-                                                                        <input 
+                                                                        <input
+                                                                         readonly
                                                                         type="text" 
                                                                         class="form-control"
                                                                         name="res_profilefirstname" 
                                                                         id="res_profilefirstname" 
                                                                         placeholder="First Name"
-                                                                        value= <?php echo $_SESSION['res_firstName'];?>
-                                                                        readonly/>
+                                                                        value= <?php echo $_SESSION['res_firstaName'];?>
+                                                                        />
                                                                 </div>
 
                                                                 <div class="col-4 inputTitle">
@@ -143,7 +145,7 @@ include ("config.php");
 
                                                                 <div class="col-3 inputTitle">
                                                                     <label><h4>Birth Month</h4></label><br>
-                                                                    <select id="res_profilebirthMonth" class="form-control" name="res_profilebirthMonth" required>
+                                                                    <select readonly id="res_profilebirthMonth" class="form-control" name="res_profilebirthMonth" value=<?php echo $_SESSION['res_birthMonth'];?>>
                                                                         <option selected disabled>Month</option>
                                                                         <option value="01" <?php echo ($_SESSION['res_birthMonth']=='01')?('selected'):(''); ?>>January </option>
                                                                         <option value="02" <?php echo ($_SESSION['res_birthMonth']=='02')?('selected'):(''); ?>>February </option>
@@ -162,7 +164,7 @@ include ("config.php");
 
                                                                 <div class="col-2 inputTitle">
                                                                     <label><h4>Birth Day</h4></label><br>
-                                                                    <select id="res_profilebirthDay" class="form-control" name="res_profilebirthDay" required>
+                                                                    <select readonly id="res_profilebirthDay" class="form-control" name="res_profilebirthDay" value=<?php echo $_SESSION['res_birthDate'];?>>
                                                                         <option selected disabled>Day</option>
                                                                         <option value="01" <?php echo ($_SESSION['res_birthDate']=='01')?('selected'):(''); ?>>01</option>
                                                                         <option value="02" <?php echo ($_SESSION['res_birthDate']=='02')?('selected'):(''); ?>>02</option>
@@ -201,7 +203,7 @@ include ("config.php");
 
                                                                 <div class="col-2 inputTitle">
                                                                     <label><h4>Birth Year</h4></label><br>
-                                                                    <select id="res_profilebirthYear" class="form-control" name="res_profilebirthYear" required>
+                                                                    <select readonly id="res_profilebirthYear" class="form-control" name="res_profilebirthYear" value=<?php echo $_SESSION['res_birthYear'];?>>
                                                                         <option selected disabled>Year</option>
                                                                         <option value="1990" <?php echo ($_SESSION['res_birthYear']=='1990')?('selected'):(''); ?>>1990</option>
                                                                         <option value="1991" <?php echo ($_SESSION['res_birthYear']=='1991')?('selected'):(''); ?>>1991</option>
@@ -247,7 +249,7 @@ include ("config.php");
 
                                                                 <div class="col-3 inputTitle">
                                                                     <label><h4>Sex</h4></label><br>
-                                                                        <select id="res_profileSex" class="form-control" name="res_profileSex" name="info-gender"  value=<?php echo $_SESSION['res_gender'];?>>
+                                                                        <select readonly id="res_profileSex" class="form-control" name="res_profileSex" name="info-gender"  value=<?php echo $_SESSION['res_gender'];?>>
                                                                             <option selected disabled>Sex</option>
                                                                             <option value="Male" <?php echo ($_SESSION['res_gender']=='Male')?('selected'):(''); ?>>Male</option>
                                                                             <option value="Female" <?php echo ($_SESSION['res_gender']=='Female')?('selected'):(''); ?>>Female</option>
@@ -286,7 +288,7 @@ include ("config.php");
                                                                     id="res_profilereligion" 
                                                                     placeholder="Religion"
                                                                     value= <?php echo $_SESSION['res_religion'];?>
-                                                                    required/>
+                                                                    />
                                                                 </div>
 
                                                                 <div class="col-4 inputTitle">
@@ -298,7 +300,7 @@ include ("config.php");
                                                                     id="res_profilecitizenship" 
                                                                     placeholder="Citizenship"
                                                                     value= <?php echo $_SESSION['res_citizenship'];?>
-                                                                    required/>
+                                                                    />
                                                                 </div>
 
                                                                 <div class="col-4 inputTitle">
@@ -315,27 +317,28 @@ include ("config.php");
                                                             <input 
                                                             type="text" 
                                                             class="form-control" 
-                                                            name="res_occupation" 
-                                                            id="res_occupation" 
+                                                            name="res_profileOccupation" 
+                                                            id="res_profileOccupation" 
                                                             placeholder="Occupation"
-                                                            required/>
+                                                            value= <?php echo $_SESSION['res_occupation']; ?>
+                                                            />
                                                         </div>
                                                         <div class="col-6 inputTitle">
                                                             <label><h4>Sector </h4></label><br>
-                                                                <select id="res_sector" class="form-control" name="res_sector" required>
+                                                                <select id="res_profileSector" class="form-control" name="res_profileSector" value= <?php echo $_SESSION['res_sector']; ?>>
                                                                     <option selected disabled>Sector</option>
-                                                                    <option value="Private">Private</option>
-                                                                    <option value="Public">Public</option>
-                                                                    <option value="Government">Government</option>
-                                                                    <option value="Unemployed">Unemployed</option>
-                                                                    <option value="Out of School Youth (OSY)">Out of School Youth (OSY)</option>
-                                                                    <option value="Out of School Children (OSC)">Out of School Children (OSC)</option>
-                                                                    <option value="Person with Disability (PWD)">Person with Disability (PWD)</option>
-                                                                    <option value="Senior Citizen (SC)">Senior Citizen (SC)</option>
-                                                                    <option value="Overseas Filipino Worker (OFW)">Gov Overseas Filipino Worker (OFW)</option>
-                                                                    <option value="Solo Parent">Solo Parent</option>
-                                                                    <option value="Indigenous People (IP)">Indigenous People (IP)</option>
-                                                                    <option value="Others">Others</option>
+                                                                    <option value="Private" <?php echo ($_SESSION['res_sector'] =='Private')?('selected'):(''); ?>>Private</option>
+                                                                    <option value="Public" <?php echo ($_SESSION['res_sector'] =='Public')?('selected'):(''); ?>>Public</option>
+                                                                    <option value="Government" <?php echo ($_SESSION['res_sector'] =='Government')?('selected'):(''); ?>>Government</option>
+                                                                    <option value="Unemployed" <?php echo ($_SESSION['res_sector'] =='Unemployed')?('selected'):(''); ?>>Unemployed</option>
+                                                                    <option value="Out of School Youth (OSY)" <?php echo ($_SESSION['res_sector'] =='OSY')?('selected'):(''); ?>>Out of School Youth (OSY)</option>
+                                                                    <option value="Out of School Children (OSC)" <?php echo ($_SESSION['res_sector'] =='OSC')?('selected'):(''); ?>>Out of School Children (OSC)</option>
+                                                                    <option value="Person with Disability (PWD)" <?php echo ($_SESSION['res_sector'] =='PWD')?('selected'):(''); ?>>Person with Disability (PWD)</option>
+                                                                    <option value="Senior Citizen (SC)" <?php echo ($_SESSION['res_sector'] =='Senior')?('selected'):(''); ?>>Senior Citizen (SC)</option>
+                                                                    <option value="Overseas Filipino Worker (OFW)" <?php echo ($_SESSION['res_sector'] =='OFW')?('selected'):(''); ?>>Gov Overseas Filipino Worker (OFW)</option>
+                                                                    <option value="Solo Parent" <?php echo ($_SESSION['res_sector'] =='SoloParent')?('selected'):(''); ?>>Solo Parent</option>
+                                                                    <option value="Indigenous People (IP)" <?php echo ($_SESSION['res_sector'] =='Indigenous')?('selected'):(''); ?>>Indigenous People (IP)</option>
+                                                                    <option value="Others" <?php echo ($_SESSION['res_sector']=='Others')?('selected'):(''); ?>>Others</option>
                                                                 </select>
                                                         </div>
                                                             </div>
@@ -392,30 +395,20 @@ include ("config.php");
                                                         <div class="form-group">    
                                                             <div class="row">
                                                                 <div class="col-12 inputTitle">
-                                                                    <label><h4>City Address</h4></label>
-                                                                    <textarea 
-                                                                    type="textarea" 
+                                                                    <label><h4>Address</h4></label>
+                                                                    <input
+                                                                    type="text" 
                                                                     class="form-control" 
-                                                                    name="res_cityaddress" 
-                                                                    id="res_cityaddress" 
-                                                                    placeholder="City Address"
-                                                                    required></textarea>
-                                                                </div>
-
-                                                                <div class="col-12 inputTitle ">
-                                                                    <label><h4>Provincial Address</h4></label>
-                                                                    <textarea 
-                                                                    type="textarea" 
-                                                                    class="form-control" 
-                                                                    name="res_provincialaddress" 
-                                                                    id="res_provincialaddress" 
-                                                                    placeholder="Provincial Address"
-                                                                    required></textarea>
+                                                                    name="res_profileAddress" 
+                                                                    id="res_profileAddress" 
+                                                                    placeholder="Address"
+                                                                    value= <?php echo $_SESSION['res_address'];?>
+                                                                    />
                                                                 </div>
 
                                                                 <div class="inputTitle col-12">
                                                                     <label><h4>Purok</h4></label>
-                                                                    <select id="res_profilePurok" class="form-control" name="res_profilePurok">
+                                                                    <select id="res_profilePurok" class="form-control" name="res_profilePurok" value= <?php echo $_SESSION['res_purok'];?>>
                                                                         <option selected disabled>Purok</option>
                                                                         <option value="1" <?php echo ($_SESSION['res_purok']=='1')?('selected'):(''); ?>>1</option>
                                                                         <option value="2" <?php echo ($_SESSION['res_purok']=='2')?('selected'):(''); ?>>2</option>
@@ -439,7 +432,7 @@ include ("config.php");
                                                                     id="res_profilecellphone_number" 
                                                                     placeholder="Cellphone Number"
                                                                     value= <?php echo $_SESSION['res_phoneNumber'];?>
-                                                                    required/>
+                                                                    />
                                                                 </div>
                                                                 
                                                                 <div class="inputTitle col-12">
@@ -462,8 +455,9 @@ include ("config.php");
                                                                         id="res_profileusername" 
                                                                         placeholder="User Name"
                                                                         value= <?php echo $_SESSION['res_alias'];?>
-                                                                        required/>
+                                                                        />
                                                                     </div>
+
                                                                 <div class="inputTitle col-8">
                                                                     <label><h4>Email Address</h4></label>
                                                                     <input 
@@ -472,8 +466,7 @@ include ("config.php");
                                                                     name="res_profileemail" 
                                                                     id="res_profileemail" 
                                                                     placeholder="Email Address"
-                                                                    value= <?php echo $_SESSION['res_email'];?>
-                                                                    required/>
+                                                                    value= <?php echo $_SESSION['res_email'];?>/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -483,9 +476,19 @@ include ("config.php");
                                                     <div class="form-group">
                                                         <div class="col-xs-12">
                                                             <br><br><br>
-                                                            <button class="btn btn-lg btn-warning btn-orange" type="submit" id="btnres_register" name="btnres_register">
+                                                            <button class="btn btn-lg btn-warning btn-orange" type="submit" id="btnres_save" name="btnres_save">
                                                                 <i class="glyphicon glyphicon-ok-sign"></i> Save
                                                             </button>
+
+                                                            <div class="cRight col-8 mx-auto ">
+                                                            <button
+                                                            id="btnInfoDelete"
+                                                            class="btn btn-lg btn-warning btn-orange"
+                                                            type="submit"
+                                                            name="btnInfoDelete"
+                                                            onclick="if (!confirm('Are you sure you want to delete your profile')) { return false }"
+                                                            >Delete</button>
+                                                        </div>
                                                             <br><br>
                                                         </div>
                                                     </div>

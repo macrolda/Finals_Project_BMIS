@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require ("config.php");
+    include_once ("config.php");
 ?>
 
 <!DOCTYPE HTML>
@@ -19,10 +19,10 @@
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+    <script src="validation.js" type="text/javascript"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="image/logo_1.png">
 </head>
 
@@ -64,6 +64,9 @@
                 <li>
                     <a href="AdminBarangaySettings.php">Barangay Settings</a>
                 </li>
+                <li>
+                    <a href="logs.php">Barangay Logs</a>
+                </li>
             </ul>
 
             <ul class="list-unstyled CTAs">
@@ -90,12 +93,13 @@
 
             <div class="container-fluid">
                 <section>
+                    <form action="database.php" method="post">
                         <div class="table-responsive">
                             <div class="table-wrapper">
                                 <div class="table-title">
                                     <div class="row">
                                         <div class="col-4">
-                                            <h2><b>Resident's Information</b></h2>
+                                            <h2><b>Barangay Clearance</b></h2>
                                         </div>
                                         <div class="col-8">
                                             <div class="search-box">
@@ -108,25 +112,40 @@
                                 <table class="table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>ResidentID</th>
+                                            <th>LastName</th>
                                             <th>FirstName</th>
                                             <th>MiddleName</th>
-                                            <th>LastName</th>
+                                            <th>ResidentID</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <th>123456789</th>
-                                        <td>Maria Ailah</td>
-                                        <td>Confiado</td>
-                                        <td>Rolda</td>
-                                        <td>
-                                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                        </td>
+                                    <?php
+                                        include_once("config.php");
+                                        $getResi = "SELECT * FROM resident_info";
+                                        $result = mysqli_query($conn, $getResi);
+                                        if (mysqli_num_rows($result) > 0) {
+                                        while ($resident = mysqli_fetch_assoc($result)) 
+                                        {
+                                            $lastName = $resident['res_lastName'];
+                                            $firstName = $resident['res_firstaName'];
+                                            $middleName = $resident['res_middleName'];
+                                            echo "<tr>"
+                                            . "<td>" . $resident['res_lastName']
+                                            . "</td><td>" . $resident['res_firstaName']
+                                            . "</td><td>" . $resident['res_middleName']
+                                            . "</td><td>" . $resident['user_id']
+                                            . "</td><td>
+                                            <button  data-toggle='modal' data-target='#editEmployeeModal' name='btnCreateClearance' type='submit' value=" . $resident['user_id'] . " class='btn btn-success text-dark bg-gradient fa fa-eye'>
+                                           </button></td>"
+                                            . "</tr>";
+                                        }
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
-                        </div>        
+                        </div>      
                     </div>
                     <!-- print Modal HTML -->
                     <div id="editEmployeeModal" class="modal fade">
@@ -143,15 +162,15 @@
                                             <div class="row">
                                                 <div class="col-4 form-group ">
                                                     <label>First Name</label>
-                                                    <input type="text" class="form-control" readonly>
+                                                    <input type="text" class="form-control" >
                                                 </div>
                                                 <div class="col-4 form-group ">
                                                     <label>Middle Name</label>
-                                                    <input type="text" class="form-control" readonly>
+                                                    <input type="text" class="form-control">
                                                 </div>
                                                 <div class="col-4 form-group ">
                                                     <label>Last Name</label>
-                                                    <input type="text" class="form-control" readonly>
+                                                    <input type="text" class="form-control">
                                                 </div>
                                             </div>
                                         </div>			
@@ -193,7 +212,7 @@
                             </div>
                         </div>
                     </div>
-
+                    </form>  
                     
                 </section>
             </div>

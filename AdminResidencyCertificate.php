@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require ("config.php");
+    include_once ("config.php");
 ?>
 
 <!DOCTYPE HTML>
@@ -64,6 +64,9 @@
                 <li>
                     <a href="AdminBarangaySettings.php">Barangay Settings</a>
                 </li>
+                <li>
+                    <a href="logs.php">Barangay Logs</a>
+                </li>
             </ul>
 
             <ul class="list-unstyled CTAs">
@@ -90,6 +93,7 @@
 
             <div class="container-fluid">
                 <section>
+                    <form action="database.php" method="post">
                         <div class="table-responsive">
                             <div class="table-wrapper">
                                 <div class="table-title">
@@ -108,39 +112,106 @@
                                 <table class="table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>
-                                                <span class="custom-checkbox">
-                                                    <input type="checkbox" id="selectAll">
-                                                    <label for="selectAll"></label>
-                                                </span>
-                                            </th>
                                             <th>FirstName</th>
                                             <th>MiddleName</th>
                                             <th>LastName</th>
+                                            <th>ResidentID</th> 
                                             <th>Print Document</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <span class="custom-checkbox">
-                                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                                    <label for="checkbox1"></label>
-                                                </span>
-                                            </td>
-                                            <td>Maria Ailah</td>
-                                            <td>Confiado</td>
-                                            <td>Rolda</td>
-                                            <td>
-                                                <a onClick="location.href='CertificateTemplates/ResidencyCertificate.php'" class="print" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE171;</i></a>
-                                            </td>
-                                        </tr>
+                                            <?php
+                                                include_once("config.php");
+                                                $getResi = "SELECT * FROM resident_info";
+                                                $result = mysqli_query($conn, $getResi);
+                                                if (mysqli_num_rows($result) > 0) {
+                                                while ($resident = mysqli_fetch_assoc($result)) 
+                                                {
+                                                    $lastName = $resident['res_lastName'];
+                                                    $firstName = $resident['res_firstaName'];
+                                                    $middleName = $resident['res_middleName'];
+                                                    echo "<tr>"
+                                                    . "<td>" . $resident['res_lastName']
+                                                    . "</td><td>" . $resident['res_firstaName']
+                                                    . "</td><td>" . $resident['res_middleName']
+                                                    . "</td><td>" . $resident['user_id']
+                                                    . "</td><td>
+                                                    <button data-toggle='modal' data-target='#editEmployeeModal' name='btnCreateResidency' type='button' value=" . $resident['user_id'] . " class='btn btn-success text-dark bg-gradient fa fa-eye'>
+                                                </button></td>"
+                                                    . "</tr>";
+                                                }
+                                                }
+                                                ?>
                                     </tbody>
                                 </table>
                             </div>
                         </div>        
                     </div>
+                    <div id="editEmployeeModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form action="database.php">
+                                    <div class="modal-header">						
+                                        <h4 class="modal-title">Barangay Clearance</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group ">
+                                                    <label>First Name</label>
+                                                    <input type="text" class="form-control" >
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Middle Name</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Last Name</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>			
+                                        <div class="col-12 form-group">
+                                            <label>Barangay Clearance Purpose</label>
+                                            <input type="text" id="purpose" class="form-control" required>
+                                        </div>
 
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6 form-group">
+                                                    <label>OR Number</label>
+                                                    <input type="number" id="inputORNum" class="form-control" required>
+                                                </div>
+                                                <div class="col-6 form-group">
+                                                    <label>OR Date Issued</label>
+                                                    <input type="date" id="inputORDate" class="form-control" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6 form-group">
+                                                    <label>Cedulla Number</label>
+                                                    <input type="number" id="inputCedullaNum" class="form-control" required>
+                                                </div>
+                                                <div class="col-6 form-group">
+                                                    <label>Cedulla Date Issued</label>
+                                                    <input type="date" id="inputCedullaDate" class="form-control" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input onClick="location.href='CertificateTemplates/ResidencyCertificate.php'" type="submit" class="btn btn-success" value="Print Document">
+                                        <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancel">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
                 </section>
             </div>
         </div>

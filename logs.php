@@ -45,10 +45,10 @@
             <ul class="list-unstyled components">
                 <p class="brgyTitle">Barangay Tabunok</p>
 
-                <li>
+                <li class="active">
                     <a href="AdminDashboard.php">Dashboard</a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="AdminResidentRecords.php">Resident Records</a>
                 </li>
 
@@ -95,7 +95,7 @@
 
             <div class="container-fluid">
                 <section>
-                    <form action="database.php" method="post" name="table_resident">
+                    <form action="database.php" method="post" name="table_log">
                         <div class="table-responsive">
                             <div class="table-wrapper">
                                 <div class="table-title">
@@ -109,47 +109,39 @@
                                                 <input type="text" onkeyup="searchRes()" class="form-control" name="searchResident" id="searchResident" placeholder="Search">
                                             </div>
                                         </div>
-                                        <div class="col-4">
-                                            <a href="ResidentRegister.php" class="btn btn-success">Add Resident</span></a>
-                                        </div>
+    
                                     </div>
                                 </div>
-                                <table class="table table-striped table-hover" name="resTable" id="resTable">
+                                <table class="table table-striped table-hover" name="logTable" id="logTable">
                                     <thead>
                                         <tr>
-                                            <th>FirstName</th>
-                                            <th>MiddleName</th>
-                                            <th>LastName</th>
-                                            <th>ResidentNumber</th>
-                                            <th>Age</th>
-                                            <th>Sex</th>
-                                            <th>VoterStatus</th>
-                                            <th>Actions</th>
+                                        <th data-field="transactionId" data-sortable="true">Transaction ID</th>
+                                        <th data-field="timestamp">Timestamp</th>
+                                        <th data-field="event" data-sortable="true">Event</th>
+                                        <th data-field="residentId" data-sortable="true">Person Name</th>
+                                        <th data-field="residentName" data-sortable="true">Person ID</th>
+                                        <th data-field="encoder" data-sortable="true">Encoder</th>
+                                        <th data-field="position" data-sortable="true">Encoder Position</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php
+
                                         include_once("config.php");
-                                        $getResident = "SELECT * FROM resident_info";
-                                        $result = mysqli_query($conn, $getResident);
+                                        $getLogs = "SELECT * FROM logs_info  ORDER BY `log_date` DESC, `log_time` DESC";
+                                        $result = mysqli_query($conn, $getLogs);
                                         if (mysqli_num_rows($result) > 0) {
-                                            while ($resident = mysqli_fetch_assoc($result)) {
-                                            $lastName = $resident['res_lastName'];
-                                            $firstName = $resident['res_firstaName'];
-                                            $middleName = $resident['res_middleName'];
-                                            echo "<tr>"
-                                                . "<td>" . $resident['res_firstaName']
-                                                . "</td><td>" . $resident['res_middleName']
-                                                . "</td><td>" . $resident['res_lastName']
-                                                . "</td><td>" . $resident['user_id']
-                                                . "</td><td>" . $resident['res_age']
-                                                . "</td><td>" . $resident['res_gender']
-                                                . "</td><td>" . $resident['res_voterStatus']
-                                                . "</td><td><button name='btnView' type='submit' value=" . $resident['user_id'] . " class='btn btn-success text-dark bg-gradient fa fa-eye'></button>
-                                                    <button name='btnEdit' type='submit' value=" . $resident['user_id'] . " class='btn btn-warning text-dark bg-gradient fa fa-edit'></button>
-                                                    <button name='btnDelete' type='submit' value=" . $resident['user_id'] . " class='btn btn-danger text-dark bg-gradient fa fa-trash'>".$resident['user_id']."</button></td>"
-                                                . "</tr>";
-                                            }
+                                        while ($logs = mysqli_fetch_assoc($result)) {
+                                            echo 
+                                            "<tr><td>" . $logs['log_transactionID']
+                                            . "</td><td>" . $logs['log_timestamp']
+                                            . "</td><td>" . $logs['log_event']
+                                            . "</td><td>" . $logs['log_personName']
+                                            . "</td><td>" . $logs['log_personID']
+                                            . "</td><td>" . $logs['log_encoder']
+                                            . "</td><td>" . $logs['log_encoderPosition']
+                                            . "</tr>";
+                                        }
                                         }
                                         ?>
                                     </tbody>

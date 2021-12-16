@@ -1,9 +1,21 @@
 <?php
 require('fpdf17/fpdf.php');
+include_once("../config.php");
 
 //A4 width : 219mm
 //default margin : 10mm each side
 //writable horizontal : 219-(10*2)=189mm
+
+$data_resident = "SELECT res_firstaName, res_lastName, res_middleName FROM resident_info";
+$result_resident = $conn -> query($data_resident);
+
+session_start();
+$res_lastName = $_SESSION['res_lastName'];
+$res_firstaName = $_SESSION['res_firstaName'];
+$res_middleName = $_SESSION['res_middleName'];
+$currentDate = date("F d, Y");
+$inputORNum = date("d, y");
+$inputCedullaNum = date("d,y");
 
 $pdf = new FPDF('P','mm','A4');
 $pdf->AddPage();
@@ -36,7 +48,7 @@ $pdf->Cell(0,5,'',0,15,'C');
 $pdf->Cell(0,5,'',0,16,'C');
 $pdf->Cell(0,5,'',0,17,'C');
 $pdf->Cell(0,5,'',0,18,'C');
-$pdf->Cell(0,5,'This is to certify .$firstName .$middleName .$lastName that is of legal age,',0,19,'C');
+$pdf->Cell(0,5,'This is to certify' .$res_firstaName. " ".$res_middleName." " .$res_lastName.' that is of legal age,',0,19,'C');
 $pdf->Cell(0,5,'',0,20,'C');
 $pdf->Cell(0,5,'Filipino and a bonafied resident of Barangay Tabunok and that has no derogatory',0,21,'C');
 $pdf->Cell(0,5,'',0,22,'C');
@@ -47,9 +59,9 @@ $pdf->Cell(0,5,'',0,25,'C');
 $pdf->Cell(0,5,'This certificate is issued in his/her request for: ',0,26,'C');
 $pdf->Cell(0,5,'',0,27,'C');
 $pdf->Cell(0,5,'',0,28,'C');
-$pdf->Cell(0,5,'.$purpose',0,29,'C');
+$pdf->Cell(0,5,'any purpose',0,29,'C');
 $pdf->Cell(0,5,'',0,30,'C');
-$pdf->Cell(0,5,'Issued this .$currentDate',0,31,'C');
+$pdf->Cell(0,5,'Issued this ' .$currentDate. ' ',0,31,'C');
 $pdf->Cell(0,5,'',0,32,'C');
 $pdf->Cell(0,5,'',0,33,'C');
 
@@ -58,7 +70,7 @@ $pdf->Cell(0,5,'',5,35,'C');
 $pdf->Cell(0,5,'',5,36,'C');
 $pdf->Cell(0,5,'',5,37,'C');
 
-$pdf->Cell(0,5,'.$AdminFirstName .$AdminMiddleName .$AdminLastName',0,38,'R');
+$pdf->Cell(0,5,'Captain',0,38,'R');
 $pdf->Cell(0,5,'______________________________',0,39,'R');
 $pdf->Cell(0,5,' Punong Barangay              ',0,40,'R');
 
@@ -70,13 +82,13 @@ $pdf->Cell(0,5,'',5,42,'C');
 $pdf->Cell(0,5,'',5,43,'C');
 $pdf->Cell(0,5,'',5,44,'C');
 
-$pdf->Cell(0,5,'OR Number: .$inputORNum',5,41,'L');
+$pdf->Cell(0,5,'OR Number:' .$inputORNum,5,41,'L');
 $pdf->Cell(0,5,'',5,44,'C');
-$pdf->Cell(0,5,'OR Date Issued: .$inputORDate',5,42,'L');
+$pdf->Cell(0,5,'OR Date Issued: '.$currentDate,5,42,'L');
 $pdf->Cell(0,5,'',5,44,'C');
-$pdf->Cell(0,5,'Cedulla Number: .$inputCedullaNum',5,43,'L');
+$pdf->Cell(0,5,'Cedulla Number: '.$inputCedullaNum,5,43,'L');
 $pdf->Cell(0,5,'',5,44,'C');
-$pdf->Cell(0,5,'Cedulla Date Issued: .$inputCedullaDate',5,44,'L');
+$pdf->Cell(0,5,'Cedulla Date Issued:' .$currentDate ,5,44,'L');
 
 $pdf->Output();
 ?>
