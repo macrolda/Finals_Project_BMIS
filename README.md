@@ -1,5 +1,12 @@
 # Finals_Project_BMIS
 
+#credentials:
+Nares, Anna Julienne
+Pasia, Kharla Jane
+Rolda, Maria Ailah
+
+#details:
+
 `AdminAddResidentModal` - modal for adding resident through admin page
 
 `AdminBarangayClearance` - php file for issuing barangay clearance from admin page
@@ -49,3 +56,4 @@
 `ResidentSideBar` -  NOTHING. should've removed but somehow the devs forgot about it 
 
 `validation` - JS file for validations
+
