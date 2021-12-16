@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Admin | Resident Records</title>
+    <title>Admin | Barangay Logs</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="css/AdminDashboard.css">
@@ -24,8 +24,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <link rel="icon" type="image/png" sizes="32x32" href="image/logo_1.png">
-    
     <script src="validation.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -45,7 +45,7 @@
             <ul class="list-unstyled components">
                 <p class="brgyTitle">Barangay Tabunok</p>
 
-                <li class="active">
+                <li>
                     <a href="AdminDashboard.php">Dashboard</a>
                 </li>
                 <li>
@@ -66,7 +66,7 @@
                 <li>
                     <a href="AdminBarangaySettings.php">Barangay Settings</a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="logs.php">Barangay Logs</a>
                 </li>
             </ul>
@@ -83,14 +83,16 @@
             </ul>
         </nav>
         <!-- Page Content  -->
+        
         <div id="content">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn barBtn">
                         <i class="fas fa-align-justify"></i>
                     </button>
+                    </form>
                 </div>
-                <h2 class="col-12" id="navHeader">Barangay Tabunok's Resident Records</h2>
+                <h2 class="col-12" id="navHeader">Barangay Tabunok's Logs</h2>
             </nav>
 
             <div class="container-fluid">
@@ -101,18 +103,17 @@
                                 <div class="table-title">
                                     <div class="row">
                                         <div class="col-4">
-                                            <h2><b>Resident's Information</b></h2>
+                                            <h2><b>Barangay Logs</b></h2>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-8">
                                             <div class="search-box">
                                                 <i class="material-icons">&#xE8B6;</i>
-                                                <input type="text" onkeyup="searchRes()" class="form-control" name="searchResident" id="searchResident" placeholder="Search">
+                                                <input type="text" class="form-control" onkeyup="search()" name="searchAdmin" id="searchAdmin" placeholder="Search">
                                             </div>
                                         </div>
-    
                                     </div>
                                 </div>
-                                <table class="table table-striped table-hover" name="logTable" id="logTable">
+                                <table class="table table-striped table-hover" name="adminTable" id="adminTable">
                                     <thead>
                                         <tr>
                                         <th data-field="transactionId" data-sortable="true">Transaction ID</th>
@@ -125,15 +126,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php
-
+                                        <?php
                                         include_once("config.php");
                                         $getLogs = "SELECT * FROM logs_info  ORDER BY `log_date` DESC, `log_time` DESC";
                                         $result = mysqli_query($conn, $getLogs);
                                         if (mysqli_num_rows($result) > 0) {
                                         while ($logs = mysqli_fetch_assoc($result)) {
-                                            echo 
-                                            "<tr><td>" . $logs['log_transactionID']
+                                            echo"<tr>"
+                                            ."<td>" . $logs['log_transactionID']
                                             . "</td><td>" . $logs['log_timestamp']
                                             . "</td><td>" . $logs['log_event']
                                             . "</td><td>" . $logs['log_personName']
@@ -141,29 +141,189 @@
                                             . "</td><td>" . $logs['log_encoder']
                                             . "</td><td>" . $logs['log_encoderPosition']
                                             . "</tr>";
-                                        }
+                                            }
                                         }
                                         ?>
                                     </tbody>
                                 </table>
                             </div>
-                        </div>    
-                    </form>    
+                        </div>
+                        </form>        
                     </div>
                     
                     <!-- Add Modal HTML -->
-                    <div id="addResidentModal" class="modal fade">
-                        <?php include 'AdminAddResidentModal.php';?>
+                    <div id="addAdminModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form>
+                                    <div class="modal-header">						
+                                        <h4 class="modal-title">Add Barangay Admin</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group ">
+                                                    <label>First Name</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Middle Name</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Last Name</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                            </div>
+                                        </div>			
+                                        <div class="col-12 form-group">
+                                            <label>Birthday</label>
+                                            <input  type="date" name="adminRegBirthday" class="form-control" id="adminRegBirthday" required>
+                                        </div>
+
+                                        <div class="col-12 form-group">
+                                            <label>Barangay Position</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group">
+                                                    <label>Username</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-8 form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                        <input type="submit" class="btn btn-success" value="Add">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- view Modal HTML -->
-                    <div id="viewResidentModal" class="modal fade">
-                        <?php include 'AdminViewResidentModal.php';?>
+                    <div id="viewAdminModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form>
+                                    <div class="modal-header">						
+                                        <h4 class="modal-title">View Barangay Admin Information</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group ">
+                                                    <label>First Name</label>
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Middle Name</label>
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Last Name</label>
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>			
+                                        <div class="col-12 form-group">
+                                            <label>Birthday</label>
+                                            <input  type="date" name="adminRegBirthday" class="form-control" id="adminRegBirthday" readonly>
+                                        </div>
+
+                                        <div class="col-12 form-group">
+                                            <label>Barangay Position</label>
+                                            <input type="text" class="form-control" readonly>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group">
+                                                    <label>Username</label>
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-8 form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="button" class="btn btn-info" data-dismiss="modal" value="Close">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                     <!-- edit Modal HTML -->
-                    <div id="editResidentModal" class="modal fade">
-                        <?php include 'AdminEditResidentModal.php';?>
-                    </div>
+                    <div id="editAdminModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form>
+                                    <div class="modal-header">						
+                                        <h4 class="modal-title">Edit Barangay Admin Information</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group ">
+                                                    <label>First Name</label>
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Middle Name</label>
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-4 form-group ">
+                                                    <label>Last Name</label>
+                                                    <input type="text" class="form-control" readonly>
+                                                </div>
+                                            </div>
+                                        </div>			
+                                        <div class="col-12 form-group">
+                                            <label>Birthday</label>
+                                            <input  type="date" name="adminRegBirthday" class="form-control" id="adminRegBirthday" readonly>
+                                        </div>
+
+                                        <div class="col-12 form-group">
+                                            <label>Barangay Position</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-4 form-group">
+                                                    <label>Username</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-8 form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="submit" class="btn btn-info" value="Confirm">
+                                        <input type="button" class="btn btn-danger" value="Reset">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                 </section>
             </div>
         </div>
