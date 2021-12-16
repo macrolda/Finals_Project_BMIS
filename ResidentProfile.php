@@ -474,22 +474,18 @@ include_once ("config.php");
                                                 </div>    
                                                     
                                                     <div class="form-group">
-                                                        <div class="col-xs-12">
+                                                        <div class="col-12">
                                                             <br><br><br>
-                                                            <button class="btn btn-lg btn-warning btn-orange" type="submit" id="btnres_save" name="btnres_save">
+                                                            <button class="btn btn-lg btn-success" type="submit" id="btnres_save" name="btnres_save">
                                                                 <i class="glyphicon glyphicon-ok-sign"></i> Save
                                                             </button>
-
-                                                            <div class="cRight col-8 mx-auto ">
                                                             <button
                                                             id="btnInfoDelete"
-                                                            class="btn btn-lg btn-warning btn-orange"
+                                                            class="btn btn-lg btn-danger"
                                                             type="submit"
                                                             name="btnInfoDelete"
                                                             onclick="if (!confirm('Are you sure you want to delete your profile')) { return false }"
                                                             >Delete</button>
-                                                        </div>
-                                                            <br><br>
                                                         </div>
                                                     </div>
                                                 

@@ -104,11 +104,37 @@ include_once ("config.php");
                                             <h3>Barangay Tabunok</h3>
                                         </div>
                                     <div class="card-body">
-                                        <p class="mb-0"><strong class="pr-1"><b>Barangay Name:</b></strong><p id="btgyName">Barangay Tabunok</p></p>
-                                        <p class="mb-0"><strong class="pr-1"><b>Municipality:</b></strong><p id="btgyMuni">{{municipality}}</p></p>
-                                        <p class="mb-0"><strong class="pr-1"><b>Province:</b></strong><p id="btgyProvince">{{province}}</p></p>
-                                        <p class="mb-0"><strong class="pr-1"><b>Contact Number:</b></strong><p id="btgyNum">{{number}}</p></p>
-                                        <p class="mb-0"><strong class="pr-1"><b>Email:</b></strong><p id="btgyEmail">{{email}}</p></p>
+                                    <p class="mb-0">
+                                            <strong class="pr-1">
+                                                <b>Barangay Name:</b>
+                                            </strong>
+                                                    <h4 id="btgyName">Barangay Tabunok</h4>
+                                        </p>
+
+                                        <p class="mb-0">
+                                            <strong class="pr-1">
+                                                <b>Municipality:</b>
+                                            </strong>
+                                                <h4 id="btgyMuni">Talisay City</h4>
+                                        </p>
+                                        <p class="mb-0">
+                                            <strong class="pr-1">
+                                                <b>Province:</b>
+                                            </strong>
+                                            <h4 id="btgyProvince">Cebu</h4>
+                                        </p>
+                                        <p class="mb-0">
+                                            <strong class="pr-1">
+                                                <b>Contact Number:</b>
+                                            </strong>
+                                            <h4 id="btgyNum">{{number}}</h4>
+                                        </p>
+                                        <p class="mb-0">
+                                            <strong class="pr-1">
+                                                <b>Email:</b>
+                                            </strong>
+                                            <h4 id="btgyEmail">{{email}}</h4>
+                                        </p>
                                         
                                     </div>
                                 </div>
@@ -176,6 +202,14 @@ include_once ("config.php");
                                                     class="form-control"
                                                     name="brgy_email"
                                                     />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th width="40%">Barangay Map</th>
+                                                <th width="1%">:</th>
+                                                <td>
+                                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15703.87331693718!2d123.83321282739236!3d10.264135432725087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99cffe8504c7d%3A0x813c9586130f9183!2sTabunok%2C%20Antuwanga%2C%20Talisay%2C%20Cebu!5e0!3m2!1sen!2sph!4v1639514215510!5m2!1sen!2sph" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                                      
                                                 </td>
                                             </tr>
                                         </table>

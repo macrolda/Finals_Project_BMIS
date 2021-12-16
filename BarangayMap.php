@@ -100,13 +100,13 @@
                                             <strong class="pr-1">
                                                 <b>Municipality:</b>
                                             </strong>
-                                                <h4 id="btgyMuni">{{municipality}}</h4>
+                                                <h4 id="btgyMuni">Talisay City</h4>
                                         </p>
                                         <p class="mb-0">
                                             <strong class="pr-1">
                                                 <b>Province:</b>
                                             </strong>
-                                            <h4 id="btgyProvince">{{province}}</h4>
+                                            <h4 id="btgyProvince">Cebu</h4>
                                         </p>
                                         <p class="mb-0">
                                             <strong class="pr-1">
