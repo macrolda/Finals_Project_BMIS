@@ -97,7 +97,7 @@
 
             <div class="container-fluid">
                 <section>
-                    <form action="database.php" method="post" name="table_log">
+                 
                         <div class="table-responsive">
                             <div class="table-wrapper">
                                 <div class="table-title">
@@ -113,6 +113,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <form action="database.php" method="post" name="table_log">
                                 <table class="table table-striped table-hover" name="adminTable" id="adminTable">
                                     <thead>
                                         <tr>
@@ -128,7 +129,7 @@
                                     <tbody>
                                         <?php
                                         include_once("config.php");
-                                        $getLogs = "SELECT * FROM logs_info  ORDER BY `log_date` DESC, `log_time` DESC";
+                                        $getLogs = "SELECT * FROM logs_info";
                                         $result = mysqli_query($conn, $getLogs);
                                         if (mysqli_num_rows($result) > 0) {
                                         while ($logs = mysqli_fetch_assoc($result)) {
@@ -146,9 +147,10 @@
                                         ?>
                                     </tbody>
                                 </table>
+                                
+                        </form>
                             </div>
-                        </div>
-                        </form>        
+                        </div>    
                     </div>
                     
                     <!-- Add Modal HTML -->
